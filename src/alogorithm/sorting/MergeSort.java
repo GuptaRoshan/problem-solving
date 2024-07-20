@@ -1,4 +1,4 @@
-package dataStructure.sorting;
+package alogorithm.sorting;
 
 import java.util.Arrays;
 
@@ -6,18 +6,19 @@ import java.util.Arrays;
 public class MergeSort {
 
     void merge(int[] arr, int left, int mid, int right) {
-        int leftSubArraySize = mid - left + 1;
-        int rightSubArraySize = right - mid;
+        // If there are two elements, left = 0, mid = 0, right = 1
+        int leftSubArraySize = mid - left + 1;  // leftSubArraySize = 0 - 0 + 1
+        int rightSubArraySize = right - mid; // leftSubArraySize = 1 - 0
 
         // Create temp arrays
         int[] leftSubArray = new int[leftSubArraySize];
         int[] rightSubArray = new int[rightSubArraySize];
 
-        //noinspection
+        //copy the left subarray elements from array, start from left
         for (int i = 0; i < leftSubArraySize; i++)
             leftSubArray[i] = arr[left + i];
 
-        //noinspection
+        //copy the right subarray elements from array, start from right
         for (int j = 0; j < rightSubArraySize; j++)
             rightSubArray[j] = arr[(mid + 1) + j];
 

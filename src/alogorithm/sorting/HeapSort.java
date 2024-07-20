@@ -1,4 +1,4 @@
-package dataStructure.sorting;
+package alogorithm.sorting;
 
 import java.util.Arrays;
 

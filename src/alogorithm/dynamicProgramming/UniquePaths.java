@@ -1,4 +1,4 @@
-package dataStructure.dp;
+package alogorithm.dynamicProgramming;
 
 public class UniquePaths {
     public static int uniquePaths(int m, int n) {

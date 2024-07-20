@@ -1,15 +1,16 @@
-package dataStructure.sorting;
+package alogorithm.sorting;
 
 import java.util.Arrays;
 
+@SuppressWarnings("all")
 public class QuickSort {
 
     // Quicksort algorithm
     public static void quickSort(int[] array, int low, int high) {
         if (low < high) {
-            // Partition the problems.array and get the index of the pivot element
+            // Partition the problem array and get the index of the pivot element
             int pivotIndex = partition(array, low, high);
-            // Recursively sort the sub-arrays on both sides of the pivot
+            // Recursively sort the arrays on both sides of the pivot
             quickSort(array, low, pivotIndex - 1);
             quickSort(array, pivotIndex + 1, high);
         }
@@ -18,17 +19,20 @@ public class QuickSort {
     // Partitioning method to find the correct position of the pivot
     public static int partition(int[] array, int low, int high) {
         // Choose the rightmost element as the pivot
-        int pivot = array[high];
-        int i = low - 1;
+        int pivotLast = array[high];
+
+        // Keeps track of the boundary between elements that are less than or equal to the pivot and elements that are greater than the pivot.
+        // 0 ... boundary ->  lower elements than pivot element,  boundary + 1 -> greater elements  than pivot element
+        int boundary = low - 1;
 
         for (int j = low; j < high; j++) {
-            if (array[j] <= pivot) {
-                i++;
-                swap(array, i, j);
+            if (array[j] <= pivotLast) {
+                boundary++;
+                swap(array, boundary, j);
             }
         }
-        swap(array, i + 1, high);
-        return i + 1;
+        swap(array, boundary + 1, high);
+        return boundary + 1;
     }
 
     public static void swap(int[] arr, int i, int j) {

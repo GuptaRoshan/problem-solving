@@ -363,7 +363,7 @@ isSubsetSum(set, 6, 9)
 ```
 
 ```java
-                         []
+                         [] 
                 /        |       \
             [1]         [2]       [3]
           /   \       /   \     /   \
@@ -414,4 +414,6 @@ isSubsetSum(set, 6, 9)
 # Binary Search Patterns
 
 - [Binary Search Patterns](<https://leetcode.com/discuss/interview-question/1322500/5-variations-of-Binary-search-(A-Self-Note)>)
+
+# Sorting
 

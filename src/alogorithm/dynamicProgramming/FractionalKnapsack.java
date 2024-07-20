@@ -1,4 +1,4 @@
-package dataStructure.dp;
+package alogorithm.dynamicProgramming;
 
 import java.util.Arrays;
 

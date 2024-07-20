@@ -1,6 +1,7 @@
 package dataStructure.heap;
 
 
+// in Heap root is always greater than left and right child nodes
 class MinHeap {
     private final int[] heap;
     private final int capacity;
