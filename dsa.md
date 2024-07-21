@@ -685,7 +685,7 @@ public int reverseBits(int number) {
 ```
 
 
-- **Determine if Two Integers Have Opposite Signs**
+- ### Determine if Two Integers Have Opposite Signs
 
 ```java
 
