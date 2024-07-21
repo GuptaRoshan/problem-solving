@@ -411,9 +411,304 @@ isSubsetSum(set, 6, 9)
                  └── sumOfDigits(4)
 ```
 
-# Binary Search Patterns
+# Binary Search
 
 - [Binary Search Patterns](<https://leetcode.com/discuss/interview-question/1322500/5-variations-of-Binary-search-(A-Self-Note)>)
 
+
 # Sorting
+
+### Bucket Sort
+
+```java
+
+// The formula int range = max - min + 1; calculates the total number of distinct values or positions that an array's elements can span
+
+// int[] arr = { -5, 0, 3, 7 };
+// int range = max - min + 1; // 7 - (-5) + 1 = 13
+//The range of values from -5 to 7 covers 13 distinct positions: -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7.
+int range = max - min + 1; 
+
+int numberOfBuckets = 5;
+int bucketSize = (int) Math.ceil((double) range / numberOfBuckets); // one bucket how much elements should hold
+
+
+private static int getBucketIndex(int elem, int min, int bucketSize) {
+   
+  // Elem - min: This shifts the element value so that min becomes the starting point of the range. For example, 
+  // if min is -5, then elem value 0 would be shifted to 5 (i.e., 0 - (-5) = 5).  
+  
+  // (elem - min) / bucketSize: This divides the normalized value by the bucket size to determine which bucket the element should go into. The result is the index of the bucket.
+  return (elem - min) / bucketSize;
+}
+
+```
+
+
+# Bit Manipulation
+
+- ### Bitwise effects on numbers
+
+```java
+
+    /*
+    * Left Shift (<<) :
+    * The left shift operator (<<) shifts the bits of a number to the left by a specified number of positions.
+    * Each bit is shifted to the left by the specified amount, and zeros are added to the right.
+    */
+    int x = 5; // Binary representation: 000...0000101
+    int y = x << 2; // Shift left by 2 positions
+    // After shifting left by 2 positions, the binary representation becomes: 000...0010100
+
+    // Multiplication by powers of 2
+    /*  5 * 2^2 = 20 **/
+    System.out.println(y); // Output: 20
+
+    /*
+    * Right Shift (>>):
+    * The right shift operator (>>) shifts the bits of a number to the right by a specified number of positions.
+    * Each bit is shifted to the right by the specified amount.
+    */
+
+    int a = 20; // Binary representation: 000...0010100
+    int b = a >> 2; // Shift right by 2 positions
+    // After shifting right by 2 positions, the binary representation becomes: 000...0000101
+
+    // Division by powers of 2
+    /*  20 / 2^2 = 5 **/
+    System.out.println(b); // Output: 5
+
+```
+
+- ### Check if a Number is Even or Odd
+
+```java
+
+// Input Examples:
+// isEven(4):
+// 4 in binary: 0100
+// 4 & 1: 0100 & 0001 = 0000 (result is 0, so 4 is even)
+
+// isEven(7):
+// 7 in binary: 0111
+// 7 & 1: 0111 & 0001 = 0001 (result is 1, so 7 is odd)
+
+public boolean isEven(int number) {
+    return (number & 1) == 0;
+}
+
+```
+
+- ### Toggle a Specific Bit
+
+```java
+
+// Input Examples:
+// toggleBit(5, 1):
+// 5 in binary: 0101
+// 1 << 1 (shift left by 1): 0010
+// 5 ^ 2: 0101 ^ 0010 = 0111 (result is 7)
+
+// toggleBit(8, 3):
+// 8 in binary: 1000
+// 1 << 3 (shift left by 3): 1000
+// 8 ^ 8: 1000 ^ 1000 = 0000 (result is 0)
+
+public int toggleBit(int number, int bitPosition) {
+    return number ^ (1 << bitPosition);
+}
+
+```
+
+
+- ### Set a Specific Bit
+
+```java
+
+// Input Examples:
+// setBit(5, 2):
+// 5 in binary: 0101
+// 1 << 2 (shift left by 2): 0100
+// 5 | 4: 0101 | 0100 = 0101 (result is 7)
+
+// setBit(10, 1):
+// 10 in binary: 1010
+// 1 << 1 (shift left by 1): 0010
+// 10 | 2: 1010 | 0010 = 1010 (result is 10)
+
+public int setBit(int number, int bitPosition) {
+    return number | (1 << bitPosition);
+}
+
+```
+
+- ### clear a Specific Bit
+
+```java
+
+// Input Examples:
+// clearBit(7, 1):
+// 7 in binary: 0111
+// ~(1 << 1) (shift left by 1 and complement): ~0010 = 1101
+// 7 & 1101: 0111 & 1101 = 0101 (result is 5)
+
+// clearBit(15, 3):
+// 15 in binary: 1111
+// ~(1 << 3) (shift left by 3 and complement): ~1000 = 0111
+// 15 & 0111: 1111 & 0111 = 0111 (result is 7)
+
+public int clearBit(int number, int bitPosition) {
+    return number & ~(1 << bitPosition);
+}
+
+```
+
+- ### Count the Number of Set Bits (Hamming Weight)
+
+```java
+
+// Input Examples:
+// countSetBits(7):
+// 7 in binary: 0111
+// Number of 1's: 3
+
+// countSetBits(10):
+// 10 in binary: 1010
+// Number of 1's: 2
+
+public int clearBit(int number, int bitPosition) {
+public int countSetBits(int number) {
+    int count = 0;
+    while (number != 0) {
+        count += (number & 1);
+        number >>= 1;
+    }
+    return count;
+}
+
+```
+
+- ### Find the Position of the Rightmost Set Bit
+
+```java
+
+// Input Examples:
+// findRightmostSetBit(12):
+// 12 in binary: 1100
+// -12 in binary (two's complement): 0011 (inverting 1100) + 1 = 0100
+// 12 & -12: 1100 & 0100 = 0100 (result is 4)
+
+// findRightmostSetBit(18):
+// 18 in binary: 10010
+// -18 in binary: 01101 (inverting 10010) + 1 = 01110
+// 18 & -18: 10010 & 01110 = 00110 (result is 2)
+
+public int findRightmostSetBit(int number) {
+    return number & -number;
+}
+
+```
+
+- ### Check if a Number is a Power of Two
+
+```java
+
+// Input Examples:
+// isPowerOfTwo(4):
+// 4 in binary: 0100
+// 4 - 1 = 3 (binary: 0011)
+// 4 & 3: 0100 & 0011 = 0000 (result is 0, so 4 is a power of two)
+
+// isPowerOfTwo(6):
+// 6 in binary: 0110
+// 6 - 1 = 5 (binary: 0101)
+// 6 & 5: 0110 & 0101 = 0100 (result is not 0, so 6 is not a power of two)
+
+public boolean isPowerOfTwo(int number) {
+    return (number > 0) && ((number & (number - 1)) == 0);
+}
+
+```
+
+- ### Swap Two Numbers Without Using a Temporary Variable
+
+```java
+
+// Input Examples:
+// arr = [3, 5]; swap(arr, 0, 1);
+// Before swap: [3, 5]
+// 3 ^ 5 = 6 (0110)
+// 5 ^ 6 = 3
+// 6 ^ 3 = 5
+// After swap: [5, 3]
+
+// arr = [7, 2]; swap(arr, 0, 1);
+// Before swap: [7, 2]
+// 7 ^ 2 = 5 (0101)
+// 2 ^ 5 = 7
+// 5 ^ 7 = 2
+// After swap: [2, 7]
+
+public void swap(int[] arr, int i, int j) {
+    if (i != j) {
+        arr[i] ^= arr[j];
+        arr[j] ^= arr[i];
+        arr[i] ^= arr[j];
+    }
+}
+
+```
+
+- ### Reverse Bits of an Integer
+
+```java
+
+// Input Examples:
+// reverseBits(5):
+// 5 in binary: 00000101
+// Reversed: 10100000 (result is 160)
+
+// reverseBits(15):
+// 15 in binary: 00001111
+// Reversed: 11110000 (result is 240)
+
+public int reverseBits(int number) {
+    int result = 0;
+    while (number > 0) {
+        result = (result << 1) | (number & 1);
+        number >>= 1;
+    }
+    return result;
+}
+
+
+```
+
+
+- **Determine if Two Integers Have Opposite Signs**
+
+```java
+
+// Input Examples:
+// haveOppositeSigns(5, -3):
+// 5 in binary: 00000000000000000000000000000101
+// -3 in binary (two's complement): 11111111111111111111111111111101
+// 5 ^ -3: 00000000000000000000000000000101 ^ 11111111111111111111111111111101 = 11111111111111111111111111111000 (negative result)
+// Result: true (opposite signs)
+
+// haveOppositeSigns(-7, -8):
+// -7 in binary: 11111111111111111111111111111001
+// -8 in binary: 11111111111111111111111111111000
+// -7 ^ -8: 11111111111111111111111111111001 ^ 11111111111111111111111111111000 = 00000000000000000000000000000001 (positive result)
+// Result: false (same signs)
+
+
+public boolean haveOppositeSigns(int a, int b) {
+    return (a ^ b) < 0;
+}
+
+```
+
+
+
 
