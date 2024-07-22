@@ -461,10 +461,10 @@ String strDouble = "3.14";
 double doubleValue = Double.parseDouble(strDouble);
 
 int intValue4 = 42;
-String strValue = Integer.toString(intValue);
+String strValue = String.valueOf(intValue);
 
 double doubleValue3 = 3.14;
-String strValue2 = Double.toString(doubleValue);
+String strValue2 = String.valueOf(doubleValue);
 
 
 ```

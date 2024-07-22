@@ -708,7 +708,85 @@ public boolean haveOppositeSigns(int a, int b) {
 }
 
 ```
+# Map 
+
+- `Use for grouping elements`
+- `Use for storing count frequency of elements`
+- `Combine map count frequnecy to create a pair<k, v>, combine with priority queue, list etc.`
 
 
+# Matrix
 
+### Basic Directions (left, right, top, down)
+
+- `{0, 1}` : Represents movement to the right
+- `{0, -1}`: Represents movement to the left
+- `{1, 0}` : Represents movement downwards
+- `{-1, 0}`: Represents movement upwards
+
+### Additional diagonal movements
+
+- `{1, 1}`  : Represents movement diagonally down and to the right
+- `{1, -1}` : Represents movement diagonally down and to the left
+- `{-1, 1}` : Represents movement diagonally up and to the right
+- `{-1, -1}`: Represents movement diagonally up and to the left
+
+
+### Matrix Conversion
+
+Convert `n * m` matrix to an array : `a[row * m + col] = matrix[row][col]`
+
+```java
+    public static int[] matrixToArray(int[][] matrix) {
+        int m = matrix.length;
+        int n = matrix[0].length;
+        int[] array = new int[m * n];
+
+        for (int row = 0; row < m; row++) {
+            for (int col = 0; col < n; col++) {
+                array[row * n + col] = matrix[row][col];
+            }
+        }
+        return array;
+    }
+```
+
+Convert array to `n * m` matrix : `matrix[x / m][x % m] = a[x]`;
+
+```java
+public static int[][] arrayToMatrix(int[] array, int n, int m) {
+        int[][] matrix = new int[n][m];
+
+        for (int x = 0; x < array.length; x++) {
+            matrix[x / m][x % m] = array[x];
+        }
+        return matrix;
+    }
+```
+
+### Grid Number in matrix
+
+ gridNumber = `(row / 3) * 3 + (col / 3)`
+
+
+ # Permutations
+
+`P(n, r) = (n−r)! / n!`
+where n is the total number of items and r is the number of items to choose from the total.
+
+Permutations of 2 letters from ABC:
+
+`P(3, 2) = (3−2)! / 3! = 3×2×1 = 6`
+
+The permutations are: `AB, BA, AC, CA, BC, CB`
+
+# Combinations
+
+`C(n, r) = n! / (r! × (n−r)!)`
+
+Combinations of 2 letters from ABC:
+
+`C(3, 2) = 3! / ( 2! × (3−2)! ) = 3×2×1 / (2×1×1) = 3`
+
+The combinations are: `AB, AC, BC`
 
