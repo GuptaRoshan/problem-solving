@@ -444,6 +444,160 @@ private static int getBucketIndex(int elem, int min, int bucketSize) {
 
 ```
 
+# Map Usage in LeetCode Problems
+
+1. **Frequency Counting**
+   - Approach: Count occurrences of elements
+   - Examples: 
+     - Valid Anagram
+     - Top K Frequent Elements
+   - Usage: `Map<element, frequency>`
+
+2. **Two Sum and Variants**
+   - Approach: Store complement values
+   - Examples:
+     - Two Sum
+     - 3Sum
+     - 4Sum
+   - Usage: `Map<complement, index>`
+
+3. **Caching/Memoization**
+   - Approach: Store computed results
+   - Examples:
+     - Fibonacci Number
+     - LRU Cache
+   - Usage: `Map<input, computedResult>`
+
+4. **String Manipulation**
+   - Approach: Character mapping or counting
+   - Examples:
+     - Isomorphic Strings
+     - Group Anagrams
+   - Usage: `Map<char, char> or Map<string, list>`
+
+5. **Graph Representation**
+   - Approach: Adjacency list
+   - Examples:
+     - Clone Graph
+     - Course Schedule
+   - Usage: `Map<node, List<neighbors>>`
+
+6. **Prefix Sum**
+   - Approach: Store cumulative sum
+   - Examples:
+     - Subarray Sum Equals K
+     - Continuous Subarray Sum
+   - Usage: `Map<prefixSum, count> or Map<prefixSum, index>`
+
+7. **Design Problems**
+   - Approach: Implement data structure
+   - Examples:
+     - Design HashMap
+     - Implement Trie (Prefix Tree)
+   - Usage: `Map as core data structure`
+
+8. **Longest Substring/Subarray**
+   - Approach: Track last seen index
+   - Examples:
+     - Longest Substring Without Repeating Characters
+     - Longest Consecutive Sequence
+   - Usage: `Map<char/num, lastSeenIndex>`
+
+9. **Array Transformation**
+   - Approach: Map old to new values
+   - Examples:
+     - Find and Replace Pattern
+     - Word Pattern
+   - Usage: `Map<oldValue, newValue>`
+
+10. **Intersection and Union**
+    - Approach: Track common elements
+    - Examples:
+      - Intersection of Two Arrays
+      - Union of Two Arrays
+    - Usage: `Map<element, occurrence>`
+
+11. **Time-Based Data Structures**
+    - Approach: Store values with timestamps
+    - Examples:
+      - Time Based Key-Value Store
+    - Usage: `Map<key, List<{timestamp, value}>>`
+
+12. **Sliding Window**
+    - Approach: Track window contents
+    - Examples:
+      - Longest Substring with At Most K Distinct Characters
+    - Usage: `Map<char, frequency>`
+
+13. **Path Sum Problems**
+    - Approach: Store path sums
+    - Examples:
+      - Path Sum III
+    - Usage: `Map<prefixSum, count>`
+
+14. **Parentheses Problems**
+    - Approach: Match opening and closing
+    - Examples:
+      - Valid Parentheses
+    - Usage: `Map<closingParen, openingParen>`
+
+15. **Bit Manipulation**
+    - Approach: Store bit patterns
+    - Examples:
+      - Repeated DNA Sequences
+    - Usage: `Map<bitPattern, count>`
+
+# Two-Pointer Techniques in Coding Problems
+
+1. **Merge Two Sorted Arrays**
+   - First pointer: `0th index of first array`
+   - Second pointer: `0th index of second array`
+   - Movement: Compare elements, place smaller in result, move corresponding pointer
+
+2. **Two Sum (Sorted Array)**
+   - First pointer: `0th index (left)`
+   - Second pointer: `Last index (right)`
+   - Movement: Move left if sum too small, right if sum too large
+
+3. **Reverse Array/String**
+   - First pointer: `0th index (left)`
+   - Second pointer: `Last index (right)`
+   - Movement: Swap elements, move left pointer right and right pointer left
+
+4. **Remove Duplicates from Sorted Array**
+   - First pointer: `0th index (unique elements)`
+   - Second pointer: `1st index (iterator)`
+   - Movement: Second pointer moves, first only when new unique element found
+
+5. **Container With Most Water**
+   - First pointer: `0th index (left)`
+   - Second pointer: `Last index (right)`
+   - Movement: Move the pointer with shorter height inward
+
+6. **3Sum**
+   - First pointer: `Fixed, iterates through array`
+   - Second and Third: `Two-sum on remaining elements (like #2)`
+
+7. **Sliding Window**
+   - First pointer: `Start of window`
+   - Second pointer: `End of window`
+   - Movement: `Expand/contract window based on condition`
+
+8. **Palindrome Check**
+   - First pointer: `0th index (left)`
+   - Second pointer: `Last index (right)`
+   - Movement: Move towards center, comparing characters
+
+9. **Linked List Cycle Detection**
+   - First pointer: `Slow (moves one step)`
+   - Second pointer: `Fast (moves two steps)`
+   - Movement: If cycle exists, they'll meet
+
+10. **Dutch National Flag**
+    - First pointer: `0th index (left, for 0s)`
+    - Second pointer: `0th index (iterator)`
+    - Third pointer: `Last index (right, for 2s)`
+    - Movement: Swap elements based on value, adjust pointers
 
 # Bit Manipulation
 
@@ -708,12 +862,6 @@ public boolean haveOppositeSigns(int a, int b) {
 }
 
 ```
-# Map 
-
-- `Use for grouping elements`
-- `Use for storing count frequency of elements`
-- `Combine map count frequnecy to create a pair<k, v>, combine with priority queue, list etc.`
-
 
 # Matrix
 
