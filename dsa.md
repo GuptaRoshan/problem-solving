@@ -415,34 +415,6 @@ isSubsetSum(set, 6, 9)
                  └── sumOfDigits(4)
 ```
 
-# Sorting
-
-### Bucket Sort
-
-```java
-
-// The formula int range = max - min + 1; calculates the total number of distinct values or positions that an array's elements can span
-
-// int[] arr = { -5, 0, 3, 7 };
-// int range = max - min + 1; // 7 - (-5) + 1 = 13
-//The range of values from -5 to 7 covers 13 distinct positions: -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7.
-int range = max - min + 1;
-
-int numberOfBuckets = 5;
-int bucketSize = (int) Math.ceil((double) range / numberOfBuckets); // one bucket how much elements should hold
-
-
-private static int getBucketIndex(int elem, int min, int bucketSize) {
-
-  // Elem - min: This shifts the element value so that min becomes the starting point of the range. For example,
-  // if min is -5, then elem value 0 would be shifted to 5 (i.e., 0 - (-5) = 5).
-
-  // (elem - min) / bucketSize: This divides the normalized value by the bucket size to determine which bucket the element should go into. The result is the index of the bucket.
-  return (elem - min) / bucketSize;
-}
-
-```
-
 # Map Usage in LeetCode Problems
 
 1. **Frequency Counting**
@@ -866,7 +838,7 @@ private static int getBucketIndex(int elem, int min, int bucketSize) {
 
 # Bit Manipulation
 
-- ### Bitwise effects on numbers
+### Bitwise effects on numbers
 
 ```java
 
@@ -899,7 +871,7 @@ private static int getBucketIndex(int elem, int min, int bucketSize) {
 
 ```
 
-- ### Check if a Number is Even or Odd
+### Check if a Number is Even or Odd
 
 ```java
 
@@ -918,7 +890,7 @@ public boolean isEven(int number) {
 
 ```
 
-- ### Toggle a Specific Bit
+### Toggle a Specific Bit
 
 ```java
 
@@ -937,9 +909,10 @@ public int toggleBit(int number, int bitPosition) {
     return number ^ (1 << bitPosition);
 }
 
+
 ```
 
-- ### Set a Specific Bit
+### Set a Specific Bit
 
 ```java
 
@@ -960,7 +933,7 @@ public int setBit(int number, int bitPosition) {
 
 ```
 
-- ### clear a Specific Bit
+### clear a Specific Bit
 
 ```java
 
@@ -981,7 +954,7 @@ public int clearBit(int number, int bitPosition) {
 
 ```
 
-- ### Count the Number of Set Bits (Hamming Weight)
+### Count the Number of Set Bits (Hamming Weight)
 
 ```java
 
@@ -1005,7 +978,7 @@ public int countSetBits(int number) {
 
 ```
 
-- ### Find the Position of the Rightmost Set Bit
+### Find the Position of the Rightmost Set Bit
 
 ```java
 
@@ -1026,7 +999,7 @@ public int findRightmostSetBit(int number) {
 
 ```
 
-- ### Check if a Number is a Power of Two
+### Check if a Number is a Power of Two
 
 ```java
 
@@ -1047,7 +1020,7 @@ public boolean isPowerOfTwo(int number) {
 
 ```
 
-- ### Swap Two Numbers Without Using a Temporary Variable
+### Swap Two Numbers Without Using a Temporary Variable
 
 ```java
 
@@ -1076,7 +1049,7 @@ public void swap(int[] arr, int i, int j) {
 
 ```
 
-- ### Reverse Bits of an Integer
+### Reverse Bits of an Integer
 
 ```java
 
@@ -1101,7 +1074,7 @@ public int reverseBits(int number) {
 
 ```
 
-- ### Determine if Two Integers Have Opposite Signs
+### Determine if Two Integers Have Opposite Signs
 
 ```java
 
@@ -1179,21 +1152,12 @@ gridNumber = `(row / 3) * 3 + (col / 3)`
 
 # Permutations
 
-`P(n, r) = (n−r)! / n!`
-where n is the total number of items and r is the number of items to choose from the total.
-
-Permutations of 2 letters from ABC:
-
-`P(3, 2) = (3−2)! / 3! = 3×2×1 = 6`
-
-The permutations are: `AB, BA, AC, CA, BC, CB`
+`P(n, r) = (n−r)! / n!`  where n is the total number of items and r is the number of items to choose from the total.
+Permutations of 2 letters from ABC : `P(3, 2) = (3−2)! / 3! = 3×2×1 = 6`
+The permutations are : `AB, BA, AC, CA, BC, CB`
 
 # Combinations
 
 `C(n, r) = n! / (r! × (n−r)!)`
-
-Combinations of 2 letters from ABC:
-
-`C(3, 2) = 3! / ( 2! × (3−2)! ) = 3×2×1 / (2×1×1) = 3`
-
-The combinations are: `AB, AC, BC`
+Combinations of 2 letters from ABC : `C(3, 2) = 3! / ( 2! × (3−2)! ) = 3×2×1 / (2×1×1) = 3`
+The combinations are : `AB, AC, BC`
