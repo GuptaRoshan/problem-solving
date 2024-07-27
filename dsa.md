@@ -680,9 +680,196 @@ isSubsetSum(set, 6, 9)
    - LeetCode 567: Permutation in String
    - LeetCode 1004: Max Consecutive Ones III
 
-# Binary Search
+# Stack Techniques
 
-- [Binary Search Patterns](<https://leetcode.com/discuss/interview-question/1322500/5-variations-of-Binary-search-(A-Self-Note)>)
+1. **Monotonic Stack**
+
+   - A stack that maintains elements in a strictly increasing or decreasing order
+   - Used for problems involving finding the next greater/smaller element or calculating spans
+
+   **How it works:**
+
+   - Iterate through the elements
+   - For each element, pop elements from the stack that violate the monotonic property
+   - Push the current element onto the stack
+   - The elements remaining in the stack after processing all elements often represent the solution
+
+2. **Paired Brackets Matching**
+
+   - Used for validating or processing strings with paired brackets or parentheses
+
+   **How it works:**
+
+   - Push opening brackets onto the stack
+   - When encountering a closing bracket, check if it matches the top of the stack
+   - If it matches, pop the top element; if not, the string is invalid
+   - After processing all characters, the stack should be empty for a valid string
+
+3. **Expression Evaluation**
+
+   - Used for evaluating arithmetic expressions, especially those in Reverse Polish Notation (RPN)
+
+   **How it works:**
+
+   - For RPN: Push operands onto the stack
+   - When an operator is encountered, pop the required number of operands, apply the operator, and push the result back
+   - The final result is the top of the stack after processing all tokens
+
+4. **Backtracking with Stack**
+
+   - Used for problems that require exploring paths or combinations with the ability to backtrack
+
+   **How it works:**
+
+   - Push states or choices onto the stack as you explore
+   - When backtracking, pop the stack to return to the previous state
+   - Continue until all possibilities are explored
+
+5. **Stack for Tree Traversal**
+
+   - Used for implementing iterative versions of tree traversal algorithms
+
+   **How it works:**
+
+   - Push nodes onto the stack as you traverse
+   - Pop nodes to process them
+   - The order of pushing and processing determines the type of traversal (in-order, pre-order, post-order)
+
+# Binary Search Techniques
+
+1. **Basic Binary Search**
+
+   **Technique**
+
+   Search a sorted array by repeatedly dividing the search interval in half.
+
+   **How it works**
+
+   - [Binary Search Patterns](<https://leetcode.com/discuss/interview-question/1322500/5-variations-of-Binary-search-(A-Self-Note)>)
+
+   **Common Applications**
+
+   - Searching in sorted arrays
+   - Implementing lower_bound and upper_bound
+
+2. **Binary Search on Answer**
+
+   **Technique**
+   Use binary search to find an answer that satisfies certain conditions.
+
+   **How it works**
+
+   - Define a range where the answer must lie
+   - Use binary search to narrow down the correct answer
+   - Check if the mid value satisfies the problem conditions
+
+   **Common Applications**
+
+   - Minimizing maximum or maximizing minimum problems
+   - Finding the Kth element in sorted arrays
+
+3. **Binary Search on Floating Point Numbers**
+
+   **Technique**
+   Apply binary search to a continuous range of real numbers.
+
+   **How it works**
+
+   - Define a precision (epsilon)
+   - Continue binary search until the range is smaller than the precision
+
+   **Common Applications**
+
+   - Finding square roots
+   - Optimization problems with continuous domains
+
+4. **Binary Search in Rotated Sorted Array**
+
+   **Technique**
+   Modify binary search to work on a sorted array that has been rotated.
+
+   **How it works**
+
+   - Find the pivot point where rotation occurs
+   - Perform binary search on the appropriate half of the array
+
+   **Common Applications**
+
+   - Searching in rotated sorted arrays
+   - Finding minimum in rotated sorted array
+
+5. **Binary Search on Monotonic Functions**
+
+   **Technique**
+   Apply binary search to find roots or extrema of monotonic functions.
+
+   **How it works**
+
+   - Define the function and its monotonic property
+   - Use binary search to narrow down the point where the function changes sign or reaches extremum
+
+   **Common Applications**
+
+   - Finding peaks in bitonic arrays
+   - Optimization problems
+
+6. **Multi-dimensional Binary Search**
+
+   **Technique**
+   Apply binary search on multiple dimensions or parameters simultaneously.
+
+   **How it works**
+
+   - Perform binary search on one dimension
+   - For each step, solve a subproblem in other dimensions
+
+   **Common Applications**
+
+   - Median of two sorted arrays
+   - Searching in sorted 2D matrices
+
+7. **Binary Search with Prefix Sums**
+
+   **Technique**
+   Combine binary search with prefix sum array for range queries.
+
+   **How it works**
+
+   - Precompute prefix sum array
+   - Use binary search to find appropriate ranges in the prefix sum array
+
+   **Common Applications**
+
+   - Finding subarrays with sum closest to a target
+   - Optimizing subarray-related problems
+
+#### General Approach to Binary Search Problems
+
+1. **Identify if binary search is applicable:**
+
+   - Look for sorted data or monotonic properties
+   - Consider if the problem involves finding a specific value or optimizing some condition
+
+2. **Define the search space:**
+
+   - Determine the range where the answer must lie
+   - For arrays, this is typically the index range
+   - For "search on answer" problems, define reasonable lower and upper bounds
+
+3. **Implement the basic binary search structure:**
+
+   - Choose between recursive and iterative implementations
+   - Be careful with integer overflow when calculating mid point
+
+4. **Define the condition to check at each step:**
+
+   - This is crucial for "search on answer" problems
+   - Ensure the condition correctly divides the search space
+
+5. **Handle edge cases:**
+   - Empty arrays
+   - Single-element arrays
+   - Target values at the boundaries of the search space
 
 # Linked List Techniques
 
@@ -781,60 +968,663 @@ isSubsetSum(set, 6, 9)
 
 10. For memory efficiency, try to solve in-place when possible, but be aware of when creating a new list might simplify the solution
 
-# Stack Techniques
+# Tree Techniques
 
-1. **Monotonic Stack**
+1. **Depth-First Search (DFS)**
 
-   - A stack that maintains elements in a strictly increasing or decreasing order
-   - Used for problems involving finding the next greater/smaller element or calculating spans
-
-   **How it works:**
-
-   - Iterate through the elements
-   - For each element, pop elements from the stack that violate the monotonic property
-   - Push the current element onto the stack
-   - The elements remaining in the stack after processing all elements often represent the solution
-
-2. **Paired Brackets Matching**
-
-   - Used for validating or processing strings with paired brackets or parentheses
+   - Explores as far as possible along each branch before backtracking
+   - Three main types: Preorder, Inorder, and Postorder traversals
 
    **How it works:**
 
-   - Push opening brackets onto the stack
-   - When encountering a closing bracket, check if it matches the top of the stack
-   - If it matches, pop the top element; if not, the string is invalid
-   - After processing all characters, the stack should be empty for a valid string
+   - Recursive: Use the call stack to traverse the tree
+   - Iterative: Use an explicit stack to manage nodes
 
-3. **Expression Evaluation**
+   **Common applications:**
 
-   - Used for evaluating arithmetic expressions, especially those in Reverse Polish Notation (RPN)
+   - Tree traversal
+   - Pathfinding
+   - Tree structure validation
 
-   **How it works:**
+2. **Breadth-First Search (BFS)**
 
-   - For RPN: Push operands onto the stack
-   - When an operator is encountered, pop the required number of operands, apply the operator, and push the result back
-   - The final result is the top of the stack after processing all tokens
-
-4. **Backtracking with Stack**
-
-   - Used for problems that require exploring paths or combinations with the ability to backtrack
+   - Explores all nodes at the present depth before moving to nodes at the next depth level
+   - Typically implemented using a queue
 
    **How it works:**
 
-   - Push states or choices onto the stack as you explore
-   - When backtracking, pop the stack to return to the previous state
-   - Continue until all possibilities are explored
+   - Use a queue to store nodes at each level
+   - Process nodes in the order they were added to the queue
 
-5. **Stack for Tree Traversal**
+   **Common applications:**
 
-   - Used for implementing iterative versions of tree traversal algorithms
+   - Level-order traversal
+   - Finding shortest paths
+   - Connecting components
+
+3. **Binary Search Tree (BST) Properties**
+
+   - Utilizes the ordered nature of BSTs for efficient operations
+   - Left subtree contains only nodes with keys less than the node's key
+   - Right subtree contains only nodes with keys greater than the node's key
 
    **How it works:**
 
-   - Push nodes onto the stack as you traverse
-   - Pop nodes to process them
-   - The order of pushing and processing determines the type of traversal (in-order, pre-order, post-order)
+   - Leverage the BST property to perform binary search-like operations
+   - Inorder traversal of a BST produces a sorted sequence
+
+   **Common applications:**
+
+   - Searching, insertion, and deletion in O(log n) time
+   - Validating if a binary tree is a BST
+   - Finding kth smallest/largest element
+
+4. **Tree Construction**
+
+   - Building trees from various traversal sequences or representations
+
+   **How it works:**
+
+   - Use characteristics of different traversals to reconstruct the tree
+   - Often involves recursion or stack-based approaches
+
+   **Common applications:**
+
+   - Constructing tree from preorder and inorder traversals
+   - Deserializing a tree from its serialized form
+
+5. **Lowest Common Ancestor (LCA)**
+
+   - Finds the lowest node in the tree that is an ancestor of two given nodes
+
+   **How it works:**
+
+   - Traverse the tree, looking for the given nodes
+   - The first node that is an ancestor of both target nodes is the LCA
+
+   **Common applications:**
+
+   - Finding relationships between nodes
+   - Optimizing queries on trees
+
+6. **Path Sum Problems**
+
+   - Involves finding paths in the tree that sum to a particular value
+
+   **How it works:**
+
+   - Use DFS to explore all paths from root to leaf
+   - Keep track of the running sum along each path
+
+   **Common applications:**
+
+   - Finding paths with a specific sum
+   - Maximum/minimum path sum problems
+
+7. **Tree Balancing and Validation**
+
+   - Ensures the tree maintains certain structural properties
+
+   **How it works:**
+
+   - Check or enforce balance conditions during tree operations
+   - Use recursive approaches to validate tree properties
+
+   **Common applications:**
+
+   - AVL tree and Red-Black tree implementations
+   - Validating binary search trees
+
+8. **Serialization and Deserialization**
+
+   - Converts a tree to a string representation and vice versa
+
+   **How it works:**
+
+   - Choose a traversal order (often level-order) for serialization
+   - Use delimiters to represent null nodes
+   - Parse the string to reconstruct the tree during deserialization
+
+   **Common applications:**
+
+   - Storing trees in databases or files
+   - Transmitting tree structures over networks
+
+9. **Morris Traversal**
+
+   - Allows for constant space tree traversal without recursion or a stack
+
+   **How it works:**
+
+   - Temporarily modify the tree structure to traverse without extra space
+   - Restore the original structure as you go
+
+   **Common applications:**
+
+   - Space-efficient inorder traversal
+   - Constant space tree algorithms
+
+10. **Dynamic Programming on Trees**
+
+    - Applies DP concepts to tree-based problems
+
+    **How it works:**
+
+    - Define subproblems on subtrees
+    - Combine solutions to subproblems to solve larger problems
+
+    **Common applications:**
+
+    - Maximum independent set in trees
+    - Tree diameter problems
+
+11. **Trie (Prefix Tree)**
+
+    - Specialized tree structure for efficient string operations
+
+    **How it works:**
+
+    - Each node represents a character in a string
+    - Paths from root to nodes spell out stored strings
+
+    **Common applications:**
+
+    - Autocomplete features
+    - Spell checkers
+    - IP routing tables
+
+#### General Approach to Tree Problems
+
+1. Identify the most suitable traversal method (DFS vs BFS) based on the problem requirements
+
+2. Consider the specific properties of the tree (e.g., BST, balanced tree) that can be leveraged
+
+3. For recursive solutions, clearly define the base case and ensure the recursive calls make progress
+
+4. Be mindful of edge cases:
+
+   - Empty tree
+   - Tree with only one node
+   - Unbalanced or skewed trees
+
+5. When modifying the tree, be careful to maintain its structural integrity
+
+6. For problems involving paths or sums, consider using a helper function with additional parameters to track state
+
+7. In BST problems, always consider if the BST property can be used to optimize the solution
+
+8. For problems involving multiple trees, think about how to process them simultaneously (e.g., same traversal on both)
+
+9. When dealing with large trees, consider iterative solutions to avoid stack overflow
+
+10. For complex tree manipulations, drawing out the desired result can often clarify the necessary steps
+
+# Heap and Priority Queue Techniques
+
+1. **Basic Heap Operations**
+
+   **Concept**
+   A heap is a specialized tree-based data structure that satisfies the heap property. In a max heap, for any given node, the node's value is greater than or equal to the values of its children. In a min heap, the node's value is less than or equal to the values of its children.
+
+   **Key Operations**
+
+   - Insertion: O(log n)
+   - Deletion of top element: O(log n)
+   - Peek top element: O(1)
+   - Heapify (building a heap from an array): O(n)
+
+   **How it works**
+
+   - Heaps are typically implemented as arrays, where for any element at index i:
+   - Its left child is at index 2i + 1
+   - Its right child is at index 2i + 2
+   - Its parent is at index (i - 1) / 2
+   - When inserting or deleting, the heap property is maintained by "bubbling up" or "sinking down" elements.
+
+2. **K-th Largest/Smallest Element**
+
+   **Technique**
+
+   Use a min heap for K-th largest, or a max heap for K-th smallest.
+
+   **How it works**
+
+   - For K-th largest:
+
+   1. Maintain a min heap of size K.
+   2. Iterate through all elements:
+      - If heap size < K, add the element.
+      - If current element > heap top, remove top and add current element.
+   3. The top of the heap is the K-th largest element.
+
+   - Time complexity: O(N log K), where N is the number of elements.
+
+3. **Merge K Sorted Lists/Arrays**
+
+   **Technique**
+
+   Use a min heap to efficiently merge multiple sorted sequences.
+
+   **How it works**
+
+   1. Create a min heap and insert the first element from each list along with its list identifier.
+   2. While the heap is not empty:
+
+   - Extract the minimum element (this is the next element in the merged sequence).
+   - If the list this element came from is not exhausted, insert its next element into the heap.
+
+   3. Time complexity: O(N log K), where N is the total number of elements and K is the number of lists.
+
+4. **Sliding Window Problems**
+
+   **Technique**
+   Use a heap to maintain the maximum or minimum within a sliding window.
+
+   **How it works**
+
+   1. Use a heap to store elements within the current window.
+   2. As the window slides:
+
+   - Remove elements that are no longer in the window.
+   - Add the new element entering the window.
+   - The top of the heap represents the max/min of the current window.
+
+   3. To handle element removal efficiently, you might need to pair each value with its index in the heap.
+
+5. **Top K Frequent Elements**
+
+   **Technique**
+
+   Use a hash map for counting and a heap for selecting top K.
+
+   **How it works**
+
+   1. Use a hash map to count the frequency of each element.
+   2. Use a min heap of size K to keep track of the K most frequent elements:
+      - If heap size < K, add the element.
+      - If current element's frequency > heap top's frequency, remove top and add current element.
+   3. The heap will contain the K most frequent elements.
+   4. Time complexity: O(N log K), where N is the number of elements.
+
+6. **Median in a Stream of Integers**
+
+   **Technique**
+
+   Use two heaps: a max heap for the lower half and a min heap for the upper half.
+
+   **How it works**
+
+   1. Maintain two heaps:
+
+   - A max heap for the lower half of the numbers.
+   - A min heap for the upper half of the numbers.
+
+   2. Balance the heaps so their sizes differ by at most 1.
+   3. When a new number comes in:
+
+   - Add to the appropriate heap.
+   - Rebalance if necessary by moving the top element from one heap to the other.
+
+   4. The median is either the top of the max heap (if it's larger) or the average of both tops.
+
+7. **Dijkstra's Algorithm (Shortest Path)**
+
+   **Technique**
+   Use a min heap (priority queue) to always process the vertex with the smallest known distance.
+
+   **How it works**
+
+   1. Initialize distances to all vertices as infinite, except the start vertex (distance = 0).
+   2. Push the start vertex into the min heap.
+   3. While the heap is not empty:
+
+   - Extract the vertex with minimum distance.
+   - For each neighbor of this vertex:
+     - Calculate the distance through the current vertex.
+     - If this distance is less than the previously known distance, update it and push the neighbor onto the heap.
+
+   4. Time complexity: O((V + E) log V), where V is the number of vertices and E is the number of edges.
+
+## General Approach to Heap/Priority Queue Problems
+
+1. **Identify if a heap is suitable:**
+
+   - Problems involving finding top K elements, sorting, or maintaining a dynamic set of elements where you frequently need the max/min.
+
+2. **Choose between min heap and max heap:**
+
+   - Min heap for problems where you need to repeatedly find and remove the smallest element.
+   - Max heap for problems where you need to repeatedly find and remove the largest element.
+
+3. **Consider using two heaps:**
+
+   - Useful for problems like finding the median in a stream of numbers.
+
+4. **Pair values with additional information:**
+
+   - Often useful to store pairs (value, index) or (value, frequency) in the heap.
+
+5. **Be mindful of time complexity:**
+
+   - Insertion and deletion operations are O(log n), where n is the size of the heap.
+   - Building a heap from an array is O(n).
+
+6. **Use with other data structures:**
+
+   - Heaps are often used in combination with hash maps, especially for frequency-based problems.
+
+7. **Custom comparators:**
+
+   - For complex objects, define custom comparison logic to determine heap ordering.
+
+8. **Lazy deletion:**
+
+   - In some cases, it's more efficient to mark elements as deleted rather than removing them immediately.
+
+9. **Space-time trade-off:**
+
+   - Heaps can often provide a good balance between time efficiency and space usage.
+
+10. **Practice and learn patterns:**
+    - Many heap problems share similar structures. Recognizing these patterns can speed up problem-solving.
+
+Remember, while heaps are powerful for certain types of problems, they're not always the best solution. Consider alternatives like sorting, binary search trees, or even simple arrays depending on the specific requirements of the problem.
+
+# Backtracking Techniques
+
+1. **Basic Backtracking Structure**
+
+   **How it works:**
+
+   - Start with an initial state or partial solution.
+   - Recursively explore possible candidates to build the solution.
+   - If a candidate leads to a valid solution, add it to the result.
+   - If a candidate doesn't lead to a valid solution, backtrack (undo the last choice) and try the next candidate.
+   - Continue this process until all possibilities have been explored.
+
+   The key components are:
+
+   1. A method to check if the current state is a valid solution.
+   2. A way to generate candidate choices for the next step.
+   3. A mechanism to apply and undo changes to the current state.
+   4. A recursive function that ties all these components together.
+
+2. **Pruning in Backtracking**
+
+   **How it works**
+
+   - Before fully exploring a branch, check if it can potentially lead to a valid solution.
+   - If the branch cannot possibly lead to a valid solution, skip it entirely.
+   - This is typically implemented by adding conditions before the recursive call.
+   - Pruning can significantly reduce the number of explored states, improving efficiency.
+
+3. **State Space Tree**
+
+   **How it works**
+
+   - Conceptualize the problem as a tree where:
+   - Each node represents a partial solution or state.
+   - Edges represent choices or decisions.
+   - Leaf nodes are either complete solutions or dead ends.
+   - Traverse this tree using depth-first search.
+   - Backtracking occurs when you reach a leaf node and need to explore other branches.
+
+4. **Backtracking with Memoization**
+
+   **How it works:**
+
+   - Combine backtracking with dynamic programming techniques.
+   - Store the results of subproblems in a data structure (often a hash map).
+   - Before solving a subproblem, check if its result is already stored.
+   - If found, use the stored result instead of recomputing.
+   - This optimization is particularly useful when the same subproblems are encountered multiple times during backtracking.
+
+5. **Iterative Backtracking**
+
+   **How it works:**
+
+   - Instead of using recursion, use a stack to manage the states.
+   - Push initial state onto the stack.
+   - While the stack is not empty:
+   - Pop a state from the stack.
+   - If it's a solution, process it.
+   - If not, generate new candidate states and push them onto the stack.
+   - This approach avoids potential stack overflow issues in deep recursions.
+   - It can be more complex to implement but may be necessary for very deep search trees.
+
+#### General Approach to Backtracking Problems
+
+1. **Identify the problem structure:**
+
+   - Determine if the problem requires finding all solutions or just one
+   - Identify the constraints and validity conditions
+
+2. **Define the state:**
+
+   - Determine what information needs to be maintained in each state
+   - Design a suitable data structure to represent the state
+
+3. **Implement the backtracking function:**
+
+   - Define base cases (solution found or dead end)
+   - Implement the recursive exploration of possibilities
+
+4. **Optimize with pruning:**
+
+   - Identify conditions that allow early termination of a branch
+   - Implement checks to skip invalid paths early
+
+5. **Consider time and space complexity:**
+
+   - Analyze the branching factor and depth of the search tree
+   - Look for opportunities to reduce redundant computations
+
+6. **Test with small examples:**
+
+   - Verify the algorithm with simple, known cases
+   - Gradually increase complexity to test robustness
+
+7. **Debug systematically:**
+
+   - Use print statements or debuggers to visualize the backtracking process
+   - Verify that all valid solutions are being generated and no invalid ones are included
+
+8. **Consider iterative implementation:**
+
+   - If stack overflow is a concern, convert the recursive solution to an iterative one
+
+9. **Optimize for specific problem requirements:**
+
+   - If only one solution is needed, consider adding early termination
+   - If counting solutions is sufficient, avoid storing all solutions explicitly
+
+10. **Practice and learn patterns:**
+    - Many backtracking problems share similar structures
+    - Recognizing these patterns can speed up problem-solving in the future
+
+# Graph Techniques
+
+1. **Graph Representation**
+
+   **Techniques**
+
+   - Adjacency Matrix
+   - Adjacency List
+
+   **How it works**
+
+   - Adjacency Matrix: 2D array where matrix[i][j] indicates an edge from i to j
+   - Adjacency List: Array of lists where list[i] contains nodes adjacent to node i
+
+   **Common Applications**
+
+   - Dense graphs (Adjacency Matrix)
+   - Sparse graphs (Adjacency List)
+
+2. **Depth-First Search (DFS)**
+
+   **Technique**
+   Explore as far as possible along each branch before backtracking.
+
+   **How it works**
+
+   - Use recursion to visit all neighbors of a node
+   - Keep track of visited nodes to avoid cycles
+   - Process each node once
+
+   **Common Applications**
+
+   - Topological sorting
+   - Cycle detection
+   - Path finding
+
+3. **Breadth-First Search (BFS)**
+
+   **Technique**
+   Explore all neighbor nodes at the present depth before moving to nodes at the next depth level.
+
+   **How it works**
+
+   - Use a queue to store nodes at each level
+   - Process nodes in the order they were added to the queue
+   - Keep track of visited nodes to avoid revisiting
+
+   **Common Applications**
+
+   - Shortest path in unweighted graphs
+   - Level-order traversal
+   - Finding connected components
+
+4. **Dijkstra's Algorithm**
+
+   **Technique**
+   Find the shortest path between nodes in a weighted graph.
+
+   **How it works**
+
+   - Use a priority queue to select the node with the smallest tentative distance
+   - Update distances to all adjacent nodes
+   - Repeat until all nodes are visited
+
+   **Common Applications**
+
+   - Shortest path problems
+   - Network routing protocols
+
+5. **Union-Find (Disjoint Set)**
+
+   **Technique:**
+   Efficiently keep track of a partition of a set into disjoint subsets.
+
+   **How it works**
+
+   - Implement `find` and `union` operations
+   - Use path compression and union by rank for optimization
+
+   **Common Applications**
+
+   - Kruskal's algorithm for Minimum Spanning Tree
+   - Detecting cycles in undirected graphs
+
+6. **Topological Sort**
+
+   **Technique**
+   Linear ordering of vertices such that for every directed edge (u, v), vertex u comes before v in the ordering.
+
+   **How it works**
+
+   - Use DFS and stack to store nodes in reverse finishing time
+   - Alternatively, use Kahn's algorithm with in-degree tracking
+
+   **Common Applications**
+
+   - Dependency resolution
+   - Task scheduling
+
+7. **Strongly Connected Components**
+
+   **Technique**
+   Find maximal strongly connected subgraphs.
+
+   **How it works**
+
+   - Kosaraju's algorithm: Perform DFS, reverse graph, perform DFS again
+   - Tarjan's algorithm: Single DFS with lowlink values
+
+   **Common Applications**
+
+   - Social network analysis
+   - Compiler optimization
+
+8. **Minimum Spanning Tree**
+
+   **Techniques**
+
+   - Kruskal's Algorithm
+   - Prim's Algorithm
+
+   **How it works**
+
+   - Kruskal's: Sort edges, add if no cycle formed
+   - Prim's: Grow tree from a starting vertex, always adding the cheapest edge
+
+   **Common Applications**
+
+   - Network design
+   - Cluster analysis
+
+#### General Approach to Graph Problems
+
+1. **Choose appropriate representation:**
+
+   - Adjacency list for sparse graphs
+   - Adjacency matrix for dense graphs or when quick edge lookup is needed
+
+2. **Identify the problem type:**
+
+   - Traversal, shortest path, connectivity, etc.
+   - This helps in choosing the right algorithm
+
+3. **Consider graph properties:**
+
+   - Directed vs undirected
+   - Weighted vs unweighted
+   - Cyclic vs acyclic
+
+4. **Implement basic graph operations:**
+
+   - Adding edges, checking for adjacency, etc.
+
+5. **Choose the right algorithm:**
+
+   - DFS for exploring all paths or topological sorting
+   - BFS for shortest path in unweighted graphs
+   - Dijkstra's for shortest path in weighted graphs
+
+6. **Handle edge cases:**
+
+   - Empty graph
+   - Graph with one node
+   - Disconnected graphs
+
+7. **Optimize for space and time:**
+
+   - Consider iterative vs recursive implementations
+   - Use appropriate data structures (e.g., priority queues for Dijkstra's)
+
+8. **Debug systematically:**
+
+   - Use small, simple graphs to test your algorithm
+   - Visualize the graph and algorithm steps
+
+9. **Consider problem-specific optimizations:**
+
+   - Can you preprocess the graph?
+   - Are there any special properties you can exploit?
+
+10. **Practice and learn patterns:**
+    - Many graph problems share similar structures
+    - Recognizing these patterns can speed up problem-solving
 
 # Bit Manipulation
 
@@ -1152,7 +1942,7 @@ gridNumber = `(row / 3) * 3 + (col / 3)`
 
 # Permutations
 
-`P(n, r) = (n−r)! / n!`  where n is the total number of items and r is the number of items to choose from the total.
+`P(n, r) = (n−r)! / n!` where n is the total number of items and r is the number of items to choose from the total.
 Permutations of 2 letters from ABC : `P(3, 2) = (3−2)! / 3! = 3×2×1 = 6`
 The permutations are : `AB, BA, AC, CA, BC, CB`
 
