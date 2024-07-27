@@ -843,7 +843,7 @@ isSubsetSum(set, 6, 9)
    - Finding subarrays with sum closest to a target
    - Optimizing subarray-related problems
 
-#### General Approach to Binary Search Problems
+### General Approach to Binary Search Problems
 
 1. **Identify if binary search is applicable:**
 
@@ -937,7 +937,7 @@ isSubsetSum(set, 6, 9)
    - Perform operations on the list, treating the sentinel as the start
    - Remove the sentinel node at the end if necessary
 
-#### General Approach to Linked List Problems
+### General Approach to Linked List Problems
 
 1. Identify the pattern that best fits the problem (e.g., two-pointer, reversal, merging)
 
@@ -1133,7 +1133,7 @@ isSubsetSum(set, 6, 9)
     - Spell checkers
     - IP routing tables
 
-#### General Approach to Tree Problems
+### General Approach to Tree Problems
 
 1. Identify the most suitable traversal method (DFS vs BFS) based on the problem requirements
 
@@ -1164,6 +1164,7 @@ isSubsetSum(set, 6, 9)
 1. **Basic Heap Operations**
 
    **Concept**
+
    A heap is a specialized tree-based data structure that satisfies the heap property. In a max heap, for any given node, the node's value is greater than or equal to the values of its children. In a min heap, the node's value is less than or equal to the values of its children.
 
    **Key Operations**
@@ -1196,8 +1197,6 @@ isSubsetSum(set, 6, 9)
       - If heap size < K, add the element.
       - If current element > heap top, remove top and add current element.
    3. The top of the heap is the K-th largest element.
-
-   - Time complexity: O(N log K), where N is the number of elements.
 
 3. **Merge K Sorted Lists/Arrays**
 
@@ -1285,7 +1284,8 @@ isSubsetSum(set, 6, 9)
 
    4. Time complexity: O((V + E) log V), where V is the number of vertices and E is the number of edges.
 
-## General Approach to Heap/Priority Queue Problems
+
+### General Approach to Heap/Priority Queue Problems
 
 1. **Identify if a heap is suitable:**
 
@@ -1327,8 +1327,6 @@ isSubsetSum(set, 6, 9)
 
 10. **Practice and learn patterns:**
     - Many heap problems share similar structures. Recognizing these patterns can speed up problem-solving.
-
-Remember, while heaps are powerful for certain types of problems, they're not always the best solution. Consider alternatives like sorting, binary search trees, or even simple arrays depending on the specific requirements of the problem.
 
 # Backtracking Techniques
 
@@ -1392,7 +1390,7 @@ Remember, while heaps are powerful for certain types of problems, they're not al
    - This approach avoids potential stack overflow issues in deep recursions.
    - It can be more complex to implement but may be necessary for very deep search trees.
 
-#### General Approach to Backtracking Problems
+### General Approach to Backtracking Problems
 
 1. **Identify the problem structure:**
 
@@ -1573,7 +1571,7 @@ Remember, while heaps are powerful for certain types of problems, they're not al
    - Network design
    - Cluster analysis
 
-#### General Approach to Graph Problems
+### General Approach to Graph Problems
 
 1. **Choose appropriate representation:**
 
