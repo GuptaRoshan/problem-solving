@@ -100,97 +100,33 @@
 ```
 
 ```java
-  public class SubsetSum {
-
-      public static boolean isSubsetSum(int[] set, int n, int sum) {
-          // Base cases
-          if (sum == 0) {
-              return true;
-          }
-          if (n == 0) {
-              return false;
-          }
-
-          // If last element is greater than sum, ignore it
-          if (set[n - 1] > sum) {
-              return isSubsetSum(set, n - 1, sum);
-          }
-
-          // Check if sum can be obtained by:
-          // 1. Including the last element
-          // 2. Excluding the last element
-          return isSubsetSum(set, n - 1, sum) || isSubsetSum(set, n - 1, sum - set[n - 1]);
-      }
-
-      public static void main(String[] args) {
-          int[] set = {3, 34, 4, 12, 5, 2};
-          int sum = 9;
-          int n = set.length;
-          if (isSubsetSum(set, n, sum)) {
-              System.out.println("Found a subset with given sum");
-          } else {
-              System.out.println("No subset with given sum");
-          }
-      }
-  }
-```
-
-```java
-isSubsetSum(set, 6, 9)
-├── isSubsetSum(set, 5, 9)         // Exclude set[5] (2)
-│   ├── isSubsetSum(set, 4, 9)     // Exclude set[4] (5)
-│   │   ├── isSubsetSum(set, 3, 9) // Exclude set[3] (12)
-│   │   │   ├── isSubsetSum(set, 2, 9) // Exclude set[2] (4)
-│   │   │   │   ├── isSubsetSum(set, 1, 9) // Exclude set[1] (34)
-│   │   │   │   │   ├── isSubsetSum(set, 0, 9) // Base case, return false
-│   │   │   │   │   └── isSubsetSum(set, 0, 5) // Include set[1] (34) => Base case, return false
-│   │   │   │   └── isSubsetSum(set, 1, 5) // Include set[2] (4)
-│   │   │   │       ├── isSubsetSum(set, 0, 5) // Exclude set[1] (34) => Base case, return false
-│   │   │   │       └── isSubsetSum(set, 0, 1) // Include set[1] (34) => Base case, return false
-│   │   │   └── isSubsetSum(set, 2, 5) // Include set[3] (12)
-│   │   │       ├── isSubsetSum(set, 1, 5) // Exclude set[1] (34) => Base case, return false
-│   │   │       └── isSubsetSum(set, 1, 1) // Include set[1] (34) => Base case, return false
-│   │   └── isSubsetSum(set, 3, 4) // Include set[4] (5)
-│   │       ├── isSubsetSum(set, 2, 4) // Exclude set[2] (4)
-│   │       │   ├── isSubsetSum(set, 1, 4) // Exclude set[1] (34) => Base case, return false
-│   │       │   └── isSubsetSum(set, 1, 0) // Include set[1] (34) => Base case, return true
-│   │       └── isSubsetSum(set, 2, 0) // Include set[2] (4) => Base case, return true
-│   └── isSubsetSum(set, 4, 7) // Include set[5] (2)
-│       ├── isSubsetSum(set, 3, 7) // Exclude set[3] (12)
-│       │   ├── isSubsetSum(set, 2, 7) // Exclude set[2] (4)
-│       │   │   ├── isSubsetSum(set, 1, 7) // Exclude set[1] (34) => Base case, return false
-│       │   │   └── isSubsetSum(set, 1, 3) // Include set[1] (34) => Base case, return false
-│       │   └── isSubsetSum(set, 2, 3) // Include set[2] (4)
-│       │       ├── isSubsetSum(set, 1, 3) // Exclude set[1] (34) => Base case, return false
-│       │       └── isSubsetSum(set, 1, -1) // Include set[1] (34) => Base case, return false
-│       └── isSubsetSum(set, 3, 2) // Include set[3] (12)
-│           ├── isSubsetSum(set, 2, 2) // Exclude set[2] (4)
-│           │   ├── isSubsetSum(set, 1, 2) // Exclude set[1] (34) => Base case, return false
-│           │   └── isSubsetSum(set, 1, -2) // Include set[1] (34) => Base case, return false
-│           └── isSubsetSum(set, 2, 0) // Include set[2] (4) => Base case, return true
-└── isSubsetSum(set, 5, 7) // Include set[5] (2)
-    ├── isSubsetSum(set, 4, 7) // Exclude set[4] (5)
-    │   ├── isSubsetSum(set, 3, 7) // Exclude set[3] (12)
-    │   │   ├── isSubsetSum(set, 2, 7) // Exclude set[2] (4)
-    │   │   │   ├── isSubsetSum(set, 1, 7) // Exclude set[1] (34) => Base case, return false
-    │   │   │   └── isSubsetSum(set, 1, 3) // Include set[1] (34) => Base case, return false
-    │   │   └── isSubsetSum(set, 2, 3) // Include set[2] (4)
-    │   │       ├── isSubsetSum(set, 1, 3) // Exclude set[1] (34) => Base case, return false
-    │   │       └── isSubsetSum(set, 1, -1) // Include set[1] (34) => Base case, return false
-    │   └── isSubsetSum(set, 3, 2) // Include set[3] (12)
-    │       ├── isSubsetSum(set, 2, 2) // Exclude set[2] (4)
-    │       │   ├── isSubsetSum(set, 1, 2) // Exclude set[1] (34) => Base case, return false
-    │       │   └── isSubsetSum(set, 1, -2) // Include set[1] (34) => Base case, return false
-    │       └── isSubsetSum(set, 2, 0) // Include set[2] (4) => Base case, return true
-    └── isSubsetSum(set, 4, 5) // Include set[4] (5)
-        ├── isSubsetSum(set, 3, 5) // Exclude set[3] (12)
-        │   ├── isSubsetSum(set, 2, 5) // Exclude set[2] (4)
-        │   │   ├── isSubsetSum(set, 1, 5) // Exclude set[1] (34) => Base case, return false
-        │   │   └── isSubsetSum(set, 1, 1) // Include set[1] (34) => Base case, return false
-        │   └── isSubsetSum(set, 2, 1) // Include set[2] (4)
-        │       ├── isSubsetSum(set, 1, 1) // Exclude set[1] (34) => Base case, return false
-        │       └── isSubsetSum(set, 1, -3) // Include set[1] (34) => Base case, return false
-        └── isSubsetSum(set, 3, 0) // Include set[3] (12) => Base case, return true
+   public class SubsetSum {
+   
+         public static boolean hasSubsetSum(int[] nums, int target) {
+            return hasSubsetSum(nums, target, 0);
+         }
+   
+         private static boolean hasSubsetSum(int[] nums, int target, int index) {
+            // Base case: if the target sum is 0, we have found a subset
+            if (target == 0) {
+               return true;
+            }
+            // Base case: if we have checked all elements
+            if (index == nums.length) {
+               return false;
+            }
+            // Recursive case: include the current element or exclude it
+            boolean isSubsetSumExits = hasSubsetSum(nums, target - nums[index], index + 1) || hasSubsetSum(nums, target, index + 1);
+            return isSubsetSumExits;
+         }
+   
+         public static void main(String[] args) {
+            int[] nums = {3, 34, 4, 12, 5, 2};
+            int target = 9;
+            boolean result = hasSubsetSum(nums, target);
+            System.out.println("Subset with sum " + target + " exists? " + result);
+         }
+   }
 ```
 
 ### 4. Divide and Conquer
@@ -1680,6 +1616,8 @@ public boolean isEven(int number) {
 
 ### Toggle a Specific Bit
 
+`It means doing NOT operation at a specific bit position(using XOR ^)`
+
 ```java
 
 // Input Examples:
@@ -1702,6 +1640,9 @@ public int toggleBit(int number, int bitPosition) {
 
 ### Set a Specific Bit
 
+`It means setting 1 at a specific bit position (using OR | )`
+
+
 ```java
 
 // Input Examples:
@@ -1722,6 +1663,8 @@ public int setBit(int number, int bitPosition) {
 ```
 
 ### clear a Specific Bit
+
+`It means setting 0 at a specific bit position (using AND and Complement )`
 
 ```java
 
