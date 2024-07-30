@@ -468,6 +468,43 @@
       - Repeated DNA Sequences
     - Usage: `Map<bitPattern, count>`
 
+
+
+# Deque Usage
+
+1. **Implementing Both Stack and Queue Operations**
+   
+   - As a Stack: You can use methods like addFirst() and removeFirst() to add and remove elements from the front, mimicking stack behavior.
+   - As a Queue: You can use methods like addLast() and removeFirst() to enqueue and dequeue elements, mimicking queue behavior.
+
+3. **Sliding Window Problems**
+   
+    - Deque is particularly useful in algorithms that require a sliding window over a sequence of data. For example, in finding the maximum or minimum in a sliding window over an array, a Deque can efficiently maintain the window's elements, allowing constant-time access to the window's maximum or minimum.
+
+5. **Palindrome Checking**
+   
+   - You can use a Deque to check if a string is a palindrome. By pushing characters onto the Deque and then popping from both ends, you can compare characters from the front and back to determine if they are the same.
+
+7. **Undo and Redo Operations**
+   - In applications with undo and redo functionalities, a Deque can store the history of actions. The front of the Deque can store actions for undo, while the back can store actions for redo.
+
+8. **Expression Parsing**
+   
+   - In parsing expressions, especially for balancing parentheses or evaluating postfix expressions, a Deque can be used to temporarily hold operands and operators.
+
+10. **BFS (Breadth-First Search) and DFS (Depth-First Search)**
+    
+    - In graph traversal algorithms, a Deque can be used to manage the frontier. For BFS, you can use it as a queue, and for DFS, you can use it as a stack.
+
+11. **Handling a Fixed Number of Recent Elements**
+    
+    - When you need to maintain a fixed number of recent elements, a Deque can be used to implement a circular buffer. By adding elements to the back and removing elements from the front, you can keep the buffer up to date with the most recent data.
+
+13. **Job Scheduling**
+ 
+    - In systems that require scheduling tasks or jobs, a Deque can help manage tasks that can be added and removed from either end, providing flexibility in task management.
+
+
 # Two-Pointer Techniques
 
 1. **Merge Two Sorted Arrays**
