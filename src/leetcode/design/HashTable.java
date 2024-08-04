@@ -1,4 +1,4 @@
-package LD;
+package leetcode.design;
 
 /**
  * Uses closed addressing to handle collisions;

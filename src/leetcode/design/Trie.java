@@ -1,4 +1,4 @@
-package LD;
+package leetcode.design;
 
 class Trie {
     private final TrieNode root;

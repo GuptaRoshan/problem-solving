@@ -1,6 +1,6 @@
-## What is Leetcode Design?
+# Leetcode
 
-Welcome to the LeetCode Design Solutions repository! This repo offers comprehensive and well-documented solutions to LeetCode's design problems.
+## Design Problems
 
 [Design Questions](https://leetcode.com/tag/design/)
 
@@ -21,8 +21,6 @@ Welcome to the LeetCode Design Solutions repository! This repo offers comprehens
 
 [BST Iterator Problem]: https://leetcode.com/problems/binary-search-tree-iterator/description/
 [BST Iterator Solution]: https://github.com/GuptaRoshan/design/blob/main/src/LD/BSTInorderIterator.java
-
-## Design Problems
 
 | LeetCode No. | Difficulty | Problem                              | Solution                      | Notes |
 | ------------ | ---------- | ------------------------------------ | ----------------------------- | ----- |

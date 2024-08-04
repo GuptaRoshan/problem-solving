@@ -1,4 +1,4 @@
-package LD;
+package leetcode.design;
 
 public class MinStack {
 

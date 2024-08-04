@@ -1,4 +1,4 @@
-package LD;
+package leetcode.design;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

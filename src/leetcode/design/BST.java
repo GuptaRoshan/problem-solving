@@ -1,4 +1,4 @@
-package LD;
+package leetcode.design;
 
 class BST {
 
@@ -57,7 +57,6 @@ class BST {
 
             // node with two children: get the inorder successor (smallest in the right subtree)
             root.key = minValue(root.right);
-
             // delete the inorder successor
             root.right = deleteHelper(root.right, root.key);
         }
@@ -94,6 +93,7 @@ class BST {
 
         // Insert values
         bst.insert(5);
+        bst.insert(3);
         bst.insert(3);
 
         // Check if values exist
