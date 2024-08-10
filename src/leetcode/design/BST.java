@@ -87,28 +87,4 @@ class BST {
     public void delete(int key) {
         root = deleteHelper(root, key);
     }
-
-    public static void main(String[] args) {
-        BST bst = new BST();
-
-        // Insert values
-        bst.insert(5);
-        bst.insert(3);
-        bst.insert(3);
-
-        // Check if values exist
-        System.out.println("Contains 5: " + bst.contains(5)); // Should print: true
-        System.out.println("Contains 3: " + bst.contains(3)); // Should print: true
-        System.out.println("Contains 7: " + bst.contains(7)); // Should print: false
-
-        // Delete a value
-        bst.delete(5);
-
-        // Check if values exist after deletion
-        System.out.println("Contains 5: " + bst.contains(5)); // Should print: false
-        System.out.println("Contains 3: " + bst.contains(3)); // Should print: true
-        System.out.println("Contains 7: " + bst.contains(7)); // Should print: false
-
-    }
-
 }
