@@ -12,6 +12,7 @@ public class NextPrevGreater {
         Arrays.fill(nextGreater, -1);
 
         for (int i = 0; i < arr.length; i++) {
+            // arr[i] is greater than stack.peek(), means we have found next greater element for stack.peek()
             while (!stack.isEmpty() && arr[stack.peek()] < arr[i]) {
                 int stackTop = stack.pop();
                 nextGreater[stackTop] = i;
@@ -30,7 +31,7 @@ public class NextPrevGreater {
             while (!stack.isEmpty() && arr[stack.peek()] <= arr[i]) {
                 stack.pop();
             }
-
+            // we have found the previous greater element for i, which is in stack
             if (!stack.isEmpty()) {
                 previousGreater[i] = stack.peek();
             }

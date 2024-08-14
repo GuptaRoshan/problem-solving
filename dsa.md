@@ -910,36 +910,6 @@
    - Perform operations on the list, treating the sentinel as the start
    - Remove the sentinel node at the end if necessary
 
-### General Approach to Linked List Problems
-
-1. Identify the pattern that best fits the problem (e.g., two-pointer, reversal, merging)
-
-2. Consider edge cases:
-
-   - Empty list
-   - Single node list
-   - Operations at the head or tail of the list
-
-3. Use dummy or sentinel nodes when appropriate to simplify edge cases
-
-4. Be careful with null pointer exceptions:
-
-   - Always check if a node is null before accessing its next pointer
-
-5. When modifying the list, be mindful of maintaining proper links:
-
-   - Don't lose references to parts of the list
-   - Ensure the last node of any sublist points to null or the correct next node
-
-6. For problems involving finding cycles or intersections, consider using Floyd's cycle-finding algorithm (tortoise and hare)
-
-7. When recursion is used, clearly define the base case and ensure the recursive calls make progress towards it
-
-8. After performing operations, double-check that the list is properly terminated (last node points to null)
-
-9. If the problem involves sorting, consider if it's more efficient to convert to an array, sort, and convert back to a linked list
-
-10. For memory efficiency, try to solve in-place when possible, but be aware of when creating a new list might simplify the solution
 
 # Tree Techniques
 
@@ -1106,31 +1076,50 @@
     - Spell checkers
     - IP routing tables
 
-### General Approach to Tree Problems
+### Tree Problem Categories
 
-1. Identify the most suitable traversal method (DFS vs BFS) based on the problem requirements
+1. **Tree Traversal**
+   - **Preorder Traversal**: Visit the root, then left subtree, then right subtree.
+   - **Inorder Traversal**: Visit the left subtree, then root, then right subtree.
+   - **Postorder Traversal**: Visit the left subtree, then right subtree, then root.
+   - **Level Order Traversal**: Visit nodes level by level from top to bottom.
 
-2. Consider the specific properties of the tree (e.g., BST, balanced tree) that can be leveraged
+2. **Binary Search Tree (BST) Problems**
+   - **Insertion and Deletion**: Adding or removing nodes while maintaining the BST property.
+   - **Searching**: Finding a specific value or node.
+   - **Validation**: Checking if a tree is a valid BST.
+   - **Finding the Lowest Common Ancestor (LCA)**: Finding the common ancestor of two nodes in a BST.
+   - **Converting Sorted Array to BST**: Creating a balanced BST from a sorted array.
 
-3. For recursive solutions, clearly define the base case and ensure the recursive calls make progress
+3. **Binary Tree Properties**
+   - **Height and Depth**: Calculating the height or depth of the tree.
+   - **Diameter**: Finding the longest path between any two nodes.
+   - **Symmetry**: Checking if a tree is symmetric (mirror image of itself).
+   - **Balanced Tree**: Checking if the tree is height-balanced.
 
-4. Be mindful of edge cases:
+4. **Tree Construction**
+   - **Constructing from Traversal Orders**: Building a tree from preorder and inorder, or postorder and inorder traversals.
+   - **Constructing from Serialization**: Reconstructing a tree from a serialized format (like in a string).
 
-   - Empty tree
-   - Tree with only one node
-   - Unbalanced or skewed trees
+5. **Tree Algorithms**
+   - **Depth-First Search (DFS)**: Using recursion or stack-based approach.
+   - **Breadth-First Search (BFS)**: Using queue-based approach.
+   - **Lowest Common Ancestor (LCA)**: Finding the LCA in different types of trees (BST, general trees).
 
-5. When modifying the tree, be careful to maintain its structural integrity
+6. **Tree Modifications**
+   - **Flattening**: Converting a binary tree to a linked list.
+   - **Invert/Reverse**: Flipping the tree upside down.
+   - **Merge Trees**: Combining two trees into one.
 
-6. For problems involving paths or sums, consider using a helper function with additional parameters to track state
+7. **Special Trees**
+   - **N-ary Trees**: Handling trees where each node can have more than two children.
+   - **Trie (Prefix Tree)**: Insertion, search, and deletion operations.
 
-7. In BST problems, always consider if the BST property can be used to optimize the solution
+8. **Advanced Tree Problems**
+   - **Segment Tree**: For range queries and updates.
+   - **Fenwick Tree (Binary Indexed Tree)**: For cumulative frequency tables.
+   - **Suffix Tree and Suffix Array**: For string processing problems.
 
-8. For problems involving multiple trees, think about how to process them simultaneously (e.g., same traversal on both)
-
-9. When dealing with large trees, consider iterative solutions to avoid stack overflow
-
-10. For complex tree manipulations, drawing out the desired result can often clarify the necessary steps
 
 # Heap and Priority Queue Techniques
 
