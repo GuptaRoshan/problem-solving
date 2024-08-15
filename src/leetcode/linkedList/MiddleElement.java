@@ -12,12 +12,5 @@ public class MiddleElement {
     }
 
     public static void main(String[] args) {
-        LinkedList linkedList = new LinkedList();
-        linkedList.addInTail(2);
-        linkedList.addInTail(5);
-        linkedList.addInTail(7);
-        linkedList.addInTail(8);
-        linkedList.printList(linkedList.head);
-        System.out.println("Middle element  : " + middle(linkedList.head));
     }
 }

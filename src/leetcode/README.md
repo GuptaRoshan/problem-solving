@@ -1,5 +1,23 @@
 # Leetcode
 
+
+
+## Tree
+
+[Symmetric Tree Problem]: https://leetcode.com/problems/symmetric-tree/description/
+[Symmetric Tree  Solution]: https://github.com/GuptaRoshan/design/blob/main/src/LD/MinStack.java
+
+
+| LeetCode No. | Difficulty | Problem                             | Solution                             | Notes                                                              |
+|--------------|------------|-------------------------------------|--------------------------------------|--------------------------------------------------------------------|
+| 155          | Medium     | [Min Stack][Symmetric Tree Problem] | [Solution][Symmetric Tree  Solution] | Compare two nodes simultaneously of left subtree and right subtree |
+|              |            |                                     |                                      |                                                                    |
+|              |            |                                     |                                      |                                                                    |
+|              |            |                                     |                                      |                                                                    |
+
+
+
+
 ## Design Problems
 
 [Design Questions](https://leetcode.com/tag/design/)
@@ -22,11 +40,11 @@
 [BST Iterator Problem]: https://leetcode.com/problems/binary-search-tree-iterator/description/
 [BST Iterator Solution]: https://github.com/GuptaRoshan/design/blob/main/src/LD/BSTInorderIterator.java
 
-| LeetCode No. | Difficulty | Problem                              | Solution                      | Notes |
-| ------------ | ---------- | ------------------------------------ | ----------------------------- | ----- |
-| 155          | Medium     | [Min Stack][Min Stack Problem]       | [Link][Min Stack Solution]    |       |
-| 146          | Medium     | [LRU Cache][LRU Cache Problem]       | [Link][LRU Cache Solution]    |       |
-| 706          | Medium     | [Hash Map][Hash Map Problem]         | [Link][Hash Map Solution]     |       |
-| 705          | Medium     | [Hash Set][Hash Set Problem]         | [Link][Hash Set Solution]     |       |
-| 981          | Medium     | [Time Map][Time Map Problem]         | [Link][Time Map Solution]     |       |
-| 173          | Medium     | [BST Iterator][BST Iterator Problem] | [Link][BST Iterator Solution] |       |
+| LeetCode No. | Difficulty | Problem                              | Solution                          | Notes |
+|--------------|------------|--------------------------------------|-----------------------------------|-------|
+| 155          | Medium     | [Min Stack][Min Stack Problem]       | [Solution][Min Stack Solution]    |       |
+| 146          | Medium     | [LRU Cache][LRU Cache Problem]       | [Solution][LRU Cache Solution]    |       |
+| 706          | Medium     | [Hash Map][Hash Map Problem]         | [Solution][Hash Map Solution]     |       |
+| 705          | Medium     | [Hash Set][Hash Set Problem]         | [Solution][Hash Set Solution]     |       |
+| 981          | Medium     | [Time Map][Time Map Problem]         | [Solution][Time Map Solution]     |       |
+| 173          | Medium     | [BST Iterator][BST Iterator Problem] | [Solution][BST Iterator Solution] |       |

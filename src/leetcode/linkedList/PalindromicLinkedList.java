@@ -43,13 +43,6 @@ public class PalindromicLinkedList {
 
 
     public static void main(String[] args) {
-        LinkedList linkedList = new LinkedList();
-        linkedList.addInTail(1);
-        linkedList.addInTail(2);
-        linkedList.addInTail(3);
-        linkedList.addInTail(2);
-        linkedList.addInTail(1);
-        System.out.println(isPalindrome(linkedList.head));
     }
 
 }

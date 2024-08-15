@@ -23,12 +23,5 @@ public class RemoveDuplicates {
 
 
     public static void main(String[] args) {
-        LinkedList list1 = new LinkedList();
-        list1.addInTail(0);
-        list1.addInTail(0);
-        list1.addInTail(0);
-        list1.addInTail(0);
-        list1.addInTail(0);
-        deleteDuplicates(list1.head);
     }
 }

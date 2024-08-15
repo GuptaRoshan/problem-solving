@@ -55,11 +55,12 @@ public class PriorityQueue<T> {
     private void heapifyUp(int index) {
         while (index > 0) {
             int parentIndex = (index - 1) / 2;
-            if (comparator.compare(heap[index], heap[parentIndex]) <= 0) {
+            if (comparator.compare(heap[index], heap[parentIndex]) > 0) {
+                swap(index, parentIndex);
+                index = parentIndex;
+            } else {
                 break;
             }
-            swap(index, parentIndex);
-            index = parentIndex;
         }
     }
 

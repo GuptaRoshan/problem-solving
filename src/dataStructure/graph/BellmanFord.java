@@ -46,7 +46,7 @@ public class BellmanFord {
             int v = e.destination;
             int weight = e.weight;
             if (distances[u] != Integer.MAX_VALUE && distances[u] + weight < distances[v]) {
-                System.out.println("The problems.graph contains a negative-weight cycle");
+                System.out.println("The problems graph contains a negative-weight cycle");
                 return;
             }
         }
