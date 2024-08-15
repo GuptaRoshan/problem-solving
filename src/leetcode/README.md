@@ -4,16 +4,22 @@
 
 ## Tree
 
-[Symmetric Tree Problem]: https://leetcode.com/problems/symmetric-tree/description/
+[Symmetric Tree Problem]:https://leetcode.com/problems/symmetric-tree/description/
 [Symmetric Tree  Solution]: https://github.com/GuptaRoshan/problem-solving/blob/main/src/leetcode/tree/SymmetricTree.java
 
+[Flatten Binary Tree LinkedList]: https://leetcode.com/problems/flatten-binary-tree-to-linked-list/description/
+[Flatten Binary Tree LinkedList Solution]: https://github.com/GuptaRoshan/problem-solving/blob/main/src/leetcode/tree/FlattenBinaryTreeLinkedList.java
 
-| LeetCode No. | Difficulty | Problem                             | Solution                             | Notes                                                              |
-|--------------|------------|-------------------------------------|--------------------------------------|--------------------------------------------------------------------|
-| 155          | Medium     | [Min Stack][Symmetric Tree Problem] | [Solution][Symmetric Tree  Solution] | Compare two nodes simultaneously of left subtree and right subtree |
-|              |            |                                     |                                      |                                                                    |
-|              |            |                                     |                                      |                                                                    |
-|              |            |                                     |                                      |                                                                    |
+[Merge Trees Problem]: https://leetcode.com/problems/merge-two-binary-trees/description/
+[Merge Trees  Solution]: https://github.com/GuptaRoshan/problem-solving/blob/main/src/leetcode/tree/MergeTrees.java
+
+
+| LeetCode No. | Difficulty | Problem                                                        | Solution                                            | Notes                                                                                                     |
+|--------------|------------|----------------------------------------------------------------|-----------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
+| 101          | Easy       | [Symmetric Tree][Symmetric Tree Problem]                       | [Solution][Symmetric Tree  Solution]                | Compare two nodes simultaneously of left subtree and right subtree                                        |
+| 114          | Medium     | [Flatten Binary Tree][Flatten Binary Tree LinkedList Solution] | [Solution][Flatten Binary Tree LinkedList Solution] | Can be solved with one global variable and Reverse Postorder Traversal, Morris Traversal also can be used |
+| 617          | Easy       | [Merge Trees][Merge Trees Problem]                             | [Solution][Merge Trees  Solution]                   | Return left or right subtree, if either is null, or update value combine tree                             |
+|              |            |                                                                |                                                     |                                                                                                           |
 
 
 

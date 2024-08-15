@@ -913,168 +913,60 @@
 
 # Tree Techniques
 
-1. **Depth-First Search (DFS)**
+```
+       1
+     /   \
+    2     3
+   / \   / \
+  4   5 6   7
+  
+```
 
-   - Explores as far as possible along each branch before backtracking
-   - Three main types: Preorder, Inorder, and Postorder traversals
+## Traditional Traversals
 
-   **How it works:**
+### Inorder Traversal (`Left-Node-Right`)
 
-   - Recursive: Use the call stack to traverse the tree
-   - Iterative: Use an explicit stack to manage nodes
+- **Order**: Visit left subtree → Node → Right subtree
+- **Output**: 4 2 5 1 6 3 7
 
-   **Common applications:**
+### Preorder Traversal (`Node-Left-Right`)
 
-   - Tree traversal
-   - Pathfinding
-   - Tree structure validation
+- **Order**: Visit node → Left subtree → Right subtree
+- **Output**: 1 2 4 5 3 6 7
 
-2. **Breadth-First Search (BFS)**
+### Postorder Traversal (`Left-Right-Node`)
 
-   - Explores all nodes at the present depth before moving to nodes at the next depth level
-   - Typically implemented using a queue
+- **Order**: Visit left subtree → Right subtree → Node
+- **Output**: 4 5 2 6 7 3 1
 
-   **How it works:**
+### Level Order Traversal
 
-   - Use a queue to store nodes at each level
-   - Process nodes in the order they were added to the queue
+- **Order**: Visit nodes level by level from root to leaves
+- **Output**: 1 2 3 4 5 6 7
 
-   **Common applications:**
+## Reversed Traversals
 
-   - Level-order traversal
-   - Finding shortest paths
-   - Connecting components
+### Reversed Inorder Traversal (`Right-Node-Left`)
 
-3. **Binary Search Tree (BST) Properties**
+- **Order**: Visit right subtree → Node → Left subtree
+- **Output**: 7 3 6 1 5 2 4
 
-   - Utilizes the ordered nature of BSTs for efficient operations
-   - Left subtree contains only nodes with keys less than the node's key
-   - Right subtree contains only nodes with keys greater than the node's key
+### Reversed Preorder Traversal (`Node-Right-Left`)
 
-   **How it works:**
+- **Order**: Visit node → Right subtree → Left subtree
+- **Output**: 1 3 7 6 2 5 4
 
-   - Leverage the BST property to perform binary search-like operations
-   - Inorder traversal of a BST produces a sorted sequence
+### Reversed Postorder Traversal (`Right-Left-Node`)
 
-   **Common applications:**
+- **Order**: Visit right subtree → Left subtree → Node
+- **Output**: 7 6 3 5 4 2 1
 
-   - Searching, insertion, and deletion in O(log n) time
-   - Validating if a binary tree is a BST
-   - Finding kth smallest/largest element
+### Reversed Level Order Traversal
 
-4. **Tree Construction**
+- **Order**: Visit nodes level by level from leaves to root, left to right at each level
+- **Output**: 4 5 6 7 2 3 1
 
-   - Building trees from various traversal sequences or representations
 
-   **How it works:**
-
-   - Use characteristics of different traversals to reconstruct the tree
-   - Often involves recursion or stack-based approaches
-
-   **Common applications:**
-
-   - Constructing tree from preorder and inorder traversals
-   - Deserializing a tree from its serialized form
-
-5. **Lowest Common Ancestor (LCA)**
-
-   - Finds the lowest node in the tree that is an ancestor of two given nodes
-
-   **How it works:**
-
-   - Traverse the tree, looking for the given nodes
-   - The first node that is an ancestor of both target nodes is the LCA
-
-   **Common applications:**
-
-   - Finding relationships between nodes
-   - Optimizing queries on trees
-
-6. **Path Sum Problems**
-
-   - Involves finding paths in the tree that sum to a particular value
-
-   **How it works:**
-
-   - Use DFS to explore all paths from root to leaf
-   - Keep track of the running sum along each path
-
-   **Common applications:**
-
-   - Finding paths with a specific sum
-   - Maximum/minimum path sum problems
-
-7. **Tree Balancing and Validation**
-
-   - Ensures the tree maintains certain structural properties
-
-   **How it works:**
-
-   - Check or enforce balance conditions during tree operations
-   - Use recursive approaches to validate tree properties
-
-   **Common applications:**
-
-   - AVL tree and Red-Black tree implementations
-   - Validating binary search trees
-
-8. **Serialization and Deserialization**
-
-   - Converts a tree to a string representation and vice versa
-
-   **How it works:**
-
-   - Choose a traversal order (often level-order) for serialization
-   - Use delimiters to represent null nodes
-   - Parse the string to reconstruct the tree during deserialization
-
-   **Common applications:**
-
-   - Storing trees in databases or files
-   - Transmitting tree structures over networks
-
-9. **Morris Traversal**
-
-   - Allows for constant space tree traversal without recursion or a stack
-
-   **How it works:**
-
-   - Temporarily modify the tree structure to traverse without extra space
-   - Restore the original structure as you go
-
-   **Common applications:**
-
-   - Space-efficient inorder traversal
-   - Constant space tree algorithms
-
-10. **Dynamic Programming on Trees**
-
-    - Applies DP concepts to tree-based problems
-
-    **How it works:**
-
-    - Define subproblems on subtrees
-    - Combine solutions to subproblems to solve larger problems
-
-    **Common applications:**
-
-    - Maximum independent set in trees
-    - Tree diameter problems
-
-11. **Trie (Prefix Tree)**
-
-    - Specialized tree structure for efficient string operations
-
-    **How it works:**
-
-    - Each node represents a character in a string
-    - Paths from root to nodes spell out stored strings
-
-    **Common applications:**
-
-    - Autocomplete features
-    - Spell checkers
-    - IP routing tables
 
 ### Tree Problem Categories
 
