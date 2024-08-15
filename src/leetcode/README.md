@@ -5,7 +5,7 @@
 ## Tree
 
 [Symmetric Tree Problem]: https://leetcode.com/problems/symmetric-tree/description/
-[Symmetric Tree  Solution]: https://github.com/GuptaRoshan/design/blob/main/src/LD/MinStack.java
+[Symmetric Tree  Solution]: https://github.com/GuptaRoshan/problem-solving/blob/main/src/leetcode/tree/SymmetricTree.java
 
 
 | LeetCode No. | Difficulty | Problem                             | Solution                             | Notes                                                              |
@@ -23,22 +23,22 @@
 [Design Questions](https://leetcode.com/tag/design/)
 
 [Min Stack Problem]: https://leetcode.com/problems/min-stack/description/
-[Min Stack Solution]: https://github.com/GuptaRoshan/design/blob/main/src/LD/MinStack.java
+[Min Stack Solution]: https://github.com/GuptaRoshan/problem-solving/blob/main/src/leetcode/design/MinStack.java
 
 [LRU Cache Problem]: https://leetcode.com/problems/lru-cache/
-[LRU Cache Solution]: https://github.com/GuptaRoshan/design/blob/main/src/LD/LRUCache.java
+[LRU Cache Solution]: https://github.com/GuptaRoshan/design/blob/main/src/leetcode/design/LRUCache.java
 
 [Hash Map Problem]: https://leetcode.com/problems/design-hashmap/description/
-[Hash Map Solution]: https://github.com/GuptaRoshan/design/blob/main/src/LD/HashMap.java
+[Hash Map Solution]: https://github.com/GuptaRoshan/design/blob/main/src/leetcode/design/HashMap.java
 
 [Hash Set Problem]: https://leetcode.com/problems/design-hashset/description/
-[Hash Set Solution]: https://github.com/GuptaRoshan/design/blob/main/src/LD/HashSet.java
+[Hash Set Solution]: https://github.com/GuptaRoshan/design/blob/main/src/leetcode/design/HashSet.java
 
 [Time Map Problem]: https://leetcode.com/problems/time-based-key-value-store/description/
-[Time Map Solution]: https://github.com/GuptaRoshan/design/blob/main/src/LD/TimeMap.java
+[Time Map Solution]: https://github.com/GuptaRoshan/design/blob/main/src/leetcode/design/TimeMap.java
 
 [BST Iterator Problem]: https://leetcode.com/problems/binary-search-tree-iterator/description/
-[BST Iterator Solution]: https://github.com/GuptaRoshan/design/blob/main/src/LD/BSTInorderIterator.java
+[BST Iterator Solution]: https://github.com/GuptaRoshan/design/blob/main/src/leetcode/design/BSTInorderIterator.java
 
 | LeetCode No. | Difficulty | Problem                              | Solution                          | Notes |
 |--------------|------------|--------------------------------------|-----------------------------------|-------|
