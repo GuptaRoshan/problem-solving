@@ -14,12 +14,12 @@
 [Merge Trees  Solution]: https://github.com/GuptaRoshan/problem-solving/blob/main/src/leetcode/tree/MergeTrees.java
 
 
-| LeetCode No. | Difficulty | Problem                                                        | Solution                                            | Notes                                                                                                     |
-|--------------|------------|----------------------------------------------------------------|-----------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
-| 101          | Easy       | [Symmetric Tree][Symmetric Tree Problem]                       | [Solution][Symmetric Tree  Solution]                | Compare two nodes simultaneously of left subtree and right subtree                                        |
-| 114          | Medium     | [Flatten Binary Tree][Flatten Binary Tree LinkedList Solution] | [Solution][Flatten Binary Tree LinkedList Solution] | Can be solved with one global variable and Reverse Postorder Traversal, Morris Traversal also can be used |
-| 617          | Easy       | [Merge Trees][Merge Trees Problem]                             | [Solution][Merge Trees  Solution]                   | Return left or right subtree, if either is null, or update value combine tree                             |
-|              |            |                                                                |                                                     |                                                                                                           |
+| Problem                                                        | Solution                                            | Notes                                                                                                     |
+|----------------------------------------------------------------|-----------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
+| [Symmetric Tree][Symmetric Tree Problem]                       | [Solution][Symmetric Tree  Solution]                | Compare two nodes simultaneously of left subtree and right subtree                                        |
+| [Flatten Binary Tree][Flatten Binary Tree LinkedList Solution] | [Solution][Flatten Binary Tree LinkedList Solution] | Can be solved with one global variable and Reverse Postorder Traversal, Morris Traversal also can be used |
+| [Merge Trees][Merge Trees Problem]                             | [Solution][Merge Trees  Solution]                   | Return left or right subtree, if either is null, or update value combine tree                             |
+|                                                                |                                                     |                                                                                                           |                                                                                                           |
 
 
 
@@ -46,11 +46,11 @@
 [BST Iterator Problem]: https://leetcode.com/problems/binary-search-tree-iterator/description/
 [BST Iterator Solution]: https://github.com/GuptaRoshan/design/blob/main/src/leetcode/design/BSTInorderIterator.java
 
-| LeetCode No. | Difficulty | Problem                              | Solution                          | Notes |
-|--------------|------------|--------------------------------------|-----------------------------------|-------|
-| 155          | Medium     | [Min Stack][Min Stack Problem]       | [Solution][Min Stack Solution]    |       |
-| 146          | Medium     | [LRU Cache][LRU Cache Problem]       | [Solution][LRU Cache Solution]    |       |
-| 706          | Medium     | [Hash Map][Hash Map Problem]         | [Solution][Hash Map Solution]     |       |
-| 705          | Medium     | [Hash Set][Hash Set Problem]         | [Solution][Hash Set Solution]     |       |
-| 981          | Medium     | [Time Map][Time Map Problem]         | [Solution][Time Map Solution]     |       |
-| 173          | Medium     | [BST Iterator][BST Iterator Problem] | [Solution][BST Iterator Solution] |       |
+| Problem                              | Solution                          | Notes |
+|--------------------------------------|-----------------------------------|-------|
+| [Min Stack][Min Stack Problem]       | [Solution][Min Stack Solution]    |       |
+| [LRU Cache][LRU Cache Problem]       | [Solution][LRU Cache Solution]    |       |
+| [Hash Map][Hash Map Problem]         | [Solution][Hash Map Solution]     |       |
+| [Hash Set][Hash Set Problem]         | [Solution][Hash Set Solution]     |       |
+| [Time Map][Time Map Problem]         | [Solution][Time Map Solution]     |       |
+| [BST Iterator][BST Iterator Problem] | [Solution][BST Iterator Solution] |       |

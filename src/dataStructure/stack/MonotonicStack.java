@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class MonotonicStack {
 
-    // Increasing Monotonic Stack
+    // Strictly Increasing Monotonic Stack
     public static void increasing(int[] numbers) {
         Stack<Integer> stack = new Stack<>();
         for (int number : numbers) {
@@ -16,7 +16,7 @@ public class MonotonicStack {
         System.out.println(stack);
     }
 
-    // Increasing Monotonic Stack
+    // Strictly Increasing Monotonic Stack
     public static void decreasing(int[] numbers) {
         Stack<Integer> stack = new Stack<>();
         for (int number : numbers) {

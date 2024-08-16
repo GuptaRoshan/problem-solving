@@ -98,6 +98,8 @@ public class PriorityQueue<T> {
         }
     }
 
+
+    //--------------------------------------main--------------------------------------//
     public static void main(String[] args) {
         // Max heap for integers
         PriorityQueue<Integer> maxPQ = new PriorityQueue<>((a, b) -> Integer.compare(a, b));

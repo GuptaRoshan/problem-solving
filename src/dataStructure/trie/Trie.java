@@ -45,11 +45,6 @@ public class Trie {
         return true;
     }
 
-    public boolean endsWith(String suffix) {
-        return true;
-    }
-
-
     public static void main(String[] args) {
         Trie trie = new Trie();
         trie.insert("cat");

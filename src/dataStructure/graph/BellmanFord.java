@@ -3,26 +3,30 @@ package dataStructure.graph;
 import java.util.Arrays;
 import java.util.List;
 
-class Edge {
-    int source, destination, weight;
 
-    Edge(int s, int d, int w) {
-        source = s;
-        destination = d;
-        weight = w;
-    }
-}
 
 public class BellmanFord {
 
     public static void print(int[] distances) {
         System.out.println("Vertex\tDistance from source");
         for (int i = 0; i < distances.length; ++i) {
-            System.out.println(i + "\t\t" + distances[i]);
+            System.out.println(i + "\t\t\t" + distances[i]);
         }
     }
 
-    public static void bellmanFord(List<Edge> edges, int vertices, int source) {
+    private static class Edge {
+        int source;
+        int destination;
+        int weight;
+
+        Edge(int s, int d, int w) {
+            source = s;
+            destination = d;
+            weight = w;
+        }
+    }
+
+    public int[] bellmanFord(List<Edge> edges, int vertices, int source) {
         // Step 1: Initialize distances from source to all vertices as INFINITE
         int[] distances = new int[vertices];
         Arrays.fill(distances, Integer.MAX_VALUE);
@@ -46,13 +50,11 @@ public class BellmanFord {
             int v = e.destination;
             int weight = e.weight;
             if (distances[u] != Integer.MAX_VALUE && distances[u] + weight < distances[v]) {
-                System.out.println("The problems graph contains a negative-weight cycle");
-                return;
+                return new int[0];
             }
         }
 
-        // Step 4: Print the shortest path from source to all vertices
-        print(distances);
+        return distances;
     }
 
     public static void main(String[] args) {
@@ -65,6 +67,6 @@ public class BellmanFord {
                 new Edge(3, 4, 1));
         int vertices = 5;
         int source = 0;
-        bellmanFord(edges, vertices, source);
+        print(new BellmanFord().bellmanFord(edges, vertices, source));
     }
 }

@@ -5,6 +5,7 @@ import java.util.Stack;
 
 public class NextPrevGreater {
 
+   //---------------------------------Next Greater Element---------------------------------------//
     public static int[] findNextGreaterIndexes(int[] arr) {
         // Initialize an empty stack
         Stack<Integer> stack = new Stack<>();
@@ -22,6 +23,7 @@ public class NextPrevGreater {
         return nextGreater;
     }
 
+    //---------------------------------Previous Greater Element---------------------------------------//
     public static int[] findPreviousGreaterIndexes(int[] arr) {
         Stack<Integer> stack = new Stack<>();
         int[] previousGreater = new int[arr.length];
@@ -40,6 +42,7 @@ public class NextPrevGreater {
         return previousGreater;
     }
 
+    //---------------------------------Next and Previous Greater Element---------------------------------------//
     public static int[][] findNextAndPreviousGreaterIndexes(int[] arr) {
         Stack<Integer> stack = new Stack<>();
         int[] previousGreater = new int[arr.length];
@@ -62,6 +65,7 @@ public class NextPrevGreater {
         }
         return new int[][]{previousGreater, nextGreater};
     }
+
 
     public static void main(String[] args) {
         int[] arr = {13, 8, 1, 5, 2, 5, 9, 7, 6, 12};
