@@ -1,7 +1,5 @@
 # Leetcode
 
-
-
 ## Tree
 
 [Symmetric Tree Problem]:https://leetcode.com/problems/symmetric-tree/description/
@@ -20,8 +18,6 @@
 | [Flatten Binary Tree][Flatten Binary Tree LinkedList Solution] | [Solution][Flatten Binary Tree LinkedList Solution] | Can be solved with one global variable and Reverse Postorder Traversal, Morris Traversal also can be used |
 | [Merge Trees][Merge Trees Problem]                             | [Solution][Merge Trees  Solution]                   | Return left or right subtree, if either is null, or update value combine tree                             |
 |                                                                |                                                     |                                                                                                           |                                                                                                           |
-
-
 
 
 ## Design Problems
