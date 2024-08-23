@@ -523,6 +523,188 @@
 - Use recursion with memoization
 
 
+# Array Problems
+
+**1. Array Traversal and Basic Manipulation**
+
+**Problems:**
+- LeetCode 485: Max Consecutive Ones
+- LeetCode 283: Move Zeroes
+- GeeksforGeeks: Rearrange array in alternating positive & negative items
+
+**Solution Approach:**
+- Use single pass traversal
+- Two-pointer technique for in-place manipulation
+- Use extra space or in-place swapping for rearrangement
+
+**2. Two Pointers Technique**
+
+**Problems:**
+- LeetCode 11: Container With Most Water
+- LeetCode 15: 3Sum
+- GeeksforGeeks: Find a triplet that sum to a given value
+
+**Solution Approach:**
+- Use two pointers moving from both ends
+- Sort array first, then use two pointers
+- Use sorting and two pointers or hashing
+
+**3. Sliding Window**
+
+**Problems:**
+- LeetCode 53: Maximum Subarray
+- LeetCode 209: Minimum Size Subarray Sum
+- GeeksforGeeks: Find subarray with given sum
+
+**Solution Approach:**
+- Use Kadane's algorithm for maximum subarray
+- Use sliding window with variable size
+- Use sliding window or prefix sum technique
+
+**4. Binary Search on Arrays**
+
+**Problems:**
+- LeetCode 33: Search in Rotated Sorted Array
+- LeetCode 34: Find First and Last Position of Element in Sorted Array
+- GeeksforGeeks: Search an element in a sorted and rotated array
+
+**Solution Approach:**
+- Use modified binary search
+- Use binary search twice for first and last occurrences
+- Find pivot, then apply binary search
+
+**5. Array Partitioning**
+
+**Problems:**
+- LeetCode 75: Sort Colors
+- LeetCode 215: Kth Largest Element in an Array
+- GeeksforGeeks: Segregate 0s and 1s in an array
+
+**Solution Approach:**
+- Use Dutch National Flag algorithm
+- Use QuickSelect algorithm
+- Use two-pointer approach
+
+**6. Prefix Sum**
+
+**Problems:**
+- LeetCode 303: Range Sum Query - Immutable
+- LeetCode 560: Subarray Sum Equals K
+- GeeksforGeeks: Equilibrium index of an array
+
+**Solution Approach:**
+- Precompute prefix sums
+- Use prefix sum and hash map
+- Calculate left and right sums
+
+**7. Array Rotation**
+
+**Problems:**
+- LeetCode 189: Rotate Array
+- GeeksforGeeks: Program for array rotation
+- GeeksforGeeks: Find minimum element in a sorted and rotated array
+
+**Solution Approach:**
+- Use reverse algorithm (reverse parts, then whole)
+- Use juggling algorithm or block swap algorithm
+- Use modified binary search
+
+**8. Intervals**
+
+**Problems:**
+- LeetCode 56: Merge Intervals
+- LeetCode 57: Insert Interval
+- GeeksforGeeks: Overlapping Intervals
+
+**Solution Approach:**
+- Sort intervals, then merge
+- Iterate and merge or insert
+- Sort and use stack or linear traversal
+
+**9. Matrix Operations**
+
+**Problems:**
+- LeetCode 48: Rotate Image
+- LeetCode 54: Spiral Matrix
+- GeeksforGeeks: Search in a row-wise and column-wise sorted matrix
+
+**Solution Approach:**
+- Use transpose and reverse
+- Use simulation with direction changes
+- Use elimination method (start from top-right or bottom-left)
+
+**10. Dynamic Programming on Arrays**
+
+**Problems:**
+- LeetCode 121: Best Time to Buy and Sell Stock
+- LeetCode 300: Longest Increasing Subsequence
+- GeeksforGeeks: Maximum sum increasing subsequence
+
+**Solution Approach:**
+- Use one-pass traversal with min price tracking
+- Use dynamic programming or patience sorting
+- Use dynamic programming with reconstruction
+
+**11. Array Sorting Techniques**
+
+**Problems:**
+- LeetCode 912: Sort an Array
+- GeeksforGeeks: Sort an array of 0s, 1s and 2s
+- GeeksforGeeks: Sort an array in wave form
+
+**Solution Approach:**
+- Implement various sorting algorithms (merge sort, quick sort)
+- Use counting sort or Dutch National Flag algorithm
+- Sort and swap adjacent elements or use one-pass algorithm
+
+**12. Counting Elements**
+
+**Problems:**
+- LeetCode 448: Find All Numbers Disappeared in an Array
+- LeetCode 287: Find the Duplicate Number
+- GeeksforGeeks: Count frequencies of array elements
+
+**Solution Approach:**
+- Use index marking technique
+- Use Floyd's cycle detection algorithm
+- Use hashing or modify array elements
+
+**13. Subarray Problems**
+
+**Problems:**
+- LeetCode 238: Product of Array Except Self
+- LeetCode 152: Maximum Product Subarray
+- GeeksforGeeks: Largest subarray with equal number of 0s and 1s
+
+**Solution Approach:**
+- Use left and right product arrays
+- Use Kadane's algorithm with min and max tracking
+- Use prefix sum with hash map
+
+**14. Array Rearrangement**
+
+**Problems:**
+- LeetCode 31: Next Permutation
+- GeeksforGeeks: Rearrange an array such that arr[i] = i
+- GeeksforGeeks: Reorder an array according to given indexes
+
+**Solution Approach:**
+- Use single pass traversal with swapping
+- Use cyclic sort or value as index
+- Use extra array or swap in-place
+
+**15. Bit Manipulation on Arrays**
+
+**Problems:**
+- LeetCode 136: Single Number
+- LeetCode 268: Missing Number
+- GeeksforGeeks: Find the two non-repeating elements in an array of repeating elements
+
+**Solution Approach:**
+- Use XOR operation
+- Use XOR or sum difference
+- Use XOR and bit manipulation
+
 # Map Usage
 
 1. **Frequency Counting**
@@ -639,7 +821,6 @@
     - Examples:
       - Repeated DNA Sequences
     - Usage: `Map<bitPattern, count>`
-
 
 
 # Deque Usage
