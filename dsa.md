@@ -351,7 +351,179 @@
                  └── sumOfDigits(4)
 ```
 
-# Map Usage in LeetCode Problems
+# String Problems
+
+[Important string questions pattern](https://leetcode.com/discuss/interview-question/2001789/collections-of-important-string-questions-pattern)
+
+**1. String Manipulation**
+
+**Problems:**
+- LeetCode 344: Reverse String
+- LeetCode 151: Reverse Words in a String
+- GeeksforGeeks: Remove all duplicates from a given string
+
+**Solution Approach:**
+- Use two-pointer technique for reversing
+- Use stack or in-place manipulation for word reversal
+- Use hash set or counting sort for removing duplicates
+
+**2. Palindrome Checks**
+
+**Problems:**
+- LeetCode 125: Valid Palindrome
+- LeetCode 5: Longest Palindromic Substring
+- GeeksforGeeks: Count All Palindromic Subsequences
+
+**Solution Approach:**
+- Two-pointer technique for validation
+- Dynamic programming or expand around center for longest palindrome
+- Dynamic programming for counting palindromic subsequences
+
+**3. Anagram Problems**
+
+**Problems:**
+- LeetCode 242: Valid Anagram
+- LeetCode 49: Group Anagrams
+- GeeksforGeeks: Print all anagrams together
+
+**Solution Approach:**
+- Use hash map or sorted strings for comparison
+- Use sorted strings as keys in a hash map for grouping
+
+**4. Substring Searches**
+
+**Problems:**
+- LeetCode 28: Find the Index of the First Occurrence in a String
+- LeetCode 187: Repeated DNA Sequences
+- GeeksforGeeks: Longest Common Substring
+
+**Solution Approach:**
+- Use KMP algorithm or rolling hash for efficient substring search
+- Use sliding window and hash set for repeated sequences
+- Use dynamic programming for longest common substring
+
+**5. String Matching and Pattern Recognition**
+
+**Problems:**
+- LeetCode 10: Regular Expression Matching
+- LeetCode 44: Wildcard Matching
+- GeeksforGeeks: KMP Algorithm
+
+**Solution Approach:**
+- Use dynamic programming for regex and wildcard matching
+- Implement KMP algorithm for efficient pattern matching
+
+**6. String Compression and Decompression**
+
+**Problems:**
+- LeetCode 443: String Compression
+- LeetCode 394: Decode String
+- GeeksforGeeks: Run Length Encoding
+
+**Solution Approach:**
+- Use two-pointer technique for compression
+- Use stack for nested decoding
+- Iterate through string for run-length encoding
+
+**7. String Parsing and Tokenization**
+
+**Problems:**
+- LeetCode 71: Simplify Path
+- LeetCode 224: Basic Calculator
+- GeeksforGeeks: Parse a string of commands
+
+**Solution Approach:**
+- Use stack for path simplification
+- Use stack and state machine for expression evaluation
+- Use finite state machine for parsing commands
+
+**8. Regular Expression Problems**
+
+**Problems:**
+- LeetCode 65: Valid Number
+- LeetCode 520: Detect Capital
+- GeeksforGeeks: Regex matching for wildcard characters
+
+**Solution Approach:**
+- Use state machine or regex for number validation
+- Use regex or character counting for capital detection
+- Implement regex engine or use dynamic programming
+
+**9. String Encoding and Decoding**
+
+**Problems:**
+- LeetCode 271: Encode and Decode Strings
+- LeetCode 535: Encode and Decode TinyURL
+- GeeksforGeeks: Encode a string to a number
+
+**Solution Approach:**
+- Use length encoding or escape characters
+- Use hash map and base conversion for URL shortening
+- Use base conversion or polynomial rolling hash for string to number encoding
+
+**10. Longest Common Substring/Subsequence**
+
+**Problems:**
+- LeetCode 1143: Longest Common Subsequence
+- GeeksforGeeks: Longest Common Substring
+- GeeksforGeeks: Printing Longest Common Subsequence
+
+**Solution Approach:**
+- Use dynamic programming (2D array or optimized 1D array)
+- Backtrack through DP table to reconstruct the sequence
+
+**11. String Reversal (Words, Sentences)**
+
+**Problems:**
+- LeetCode 557: Reverse Words in a String III
+- GeeksforGeeks: Reverse a string preserving space positions
+
+**Solution Approach:**
+- Use two-pointer technique or split-reverse-join
+- Use stack or in-place reversal with space tracking
+
+**12. String Rotation**
+
+**Problems:**
+- LeetCode 796: Rotate String
+- GeeksforGeeks: Check if strings are rotations of each other
+
+**Solution Approach:**
+- Use concatenation and contains check
+- Use KMP algorithm for efficient rotation check
+
+**13. String Concatenation Optimization**
+
+**Problems:**
+- LeetCode 14: Longest Common Prefix
+- GeeksforGeeks: Minimize string concatenation cost
+
+**Solution Approach:**
+- Use vertical scanning or divide and conquer
+- Use priority queue (min-heap) for optimal concatenation order
+
+**14. String Permutations**
+
+**Problems:**
+- LeetCode 46: Permutations
+- GeeksforGeeks: Print all permutations of a string
+
+**Solution Approach:**
+- Use backtracking or iterative approach
+- Use recursion with swapping or next permutation algorithm
+
+**15. String Interleaving**
+
+**Problems:**
+- LeetCode 97: Interleaving String
+- GeeksforGeeks: Find if a string is interleaved of two other strings
+
+**Solution Approach:**
+- Use dynamic programming (2D or 1D optimized)
+- Use recursion with memoization
+
+
+# Map Usage
 
 1. **Frequency Counting**
 
