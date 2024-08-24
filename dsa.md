@@ -50,7 +50,7 @@
 
 [Important string questions pattern](https://leetcode.com/discuss/interview-question/2001789/collections-of-important-string-questions-pattern)
 
-#### 1. String Manipulation
+### 1. String Manipulation
 
 #### Problem Types:
 a) **Reverse String**
@@ -81,7 +81,7 @@ c) **Remove/Replace Characters**
 - Apply dynamic programming for longest palindromic substring
 - Use hash tables for character frequency counting
 
-#### 2. String Searching
+### 2. String Searching
 
 #### Problem Types:
 a) **Substring Search**
@@ -107,7 +107,7 @@ b) **Pattern Matching**
 - Use backtracking for wildcard matching
 
 
-#### 3. Anagrams and Permutations
+### 3. Anagrams and Permutations
 
 #### Problem Types:
 a) **Anagram Check**
@@ -133,7 +133,7 @@ b) **Permutations**
 - Implement next permutation algorithm for lexicographical order
 
 
-#### 4. String Compression
+### 4. String Compression
 
 #### Problem Types:
 a) **Run-Length Encoding**
@@ -155,7 +155,7 @@ b) **Dictionary Coding**
 - Counting
 - Hash tables/dictionaries
 
-#### 5. Longest Substring Problems
+### 5. Longest Substring Problems
 
 #### Problem Types:
 a) **Longest Substring Without Repeating Characters**
@@ -178,7 +178,7 @@ b) **Longest Common Substring/Subsequence**
 - Apply dynamic programming (2D table)
 - Use suffix trees for advanced implementations
 
-#### 6. String Parsing
+### 6. String Parsing
 
 #### Problem Types:
 - Expression Evaluation
@@ -190,7 +190,7 @@ b) **Longest Common Substring/Subsequence**
 - Implement recursive functions for nested elements
 - Use stack to keep track of opening/closing elements
 
-#### 7. String Transformation
+### 7. String Transformation
 
 #### Problem Types:
 - Edit Distance
@@ -202,7 +202,7 @@ b) **Longest Common Substring/Subsequence**
 - Apply dynamic programming for word break problems
 - Use trie for efficient word lookup
 
-#### 8. Regular Expression and Wildcard Matching
+### 8. Regular Expression and Wildcard Matching
 
 #### Problem Types:
 - Regex Matching
@@ -214,7 +214,7 @@ b) **Longest Common Substring/Subsequence**
 - Apply greedy algorithms for simple wildcard cases
 - Implement dynamic programming for complex wildcard patterns
 
-#### 9. String Encoding/Decoding
+### 9. String Encoding/Decoding
 
 #### Problem Types:
 - Decode String
@@ -226,7 +226,7 @@ b) **Longest Common Substring/Subsequence**
 - Apply depth-first traversal for serialization
 - Use stack or queue for deserialization
 
-#### 10. Trie-based Problems
+### 10. Trie-based Problems
 
 #### Problem Types:
 - Implement Trie
@@ -241,185 +241,244 @@ b) **Longest Common Substring/Subsequence**
 
 # Array Problems
 
-**1. Array Traversal and Basic Manipulation**
+### 1. Two Pointer Technique
 
-**Problems:**
-- LeetCode 485: Max Consecutive Ones
-- LeetCode 283: Move Zeroes
-- GeeksforGeeks: Rearrange array in alternating positive & negative items
+#### Problem Types:
+a) **Two Sum**
+   - Basic: Find two numbers in an array that add up to a target
+   - Variants:
+     - Three Sum, Four Sum
+     - Two Sum II (input array is sorted)
+     - Closest Sum
 
-**Solution Approach:**
-- Use single pass traversal
-- Two-pointer technique for in-place manipulation
-- Use extra space or in-place swapping for rearrangement
+b) **Sliding Window**
+   - Basic: Find subarray with given sum
+   - Variants:
+     - Longest substring with k distinct characters
+     - Minimum size subarray sum
+     - Maximum sum subarray of size k
 
-**2. Two Pointers Technique**
+c) **Palindrome, Reverse**
+   - Basic: Check if array is palindrome
+   - Variants:
+     - Reverse array in-place
+     - Rotate array
 
-**Problems:**
-- LeetCode 11: Container With Most Water
-- LeetCode 15: 3Sum
-- GeeksforGeeks: Find a triplet that sum to a given value
+#### How to Solve:
+- Use two pointers moving towards each other for Two Sum
+- Maintain a window and slide it over the array
+- Use left and right pointers for palindrome check or reversal
 
-**Solution Approach:**
-- Use two pointers moving from both ends
-- Sort array first, then use two pointers
-- Use sorting and two pointers or hashing
+#### Common Techniques:
 
-**3. Sliding Window**
+- Two pointers (start and end)
+- Sliding window
+- In-place manipulation
 
-**Problems:**
-- LeetCode 53: Maximum Subarray
-- LeetCode 209: Minimum Size Subarray Sum
-- GeeksforGeeks: Find subarray with given sum
+### 2. Sorting and Searching
 
-**Solution Approach:**
+#### Problem Types:
+a) **Binary Search**
+   - Basic: Search in sorted array
+   - Variants:
+     - Search in rotated sorted array
+     - Find first and last position of element
+     - Search insert position
+
+b) **Merge Intervals**
+   - Basic: Merge overlapping intervals
+   - Variants:
+     - Insert interval
+     - Non-overlapping intervals
+
+c) **Sorting Algorithms**
+   - Implementation of various sorting algorithms
+   - Custom sort based on specific criteria
+
+#### How to Solve:
+- Implement binary search for sorted arrays
+- Sort intervals based on start time for merging
+- Choose appropriate sorting algorithm based on input size and constraints
+
+#### Common Techniques:
+- Binary search
+- Sorting (QuickSort, MergeSort)
+- Interval manipulation
+
+### 3. Dynamic Programming
+
+#### Problem Types:
+a) **Maximum Subarray**
+   - Basic: Find contiguous subarray with largest sum
+   - Variants:
+     - Maximum product subarray
+     - Circular subarray
+
+b) **Longest Increasing Subsequence**
+   - Basic: Find length of longest increasing subsequence
+   - Variants:
+     - Longest bitonic subsequence
+     - Increasing triplet subsequence
+
+c) **Coin Change**
+   - Basic: Minimum number of coins to make amount
+   - Variants:
+     - Number of ways to make amount
+     - Coin change with limited supply
+
+#### How to Solve:
 - Use Kadane's algorithm for maximum subarray
-- Use sliding window with variable size
-- Use sliding window or prefix sum technique
+- Maintain dp array for longest increasing subsequence
+- Use bottom-up dp approach for coin change problems
 
-**4. Binary Search on Arrays**
+#### Common Techniques:
+- Tabulation (bottom-up)
+- Memoization (top-down)
+- State transition
 
-**Problems:**
-- LeetCode 33: Search in Rotated Sorted Array
-- LeetCode 34: Find First and Last Position of Element in Sorted Array
-- GeeksforGeeks: Search an element in a sorted and rotated array
+### 4. Prefix Sum
 
-**Solution Approach:**
-- Use modified binary search
-- Use binary search twice for first and last occurrences
-- Find pivot, then apply binary search
+#### Problem Types:
+a) **Range Sum Query**
+   - Basic: Sum of elements between two indices
+   - Variants:
+     - 2D range sum query
+     - Range sum query with updates
 
-**5. Array Partitioning**
+b) **Subarray Sum Equals K**
+   - Basic: Count of subarrays with sum equal to k
+   - Variants:
+     - Maximum size subarray sum equals k
+     - Continuous subarray sum
 
-**Problems:**
-- LeetCode 75: Sort Colors
-- LeetCode 215: Kth Largest Element in an Array
-- GeeksforGeeks: Segregate 0s and 1s in an array
+#### How to Solve:
+- Precompute cumulative sum array
+- Use hash map to store running sum and count
+- Optimize space using constant extra space techniques
 
-**Solution Approach:**
-- Use Dutch National Flag algorithm
-- Use QuickSelect algorithm
-- Use two-pointer approach
+#### Common Techniques:
+- Prefix sum array
+- Hash map for sum frequency
+- Difference array for range updates
 
-**6. Prefix Sum**
+### 5. Greedy Algorithms
 
-**Problems:**
-- LeetCode 303: Range Sum Query - Immutable
-- LeetCode 560: Subarray Sum Equals K
-- GeeksforGeeks: Equilibrium index of an array
+#### Problem Types:
+a) **Jump Game**
+   - Basic: Determine if you can reach the last index
+   - Variants:
+     - Jump Game II (minimum number of jumps)
+     - Jump Game III (can reach zero)
 
-**Solution Approach:**
-- Precompute prefix sums
-- Use prefix sum and hash map
-- Calculate left and right sums
+b) **Gas Station**
+   - Basic: Find starting gas station to complete circuit
+   - Variants:
+     - Minimum refueling stops
 
-**7. Array Rotation**
+c) **Candy Distribution**
+   - Basic: Distribute candies based on ratings
+   - Variants:
+     - Distribute candies with additional constraints
 
-**Problems:**
-- LeetCode 189: Rotate Array
-- GeeksforGeeks: Program for array rotation
-- GeeksforGeeks: Find minimum element in a sorted and rotated array
+#### How to Solve:
+- Iterate from end to start for Jump Game
+- Use circular array traversal for Gas Station
+- Two-pass approach for Candy Distribution
 
-**Solution Approach:**
-- Use reverse algorithm (reverse parts, then whole)
-- Use juggling algorithm or block swap algorithm
-- Use modified binary search
+#### Common Techniques:
+- Iterative greedy choice
+- Backward iteration
+- Two-pass algorithm
 
-**8. Intervals**
+### 6. Matrix Operations
 
-**Problems:**
-- LeetCode 56: Merge Intervals
-- LeetCode 57: Insert Interval
-- GeeksforGeeks: Overlapping Intervals
+#### Problem Types:
+a) **Matrix Rotation**
+   - Basic: Rotate image by 90 degrees
+   - Variants:
+     - Spiral matrix
+     - Anti-diagonal traverse
 
-**Solution Approach:**
-- Sort intervals, then merge
-- Iterate and merge or insert
-- Sort and use stack or linear traversal
+b) **Matrix Search**
+   - Basic: Search in sorted 2D matrix
+   - Variants:
+     - Kth smallest element in sorted matrix
 
-**9. Matrix Operations**
+c) **Island Problems**
+   - Basic: Number of islands
+   - Variants:
+     - Max area of island
+     - Island perimeter
 
-**Problems:**
-- LeetCode 48: Rotate Image
-- LeetCode 54: Spiral Matrix
-- GeeksforGeeks: Search in a row-wise and column-wise sorted matrix
+#### How to Solve:
+- Use layer-by-layer approach for rotation
+- Treat 2D matrix as 1D sorted array for search
+- Use DFS or BFS for island problems
 
-**Solution Approach:**
-- Use transpose and reverse
-- Use simulation with direction changes
-- Use elimination method (start from top-right or bottom-left)
+#### Common Techniques:
+- In-place rotation
+- Binary search on 2D array
+- Depth-First Search (DFS)
+- Breadth-First Search (BFS)
 
-**10. Dynamic Programming on Arrays**
+### 7. Stack and Queue
 
-**Problems:**
-- LeetCode 121: Best Time to Buy and Sell Stock
-- LeetCode 300: Longest Increasing Subsequence
-- GeeksforGeeks: Maximum sum increasing subsequence
+#### Problem Types:
+a) **Next Greater Element**
+   - Basic: Find next greater element for each element
+   - Variants:
+     - Daily temperatures
+     - Stock span problem
 
-**Solution Approach:**
-- Use one-pass traversal with min price tracking
-- Use dynamic programming or patience sorting
-- Use dynamic programming with reconstruction
+b) **Histogram**
+   - Basic: Largest rectangle in histogram
+   - Variants:
+     - Maximal rectangle (in binary matrix)
 
-**11. Array Sorting Techniques**
+c) **Sliding Window Maximum**
+   - Basic: Maximum of all subarrays of size k
+   - Variants:
+     - Sliding window median
 
-**Problems:**
-- LeetCode 912: Sort an Array
-- GeeksforGeeks: Sort an array of 0s, 1s and 2s
-- GeeksforGeeks: Sort an array in wave form
+#### How to Solve:
+- Use stack to keep track of next greater elements
+- Maintain monotonic stack for histogram problems
+- Use deque for sliding window maximum
 
-**Solution Approach:**
-- Implement various sorting algorithms (merge sort, quick sort)
-- Use counting sort or Dutch National Flag algorithm
-- Sort and swap adjacent elements or use one-pass algorithm
+#### Common Techniques:
+- Monotonic stack
+- Deque (double-ended queue)
+- Two stacks to simulate queue
 
-**12. Counting Elements**
+### 8. Bit Manipulation
 
-**Problems:**
-- LeetCode 448: Find All Numbers Disappeared in an Array
-- LeetCode 287: Find the Duplicate Number
-- GeeksforGeeks: Count frequencies of array elements
+#### Problem Types:
+a) **Single Number**
+   - Basic: Find single number in array where every element appears twice
+   - Variants:
+     - Single number II (every element appears thrice except for one)
 
-**Solution Approach:**
-- Use index marking technique
-- Use Floyd's cycle detection algorithm
-- Use hashing or modify array elements
+b) **Counting Bits**
+   - Basic: Count number of 1's in binary representation of each number
+   - Variants:
+     - Number of 1 Bits
+     - Power of Two
 
-**13. Subarray Problems**
+c) **Bitwise AND of Numbers Range**
+   - Basic: Find bitwise AND of all numbers in a range
+   - Variants:
+     - Missing Number using XOR
 
-**Problems:**
-- LeetCode 238: Product of Array Except Self
-- LeetCode 152: Maximum Product Subarray
-- GeeksforGeeks: Largest subarray with equal number of 0s and 1s
+#### How to Solve:
+- Use XOR operation for Single Number
+- Use dynamic programming or bit manipulation for Counting Bits
+- Find common prefix for Bitwise AND of Numbers Range
 
-**Solution Approach:**
-- Use left and right product arrays
-- Use Kadane's algorithm with min and max tracking
-- Use prefix sum with hash map
+#### Common Techniques:
+- XOR operation
+- Bit shifting
+- Masking
 
-**14. Array Rearrangement**
-
-**Problems:**
-- LeetCode 31: Next Permutation
-- GeeksforGeeks: Rearrange an array such that arr[i] = i
-- GeeksforGeeks: Reorder an array according to given indexes
-
-**Solution Approach:**
-- Use single pass traversal with swapping
-- Use cyclic sort or value as index
-- Use extra array or swap in-place
-
-**15. Bit Manipulation on Arrays**
-
-**Problems:**
-- LeetCode 136: Single Number
-- LeetCode 268: Missing Number
-- GeeksforGeeks: Find the two non-repeating elements in an array of repeating elements
-
-**Solution Approach:**
-- Use XOR operation
-- Use XOR or sum difference
-- Use XOR and bit manipulation
 
 # Map Usage
 
