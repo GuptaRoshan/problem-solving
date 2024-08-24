@@ -1,8 +1,26 @@
-# Contents
+# 🎯 Contents
 
-[Recursion Patterns](#recursion-patterns)
+---
 
-[String Problems](#string-problems)
+- [Recursion Patterns](#recursion-patterns)
+- [String Problems](#string-problems)
+- [Array Problems](#array-problems)
+- [Map Usage](#map-usage)
+- [Deque Usage](#deque-usage)
+- [Two-Pointer Techniques](#two-pointer-techniques)
+- [Sliding Window Techniques](#sliding-window-techniques)
+- [Stack Techniques](#stack-techniques)
+- [Binary Search Techniques](#binary-search-techniques)
+- [Linked List Techniques](#linked-list-techniques)
+- [Tree Techniques](#tree-techniques)
+- [Backtracking Techniques](#backtracking-techniques)
+- [Graph Techniques](#graph-techniques)
+- [Bit Manipulation](#bit-manipulation)
+- [Matrix](#matrix)
+- [Permutations](#permutations)
+- [Combinations](#combinations)
+
+---
 
 
 # Recursion Patterns
