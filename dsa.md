@@ -1,526 +1,242 @@
-# Recursion Patterns and Designs
+# Recursion Patterns
 
-### 1. Direct Recursion or Linear Recursion
+**1. Direct Recursion or Linear Recursion**
 
 - A function calls itself once with a subset of the original input.
-  > **subset of the original input** in the context of linear recursion means that each recursive call to the function works with a part of the data that is derived from the original input, typically a smaller or reduced version of it.
+  > **subset of the original input** in the context of linear recursion means that each recursive call to the function works with a part of the data derived from the original input, typically a smaller or reduced version.
 
-```java
-  public class Factorial {
-      // Recursive function to calculate factorial
-      public static int factorial(int n) {
-          // Base case: factorial of 0 or 1 is 1
-          if (n == 0 || n == 1) {
-              return 1;
-          }
-          // Recursive case: n! = n * (n-1)!
-          return n * factorial(n - 1);
-      }
-
-      public static void main(String[] args) {
-          int number = 5;
-          int result = factorial(number);
-          System.out.println("Factorial of " + number + " is " + result);
-      }
-  }
-```
-
-```java
-  factorial(5)
-  |
-  5 * factorial(4)
-  |    |
-  |    4 * factorial(3)
-  |        |
-  |        3 * factorial(2)
-  |            |
-  |            2 * factorial(1)
-  |                |
-  |                1 (base case)
-  |
-  120 (result)
-```
-
-### 2. Tail Recursion
+**2. Tail Recursion**
 
 - A special kind of recursion where the recursive call is the last operation in the function. This allows for optimizations by the compiler or interpreter, making the recursion more efficient in terms of memory usage.
 - Only one stack frame is created.
 
-```java
-  public class TailRecursiveFactorial {
-
-      public static int factorial(int n) {
-          return factorialHelper(n, 1);
-      }
-
-      // Helper function to handle tail recursion
-      private static int factorialHelper(int n, int accumulator) {
-          if (n == 0 || n == 1) {
-              return accumulator;
-          }
-          return factorialHelper(n - 1, n * accumulator);
-      }
-
-      public static void main(String[] args) {
-          int number = 5;
-          int result = factorial(number);
-          System.out.println("Factorial of " + number + " is " + result);
-      }
-  }
-```
-
-```java
-  factorialHelper(5, 1)
-    |
-    factorialHelper(4, 5)    // 5 * 1
-      |
-      factorialHelper(3, 20)  // 4 * 5
-        |
-        factorialHelper(2, 60) // 3 * 20
-          |
-          factorialHelper(1, 120) // 2 * 60
-            |
-            factorialHelper(0, 120) // 1 * 120 (base case, return 120)
-```
-
-### 3. Tree Recursion
+**3. Tree Recursion**
 
 - A type of recursion where a function makes multiple recursive calls. This creates a branching effect, like the branches of a tree.
 
-```
- Problem Definition:
-
- Given a set of integers and a target sum, determine if there exists a subset whose sum is equal to the target sum.
-
- Recursive Strategy:
-
- For each element, we have two choices:
- Include the element in the subset.
- Exclude the element from the subset.
-```
-
-```java
-   public class SubsetSum {
-   
-         public static boolean hasSubsetSum(int[] nums, int target) {
-            return hasSubsetSum(nums, target, 0);
-         }
-   
-         private static boolean hasSubsetSum(int[] nums, int target, int index) {
-            // Base case: if the target sum is 0, we have found a subset
-            if (target == 0) {
-               return true;
-            }
-            // Base case: if we have checked all elements
-            if (index == nums.length) {
-               return false;
-            }
-            // Recursive case: include the current element or exclude it
-            boolean isSubsetSumExits = hasSubsetSum(nums, target - nums[index], index + 1) || hasSubsetSum(nums, target, index + 1);
-            return isSubsetSumExits;
-         }
-   
-         public static void main(String[] args) {
-            int[] nums = {3, 34, 4, 12, 5, 2};
-            int target = 9;
-            boolean result = hasSubsetSum(nums, target);
-            System.out.println("Subset with sum " + target + " exists? " + result);
-         }
-   }
-```
-
-### 4. Divide and Conquer
+**4. Divide and Conquer**
 
 - The divide and conquer pattern is a powerful algorithmic technique where a problem is divided into smaller subproblems that are solved recursively.
 
-```
-  Problem Defination:
-
-  Finding the Maximum Number in an Array
-
-  Recursive Strategy:
-
-  Divide: Split the array into two halves.
-  Conquer: Recursively find the maximum number in each half.
-  Combine: Compare the maximums found in the two halves to determine the overall maximum.
-```
-
-```java
-  public class DivideAndConquerExample {
-
-      // Function to find the maximum number in an array using divide and conquer
-      public static int findMax(int[] arr, int left, int right) {
-          // Base case: when the array contains only one element
-          if (left == right) {
-              return arr[left];
-          }
-
-          // Divide the array into two halves
-          int mid = (left + right) / 2;
-
-          // Recursively find the maximum in each half
-          int maxLeft = findMax(arr, left, mid);
-          int maxRight = findMax(arr, mid + 1, right);
-
-          // Combine the results to get the overall maximum
-          return Math.max(maxLeft, maxRight);
-      }
-
-      public static void main(String[] args) {
-          int[] arr = { 3, 7, 2, 8, 1, 9, 4, 5 };
-          int max = findMax(arr, 0, arr.length - 1);
-          System.out.println("Maximum number in the array: " + max);
-      }
-  }
-```
-
-```java
-  findMax(arr, 0, 7)
-  ├── findMax(arr, 0, 3)
-  │   ├── findMax(arr, 0, 1)
-  │   │   ├── 3
-  │   │   └── 7
-  │   └── findMax(arr, 2, 3)
-  │       ├── 2
-  │       └── 8
-  └── findMax(arr, 4, 7)
-      ├── findMax(arr, 4, 5)
-      │   ├── 1
-      │   └── 9
-      └── findMax(arr, 6, 7)
-          ├── 4
-          └── 5
-```
-
-### 5. Backtracking
+**5. Backtracking**
 
 - Explore all potential solutions and backtrack when a solution fails.
   - Example: Solving puzzles like Sudoku, N-Queens problem.
 
-### 6. Dynamic Programming (with Recursion)
+**6. Dynamic Programming (with Recursion)**
 
 - Recursion combined with memoization to avoid redundant calculations.
   - Example: Fibonacci sequence with memoization, Knapsack problem.
 
-### 7. Mutual Recursion
+**7. Mutual Recursion**
 
-- Mutual recursion refers to a situation where two or more functions call each other in a recursive manner. A classic example involves checking whether a number is even or odd using mutual recursion.
+- Mutual recursion is when two or more functions recursively call each other. A classic example involves checking whether a number is even or odd using mutual recursion.
 
-```java
-  public class EvenOddMutualRecursion {
-
-      // Function to check if a number is even
-      public static boolean isEven(int n) {
-          if (n == 0)
-              return true;
-          else
-              return isOdd(n - 1);
-      }
-
-      // Function to check if a number is odd
-      public static boolean isOdd(int n) {
-          if (n == 0)
-              return false;
-          else
-              return isEven(n - 1);
-      }
-
-      public static void main(String[] args) {
-          int num = 5;
-
-          System.out.println(num + " is even? " + isEven(num));
-          System.out.println(num + " is odd? " + isOdd(num));
-      }
-  }
-```
-
-```java
-               isEven(5)
-             /          \
-     isOdd(4)          false
-     /     \
-  true  isEven(4)
-         /         \
-    isOdd(3)       true
-    /     \
-  true  isEven(3)
-         /         \
-    isOdd(2)       false
-    /     \
-  true  isEven(2)
-         /         \
-    isOdd(1)       true
-    /     \
-  true  isEven(1)
-         /         \
-    isOdd(0)       false
-    /     \
-  false  isEven(0)
-                \
-             true (base case)
-
-```
-
-### 8. Generative Recursion
+**8. Generative Recursion**
 
 - Generative recursion involves generating and solving new subproblems based on the current state, often used in scenarios like generating permutations.
 
-```java
- public class Permutations {
+**9. Indirect Recursion**
 
-     public static List<List<Integer>> generatePermutations(int[] nums) {
-         List<List<Integer>> result = new ArrayList<>();
-         List<Integer> current = new ArrayList<>();
-         boolean[] used = new boolean[nums.length];
-         generate(nums, used, current, result);
-         return result;
-     }
-
-     private static void generate(int[] nums, boolean[] used, List<Integer> current, List<List<Integer>> result) {
-         if (current.size() == nums.length) {
-             result.add(new ArrayList<>(current));
-             return;
-         }
-
-         for (int i = 0; i < nums.length; i++) {
-             if (!used[i]) {
-                 used[i] = true;
-                 current.add(nums[i]);
-                 generate(nums, used, current, result);
-                 current.remove(current.size() - 1);
-                 used[i] = false;
-             }
-         }
-     }
-
-       public static void main(String[] args) {
-          int[] nums = {1, 2, 3};
-          generatePermutations(nums);
-      }
-
- }
-```
-
-```java
-                         []
-                /        |       \
-            [1]         [2]       [3]
-          /   \       /   \     /   \
-      [1,2] [1,3]  [2,1] [2,3] [3,1] [3,2]
-       /       \    /       \   /       \
-   [1,2,3]  [1,3,2] [2,1,3] [2,3,1] [3,1,2] [3,2,1]
-
-```
-
-### 9. Indirect Recursion
-
-- A function calls another function, which eventually leads to the original function being called.
+- A function calls another function, eventually leading to the original function being called.
   - Example: Function A calls Function B, and Function B calls Function A.
 
-### 10. Nested Recursion
+**10. Nested Recursion**
 
 - Nested recursion occurs when a recursive function calls itself with a recursive call as one of its arguments.
 
-```java
- public class SumOfDigitsNestedRecursion {
-
-     public static int sumOfDigits(int n) {
-         if (n < 10) {
-             return n;  // Base case: Return the single digit number
-         } else {
-             // Recursive case: Sum the last digit and recursively sum the rest of the digits
-             return n % 10 + sumOfDigits(sumOfDigits(n / 10));
-         }
-     }
-
-     public static void main(String[] args) {
-         int n = 456;
-         int result = sumOfDigits(n);
-         System.out.println("Sum of digits of " + n + " is: " + result);
-     }
- }
-```
-
-```java
-   sumOfDigits(456)
-   │
-   └── 6 + sumOfDigits(45)
-          │
-          ├── 5 + sumOfDigits(4)
-                 │
-                 └── sumOfDigits(4)
-```
 
 # String Problems
 
 [Important string questions pattern](https://leetcode.com/discuss/interview-question/2001789/collections-of-important-string-questions-pattern)
 
-**1. String Manipulation**
+#### 1. String Manipulation
 
-**Problems:**
-- LeetCode 344: Reverse String
-- LeetCode 151: Reverse Words in a String
-- GeeksforGeeks: Remove all duplicates from a given string
+#### Problem Types:
+a) **Reverse String**
+   - Basic: Reverse an entire string
+   - Variants:
+     - Reverse words in a string while preserving word order
+     - Reverse only certain parts of a string
+     - Reverse string without affecting special characters
 
-**Solution Approach:**
-- Use two-pointer technique for reversing
-- Use stack or in-place manipulation for word reversal
-- Use hash set or counting sort for removing duplicates
+b) **Palindrome Problems**
+   - Basic: Check if a string is a palindrome
+   - Variants:
+     - Find the longest palindromic substring
+     - Determine minimum characters to add to make a palindrome
+     - Check if a string can be rearranged to form a palindrome
 
-**2. Palindrome Checks**
+c) **Remove/Replace Characters**
+   - Basic: Remove all occurrences of a given character
+   - Variants:
+     - Remove duplicates from a string
+     - Replace certain characters or patterns
+     - Remove characters to make two strings equal
 
-**Problems:**
-- LeetCode 125: Valid Palindrome
-- LeetCode 5: Longest Palindromic Substring
-- GeeksforGeeks: Count All Palindromic Subsequences
+#### How to Solve:
+- Use two pointers (start and end) and swap characters
+- For word reversal, reverse entire string, then reverse each word
+- Use two-pointer technique for palindromes
+- Apply dynamic programming for longest palindromic substring
+- Use hash tables for character frequency counting
 
-**Solution Approach:**
-- Two-pointer technique for validation
-- Dynamic programming or expand around center for longest palindrome
-- Dynamic programming for counting palindromic subsequences
+#### 2. String Searching
 
-**3. Anagram Problems**
+#### Problem Types:
+a) **Substring Search**
+   - Basic: Find if a substring exists in a string (implement strStr())
+   - Variants:
+     - Find all occurrences of a pattern in a string
+     - Search for a pattern with wildcards
+     - Find the longest common substring between two strings
 
-**Problems:**
-- LeetCode 242: Valid Anagram
-- LeetCode 49: Group Anagrams
-- GeeksforGeeks: Print all anagrams together
+b) **Pattern Matching**
+   - Basic: Check if a string matches a given pattern
+   - Variants:
+     - Implement regular expression matching
+     - Match strings with custom wildcard characters
+     - Find strings that match a pattern in an array of strings
 
-**Solution Approach:**
-- Use hash map or sorted strings for comparison
-- Use sorted strings as keys in a hash map for grouping
+#### How to Solve:
+- Naive approach: Use nested loops for comparison
+- KMP: Build failure function, then search
+- Rabin-Karp: Use rolling hash for quick comparisons
+- Use state machines for regular expressions
+- Apply dynamic programming for complex patterns
+- Use backtracking for wildcard matching
 
-**4. Substring Searches**
 
-**Problems:**
-- LeetCode 28: Find the Index of the First Occurrence in a String
-- LeetCode 187: Repeated DNA Sequences
-- GeeksforGeeks: Longest Common Substring
+#### 3. Anagrams and Permutations
 
-**Solution Approach:**
-- Use KMP algorithm or rolling hash for efficient substring search
-- Use sliding window and hash set for repeated sequences
-- Use dynamic programming for longest common substring
+#### Problem Types:
+a) **Anagram Check**
+   - Basic: Determine if two strings are anagrams
+   - Variants:
+     - Group anagrams from an array of strings
+     - Find all anagrams of a pattern in a string
+     - Minimum number of character deletions to make two strings anagrams
 
-**5. String Matching and Pattern Recognition**
+b) **Permutations**
+   - Basic: Generate all permutations of a string
+   - Variants:
+     - Next lexicographical permutation
+     - Permutation in string (check if any permutation of a string is present in another)
+     - Permutations with duplicates
 
-**Problems:**
-- LeetCode 10: Regular Expression Matching
-- LeetCode 44: Wildcard Matching
-- GeeksforGeeks: KMP Algorithm
+#### How to Solve:
+- Sort both strings and compare
+- Count character frequencies and compare
+- Use a single integer for XOR of all characters (limited alphabet)
+- Apply recursive backtracking for generating permutations
+- Use Heap's algorithm for generating all permutations
+- Implement next permutation algorithm for lexicographical order
 
-**Solution Approach:**
-- Use dynamic programming for regex and wildcard matching
-- Implement KMP algorithm for efficient pattern matching
 
-**6. String Compression and Decompression**
+#### 4. String Compression
 
-**Problems:**
-- LeetCode 443: String Compression
-- LeetCode 394: Decode String
-- GeeksforGeeks: Run Length Encoding
+#### Problem Types:
+a) **Run-Length Encoding**
+   - Basic: Compress string using count of repeated characters
+   - Variants:
+     - Decompress a run-length encoded string
+     - Optimize compression for different types of strings
+     - Compress with limitations (e.g., at most k consecutive repeats)
 
-**Solution Approach:**
-- Use two-pointer technique for compression
-- Use stack for nested decoding
-- Iterate through string for run-length encoding
+b) **Dictionary Coding**
+   - Basic: Replace common substrings with shorter codes
+   - Variants:
+     - Adaptive dictionary coding
+     - Compress with a given dictionary
+     - Optimal dictionary generation for compression
 
-**7. String Parsing and Tokenization**
+#### Common Techniques:
+- Two-pointer method
+- Counting
+- Hash tables/dictionaries
 
-**Problems:**
-- LeetCode 71: Simplify Path
-- LeetCode 224: Basic Calculator
-- GeeksforGeeks: Parse a string of commands
+#### 5. Longest Substring Problems
 
-**Solution Approach:**
-- Use stack for path simplification
-- Use stack and state machine for expression evaluation
-- Use finite state machine for parsing commands
+#### Problem Types:
+a) **Longest Substring Without Repeating Characters**
+   - Basic: Find the length of the longest substring without repeating characters
+   - Variants:
+     - Find the actual substring, not just length
+     - Allow k repeating characters
+     - Longest substring with at most two distinct characters
 
-**8. Regular Expression Problems**
+b) **Longest Common Substring/Subsequence**
+   - Basic: Find the longest common substring between two strings
+   - Variants:
+     - Longest common subsequence
+     - Longest palindromic subsequence
+     - Shortest common supersequence
 
-**Problems:**
-- LeetCode 65: Valid Number
-- LeetCode 520: Detect Capital
-- GeeksforGeeks: Regex matching for wildcard characters
+#### How to Solve:
+- Use sliding window with two pointers
+- Employ hash table to store last seen position of each character
+- Apply dynamic programming (2D table)
+- Use suffix trees for advanced implementations
 
-**Solution Approach:**
-- Use state machine or regex for number validation
-- Use regex or character counting for capital detection
-- Implement regex engine or use dynamic programming
+#### 6. String Parsing
 
-**9. String Encoding and Decoding**
+#### Problem Types:
+- Expression Evaluation
+- Nested Structures Parsing
 
-**Problems:**
-- LeetCode 271: Encode and Decode Strings
-- LeetCode 535: Encode and Decode TinyURL
-- GeeksforGeeks: Encode a string to a number
+#### How to Solve:
+- Use a stack for operators and operands in expression evaluation
+- Apply Shunting yard algorithm for infix to postfix conversion
+- Implement recursive functions for nested elements
+- Use stack to keep track of opening/closing elements
 
-**Solution Approach:**
-- Use length encoding or escape characters
-- Use hash map and base conversion for URL shortening
-- Use base conversion or polynomial rolling hash for string to number encoding
+#### 7. String Transformation
 
-**10. Longest Common Substring/Subsequence**
+#### Problem Types:
+- Edit Distance
+- Word Break
 
-**Problems:**
-- LeetCode 1143: Longest Common Subsequence
-- GeeksforGeeks: Longest Common Substring
-- GeeksforGeeks: Printing Longest Common Subsequence
+#### How to Solve:
+- Use dynamic programming (2D table) for edit distance
+- Implement recursive approach with memoization
+- Apply dynamic programming for word break problems
+- Use trie for efficient word lookup
 
-**Solution Approach:**
-- Use dynamic programming (2D array or optimized 1D array)
-- Backtrack through DP table to reconstruct the sequence
+#### 8. Regular Expression and Wildcard Matching
 
-**11. String Reversal (Words, Sentences)**
+#### Problem Types:
+- Regex Matching
+- Wildcard Matching
 
-**Problems:**
-- LeetCode 557: Reverse Words in a String III
-- GeeksforGeeks: Reverse a string preserving space positions
+#### How to Solve:
+- Build NFA (Nondeterministic Finite Automaton)
+- Use dynamic programming for matching
+- Apply greedy algorithms for simple wildcard cases
+- Implement dynamic programming for complex wildcard patterns
 
-**Solution Approach:**
-- Use two-pointer technique or split-reverse-join
-- Use stack or in-place reversal with space tracking
+#### 9. String Encoding/Decoding
 
-**12. String Rotation**
+#### Problem Types:
+- Decode String
+- Serialize/Deserialize Data Structures
 
-**Problems:**
-- LeetCode 796: Rotate String
-- GeeksforGeeks: Check if strings are rotations of each other
+#### How to Solve:
+- Use a stack to handle nested structures
+- Implement a recursive approach for nested encodings
+- Apply depth-first traversal for serialization
+- Use stack or queue for deserialization
 
-**Solution Approach:**
-- Use concatenation and contains check
-- Use KMP algorithm for efficient rotation check
+#### 10. Trie-based Problems
 
-**13. String Concatenation Optimization**
+#### Problem Types:
+- Implement Trie
+- Word Search II
 
-**Problems:**
-- LeetCode 14: Longest Common Prefix
-- GeeksforGeeks: Minimize string concatenation cost
-
-**Solution Approach:**
-- Use vertical scanning or divide and conquer
-- Use priority queue (min-heap) for optimal concatenation order
-
-**14. String Permutations**
-
-**Problems:**
-- LeetCode 46: Permutations
-- GeeksforGeeks: Print all permutations of a string
-
-**Solution Approach:**
-- Use backtracking or iterative approach
-- Use recursion with swapping or next permutation algorithm
-
-**15. String Interleaving**
-
-**Problems:**
-- LeetCode 97: Interleaving String
-- GeeksforGeeks: Find if a string is interleaved of two other strings
-
-**Solution Approach:**
-- Use dynamic programming (2D or 1D optimized)
-- Use recursion with memoization
+#### How to Solve:
+- Create TrieNode class with children and isEnd flag
+- Implement insert, search, and startsWith methods
+- Build trie with given words
+- Perform DFS on board with trie traversal for word search problems
 
 
 # Array Problems
