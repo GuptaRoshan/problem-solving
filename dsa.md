@@ -71,6 +71,7 @@
 
 - Nested recursion occurs when a recursive function calls itself with a recursive call as one of its arguments.
 
+</br>
 
 # String Problems
 
@@ -264,6 +265,7 @@ b) **Longest Common Substring/Subsequence**
 - Build trie with given words
 - Perform DFS on board with trie traversal for word search problems
 
+</br>
 
 # Array Problems
 
@@ -507,6 +509,8 @@ c) **Bitwise AND of Numbers Range**
 
 Certainly! Here's a comprehensive overview of greedy problem types and solving techniques in markdown format:
 
+</br>
+
 # Greedy Problems
 
 ### 1. Scheduling Problems
@@ -712,6 +716,7 @@ b) **Optimal Merge Pattern**
 - Bit manipulation
 - Priority queue for merging
 
+</br>
 
 # Map Usage
 
@@ -830,6 +835,9 @@ b) **Optimal Merge Pattern**
       - Repeated DNA Sequences
     - Usage: `Map<bitPattern, count>`
 
+
+</br>
+
 # Deque Usage
 
 1. **Implementing Both Stack and Queue Operations**
@@ -864,6 +872,8 @@ b) **Optimal Merge Pattern**
  
     - In systems that require scheduling tasks or jobs, a Deque can help manage tasks that can be added and removed from either end, providing flexibility in task management.
 
+
+</br>
 
 # Two-Pointer Techniques
 
@@ -925,6 +935,8 @@ b) **Optimal Merge Pattern**
     - Second pointer: `0th index (iterator)`
     - Third pointer: `Last index (right, for 2s)`
     - Movement: Swap elements based on value, adjust pointers
+
+</br>
 
 # Sliding Window Techniques
 
@@ -1013,6 +1025,8 @@ b) **Optimal Merge Pattern**
    - LeetCode 567: Permutation in String
    - LeetCode 1004: Max Consecutive Ones III
 
+</br>
+
 # Stack Techniques
 
 1. **Monotonic Stack**
@@ -1067,6 +1081,8 @@ b) **Optimal Merge Pattern**
    - Push nodes onto the stack as you traverse
    - Pop nodes to process them
    - The order of pushing and processing determines the type of traversal (in-order, pre-order, post-order)
+
+</br>
 
 # Binary Search Techniques
 
@@ -1204,6 +1220,8 @@ b) **Optimal Merge Pattern**
    - Single-element arrays
    - Target values at the boundaries of the search space
 
+</br>
+
 # Linked List Techniques
 
 1. **Two-Pointer Technique**
@@ -1271,6 +1289,8 @@ b) **Optimal Merge Pattern**
    - Remove the sentinel node at the end if necessary
 
 
+</br>
+
 # Tree Techniques
 
 ```
@@ -1327,7 +1347,6 @@ b) **Optimal Merge Pattern**
 - **Output**: 4 5 6 7 2 3 1
 
 
-
 ### Tree Problem Categories
 
 1. **Tree Traversal**
@@ -1372,6 +1391,7 @@ b) **Optimal Merge Pattern**
    - **Fenwick Tree (Binary Indexed Tree)**: For cumulative frequency tables.
    - **Suffix Tree and Suffix Array**: For string processing problems.
 
+</br>
 
 # Heap and Priority Queue Techniques
 
@@ -1542,6 +1562,8 @@ b) **Optimal Merge Pattern**
 10. **Practice and learn patterns:**
     - Many heap problems share similar structures. Recognizing these patterns can speed up problem-solving.
 
+</br>
+
 # Backtracking Techniques
 
 1. **Basic Backtracking Structure**
@@ -1653,6 +1675,8 @@ b) **Optimal Merge Pattern**
 10. **Practice and learn patterns:**
     - Many backtracking problems share similar structures
     - Recognizing these patterns can speed up problem-solving in the future
+
+</br>
 
 # Graph Techniques
 
@@ -1837,6 +1861,8 @@ b) **Optimal Merge Pattern**
 10. **Practice and learn patterns:**
     - Many graph problems share similar structures
     - Recognizing these patterns can speed up problem-solving
+
+</br>
 
 # Bit Manipulation
 
@@ -2107,6 +2133,8 @@ public boolean haveOppositeSigns(int a, int b) {
 
 ```
 
+</br>
+
 # Matrix
 
 ### Basic Directions (left, right, top, down)
@@ -2159,11 +2187,15 @@ public static int[][] arrayToMatrix(int[] array, int n, int m) {
 
 gridNumber = `(row / 3) * 3 + (col / 3)`
 
+</br>
+
 # Permutations
 
 `P(n, r) = (n−r)! / n!` where n is the total number of items and r is the number of items to choose from the total.
 Permutations of 2 letters from ABC : `P(3, 2) = (3−2)! / 3! = 3×2×1 = 6`
 The permutations are : `AB, BA, AC, CA, BC, CB`
+
+</br>
 
 # Combinations
 
