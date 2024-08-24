@@ -1,3 +1,10 @@
+# Contents
+
+[Recursion Patterns](#recursion-patterns)
+
+[String Problems](#string-problems)
+
+
 # Recursion Patterns
 
 **1. Direct Recursion or Linear Recursion**
