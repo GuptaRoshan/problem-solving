@@ -5,6 +5,7 @@
 - [Recursion Patterns](#recursion-patterns)
 - [String Problems](#string-problems)
 - [Array Problems](#array-problems)
+- [Greedy Problems](#greedy-problems)
 - [Map Usage](#map-usage)
 - [Deque Usage](#deque-usage)
 - [Two-Pointer Techniques](#two-pointer-techniques)
@@ -504,6 +505,213 @@ c) **Bitwise AND of Numbers Range**
 - Bit shifting
 - Masking
 
+Certainly! Here's a comprehensive overview of greedy problem types and solving techniques in markdown format:
+
+# Greedy Problems
+
+### 1. Scheduling Problems
+
+#### Problem Types:
+a) **Activity Selection**
+   - Basic: Select maximum number of non-overlapping activities
+   - Variants:
+     - Minimum number of meeting rooms required
+     - Maximum profit in scheduling weighted activities
+
+b) **Job Sequencing**
+   - Basic: Schedule jobs to maximize profit with deadlines
+   - Variants:
+     - Job scheduling with cooldown periods
+     - Minimum difficulty of a job schedule
+
+c) **Interval Partitioning**
+   - Basic: Assign rooms to lectures with minimum number of rooms
+   - Variants:
+     - Classroom allocation problem
+     - Minimum platforms needed for train schedule
+
+#### How to Solve:
+- Sort activities by end time for activity selection
+- Sort jobs by profit and use disjoint set for job sequencing
+- Use priority queue for interval partitioning
+
+#### Common Techniques:
+- Sorting based on end time or profit
+- Priority queue for managing conflicts
+- Disjoint set data structure
+
+### 2. Huffman Coding
+
+#### Problem Types:
+a) **Huffman Encoding**
+   - Basic: Construct Huffman tree for optimal prefix codes
+   - Variants:
+     - Optimal file merge pattern
+     - Minimum cost of merging files
+
+b) **Data Compression**
+   - Basic: Compress data using Huffman coding
+   - Variants:
+     - Implement run-length encoding
+     - Design LZW compression algorithm
+
+#### How to Solve:
+- Use priority queue to build Huffman tree
+- Traverse Huffman tree to generate codes
+- Implement encoding and decoding functions
+
+#### Common Techniques:
+- Priority queue (min-heap)
+- Tree traversal
+- Bit manipulation for encoding
+
+### 3. Fractional Knapsack
+
+#### Problem Types:
+a) **Classic Fractional Knapsack**
+   - Basic: Maximize value in knapsack allowing fractional items
+   - Variants:
+     - Minimize cost to reach a certain value
+     - Multiple knapsack problem with fractional items
+
+b) **Load Balancing**
+   - Basic: Distribute tasks among machines to minimize maximum load
+   - Variants:
+     - Load balancing with different machine capacities
+     - Online load balancing
+
+#### How to Solve:
+- Sort items by value-to-weight ratio
+- Greedily select items or fractions of items
+- Use priority queue for load balancing
+
+#### Common Techniques:
+- Sorting based on value-to-weight ratio
+- Fractional selection
+- Priority queue for machine loads
+
+### 4. Coin Change (Greedy Approach)
+
+#### Problem Types:
+a) **Minimum Coin Change**
+   - Basic: Find minimum number of coins to make a given amount
+   - Variants:
+     - Coin change with limited supply of each coin
+     - Coin change with removal allowed
+
+b) **Coin Change Combinations**
+   - Basic: Find number of ways to make change for an amount
+   - Variants:
+     - Coin change with order consideration
+
+#### How to Solve:
+- Sort coins in descending order
+- Greedily select largest coin possible at each step
+- Use dynamic programming for variants with limitations
+
+#### Common Techniques:
+- Sorting coins
+- Iterative greedy selection
+- Backtracking for complex variants
+
+### 5. Egyptian Fraction
+
+#### Problem Types:
+a) **Represent Fraction as Sum of Unit Fractions**
+   - Basic: Represent a fraction as sum of unique unit fractions
+   - Variants:
+     - Minimize number of unit fractions
+     - Egyptian fraction with constraints on denominators
+
+b) **Greedy Approximation Problems**
+   - Basic: Approximate real numbers with rational numbers
+   - Variants:
+     - Continued fraction representation
+
+#### How to Solve:
+- Use greedy algorithm to find largest possible unit fraction
+- Recursively apply the process for the remaining fraction
+- Implement continued fraction algorithm for approximation
+
+#### Common Techniques:
+- Recursive greedy approach
+- Arithmetic operations on fractions
+- Continued fraction expansion
+
+### 6. Minimum Spanning Tree
+
+#### Problem Types:
+a) **Kruskal's Algorithm**
+   - Basic: Find minimum spanning tree in a weighted graph
+   - Variants:
+     - Maximum spanning tree
+     - Minimum spanning forest
+
+b) **Prim's Algorithm**
+   - Basic: Find minimum spanning tree starting from a vertex
+   - Variants:
+     - Minimum spanning tree with constraints
+     - Minimum product spanning tree
+
+#### How to Solve:
+- Sort edges by weight for Kruskal's algorithm
+- Use priority queue for Prim's algorithm
+- Implement union-find data structure for Kruskal's
+
+#### Common Techniques:
+- Sorting edges
+- Priority queue for selecting edges
+- Union-find data structure
+
+### 7. Dijkstra's Algorithm
+
+#### Problem Types:
+a) **Single Source Shortest Path**
+   - Basic: Find shortest path from source to all vertices
+   - Variants:
+     - Shortest path with exactly k edges
+     - Shortest path with alternating colors
+
+b) **Network Routing**
+   - Basic: Find optimal route in a network
+   - Variants:
+     - Route with minimum number of hops
+     - Route with maximum bandwidth
+
+#### How to Solve:
+- Use priority queue to select minimum distance vertex
+- Maintain distance array and update distances
+- Implement path reconstruction for actual path
+
+#### Common Techniques:
+- Priority queue for vertex selection
+- Relaxation of edges
+- Path reconstruction
+
+### 8. Huffman Decoding
+
+#### Problem Types:
+a) **Decode Huffman Encoded String**
+   - Basic: Decode a string encoded using Huffman coding
+   - Variants:
+     - Decode with incomplete Huffman tree
+     - Adaptive Huffman decoding
+
+b) **Optimal Merge Pattern**
+   - Basic: Find optimal way to merge files
+   - Variants:
+     - Merge with constraints on merge order
+
+#### How to Solve:
+- Traverse Huffman tree based on encoded bits
+- Use stack or recursion for decoding
+- Apply greedy choice in merging files
+
+#### Common Techniques:
+- Tree traversal
+- Bit manipulation
+- Priority queue for merging
+
 
 # Map Usage
 
@@ -621,7 +829,6 @@ c) **Bitwise AND of Numbers Range**
     - Examples:
       - Repeated DNA Sequences
     - Usage: `Map<bitPattern, count>`
-
 
 # Deque Usage
 
