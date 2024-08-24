@@ -1077,44 +1077,44 @@ c) **Bitwise AND of Numbers Range**
 
 ## Traditional Traversals
 
-### Inorder Traversal
+#### Inorder Traversal
 
 - **Order**: `Visit left subtree → Node → Right subtree`
 - **Output**: 4 2 5 1 6 3 7
 
-### Preorder Traversal
+#### Preorder Traversal
 
 - **Order**: `Visit node → Left subtree → Right subtree`
 - **Output**: 1 2 4 5 3 6 7
 
-### Postorder Traversal
+#### Postorder Traversal
 
 - **Order**: `Visit left subtree → Right subtree → Node`
 - **Output**: 4 5 2 6 7 3 1
 
-### Level Order Traversal
+#### Level Order Traversal
 
 - **Order**: `Visit nodes level by level from root to leaves`
 - **Output**: 1 2 3 4 5 6 7
 
 ## Reversed Traversals
 
-### Reversed Inorder Traversal
+#### Reversed Inorder Traversal
 
 - **Order**: `Visit right subtree → Node → Left subtree`
 - **Output**: 7 3 6 1 5 2 4
 
-### Reversed Preorder Traversal
+#### Reversed Preorder Traversal
 
 - **Order**: `Visit node → Right subtree → Left subtree`
 - **Output**: 1 3 7 6 2 5 4
 
-### Reversed Postorder Traversal
+#### Reversed Postorder Traversal
 
 - **Order**: `Visit right subtree → Left subtree → Node`
 - **Output**: 7 6 3 5 4 2 1
 
-### Reversed Level Order Traversal
+#### Reversed Level Order Traversal
 
 - **Order**: `Visit nodes level by level from leaves to root, left to right at each level`
 - **Output**: 4 5 6 7 2 3 1
