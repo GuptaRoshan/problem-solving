@@ -20,6 +20,18 @@
 |                                                                |                                                     |                                                                                                           |                                                                                                           |
 
 
+## Binary Search
+
+[Make Bouquets Problem]:https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/description/
+[Make Bouquets Solution]: https://github.com/GuptaRoshan/problem-solving/blob/main/src/leetcode/binarySearch/MakeBouquets.java
+
+
+| Problem                                | Solution                           | Notes                                                                                                                                                                                                                                                   |
+|----------------------------------------|------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [Make Bouquets][Make Bouquets Problem] | [Solution][Make Bouquets Solution] | `Binary Search on the Answer` The problem requires finding the `minimum or maximum` value that meets a specific condition. The solution involves using binary search to narrow down a `range of values (e.g., days, sizes)` to find the optimal result. |
+
+
+
 ## Design Problems
 
 [Design Questions](https://leetcode.com/tag/design/)

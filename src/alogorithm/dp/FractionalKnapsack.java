@@ -1,4 +1,4 @@
-package alogorithm.dynamicProgramming;
+package alogorithm.dp;
 
 import java.util.Arrays;
 

@@ -569,6 +569,28 @@ b) **Data Compression**
 - Tree traversal
 - Bit manipulation for encoding
 
+
+c) **Decode Huffman Encoded String**
+   - Basic: Decode a string encoded using Huffman coding
+   - Variants:
+     - Decode with incomplete Huffman tree
+     - Adaptive Huffman decoding
+
+d) **Optimal Merge Pattern**
+   - Basic: Find optimal way to merge files
+   - Variants:
+     - Merge with constraints on merge order
+
+#### How to Solve:
+- Traverse Huffman tree based on encoded bits
+- Use stack or recursion for decoding
+- Apply greedy choice in merging files
+
+#### Common Techniques:
+- Tree traversal
+- Bit manipulation
+- Priority queue for merging
+
 ### 3. Fractional Knapsack
 
 #### Problem Types:
@@ -692,29 +714,6 @@ b) **Network Routing**
 - Relaxation of edges
 - Path reconstruction
 
-### 8. Huffman Decoding
-
-#### Problem Types:
-a) **Decode Huffman Encoded String**
-   - Basic: Decode a string encoded using Huffman coding
-   - Variants:
-     - Decode with incomplete Huffman tree
-     - Adaptive Huffman decoding
-
-b) **Optimal Merge Pattern**
-   - Basic: Find optimal way to merge files
-   - Variants:
-     - Merge with constraints on merge order
-
-#### How to Solve:
-- Traverse Huffman tree based on encoded bits
-- Use stack or recursion for decoding
-- Apply greedy choice in merging files
-
-#### Common Techniques:
-- Tree traversal
-- Bit manipulation
-- Priority queue for merging
 
 </br>
 

@@ -1,4 +1,4 @@
-package dataStructure.graph;
+package alogorithm.graph;
 
 import java.util.Arrays;
 import java.util.List;
