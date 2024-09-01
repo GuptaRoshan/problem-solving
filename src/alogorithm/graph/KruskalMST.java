@@ -1,5 +1,7 @@
 package alogorithm.graph;
 
+import alogorithm.graph.edge.DirectedEdge;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;

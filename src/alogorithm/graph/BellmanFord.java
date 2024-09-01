@@ -1,5 +1,8 @@
 package alogorithm.graph;
 
+import alogorithm.graph.edge.DirectedEdge;
+import alogorithm.graph.edge.Edge;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -7,66 +10,55 @@ import java.util.List;
 
 public class BellmanFord {
 
-    public static void print(int[] distances) {
-        System.out.println("Vertex\tDistance from source");
-        for (int i = 0; i < distances.length; ++i) {
-            System.out.println(i + "\t\t\t" + distances[i]);
-        }
-    }
-
-    private static class Edge {
-        int source;
-        int destination;
-        int weight;
-
-        Edge(int s, int d, int w) {
-            source = s;
-            destination = d;
-            weight = w;
-        }
-    }
-
-    public int[] bellmanFord(List<Edge> edges, int vertices, int source) {
+    public static void bellmanFord(List<DirectedEdge> edges, int totalVertices, int source) {
         // Step 1: Initialize distances from source to all vertices as INFINITE
-        int[] distances = new int[vertices];
+        int[] distances = new int[totalVertices];
         Arrays.fill(distances, Integer.MAX_VALUE);
         distances[source] = 0;
 
-        // Step 2: Relax all edges |vertices| - 1 times
-        for (int i = 1; i <= vertices - 1; ++i) {
-            for (Edge e : edges) {
-                int u = e.source;
-                int v = e.destination;
-                int weight = e.weight;
-                if (distances[u] != Integer.MAX_VALUE && distances[u] + weight < distances[v]) {
-                    distances[v] = distances[u] + weight;
+        // Step 2: Relax all edges vertices - 1 times
+        for (int i = 1; i <= totalVertices - 1; ++i) {
+            for (DirectedEdge edge : edges) {
+                int src = edge.src; // u
+                int dest = edge.dest; // v
+                int weight = edge.weight; // w
+
+                if (distances[src] != Integer.MAX_VALUE && distances[src] + weight < distances[dest]) {
+                    distances[dest] = distances[src] + weight;
                 }
             }
         }
 
         // Step 3: Check for negative-weight cycles
-        for (Edge e : edges) {
-            int u = e.source;
-            int v = e.destination;
-            int weight = e.weight;
-            if (distances[u] != Integer.MAX_VALUE && distances[u] + weight < distances[v]) {
-                return new int[0];
+        for (DirectedEdge edge : edges) {
+            int src = edge.src; // u
+            int dest = edge.dest; // v
+            int weight = edge.weight;// w
+
+            if (distances[src] != Integer.MAX_VALUE && distances[src] + weight < distances[dest]) {
+                System.out.println("Negative Cycle Detected");
             }
         }
 
-        return distances;
+        print(distances);
+    }
+
+    public static void print(int[] distances) {
+        System.out.println("\nDistance from source vertex : 0");
+        System.out.println("Vertex\tDistance");
+        for (int i = 0; i < distances.length; ++i) {
+            System.out.println(i + "\t\t" + distances[i]);
+        }
     }
 
     public static void main(String[] args) {
-        List<Edge> edges = Arrays.asList(
-                new Edge(0, 1, 4),
-                new Edge(0, 2, 5),
-                new Edge(1, 2, -2),
-                new Edge(1, 3, 8),
-                new Edge(2, 3, 3),
-                new Edge(3, 4, 1));
-        int vertices = 5;
-        int source = 0;
-        print(new BellmanFord().bellmanFord(edges, vertices, source));
+        List<DirectedEdge> edges = Arrays.asList(
+                new DirectedEdge(0, 1, 4),
+                new DirectedEdge(0, 2, 5),
+                new DirectedEdge(1, 2, -2),
+                new DirectedEdge(1, 3, 8),
+                new DirectedEdge(2, 3, 3),
+                new DirectedEdge(3, 4, 1));
+        bellmanFord(edges, 5, 0);
     }
 }

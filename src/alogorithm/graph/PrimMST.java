@@ -1,5 +1,7 @@
 package alogorithm.graph;
 
+import alogorithm.graph.edge.UndirectedEdge;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.PriorityQueue;
@@ -15,8 +17,8 @@ public class PrimMST {
      * expanding by building the shortest possible connection to the nearest unconnected station
      * until all stations are connected.
      */
-    public static List<UndirectedEdge> primMST(List<List<UndirectedEdge>> graph) {
-        int V = graph.size();
+    public static List<UndirectedEdge> primMST(UndirectedGraph graph) {
+        int V = graph.totalVertices;
 
         List<UndirectedEdge> minSpanningTree = new ArrayList<>();
 
@@ -25,7 +27,7 @@ public class PrimMST {
 
         // Start with vertex 0
         inMST[0] = true;
-        pq.addAll(graph.getFirst());
+        pq.addAll(graph.adjacencyList.getFirst());
 
         while (!pq.isEmpty()) {
             UndirectedEdge edge = pq.poll();
@@ -35,7 +37,7 @@ public class PrimMST {
             inMST[edge.dest] = true;
             minSpanningTree.add(edge);
 
-            for (UndirectedEdge nextEdge : graph.get(edge.dest)) {
+            for (UndirectedEdge nextEdge : graph.adjacencyList.get(edge.dest)) {
                 if (!inMST[nextEdge.dest]) {
                     pq.offer(nextEdge);
                 }
@@ -46,26 +48,19 @@ public class PrimMST {
     }
 
     public static void main(String[] args) {
-        int V = 4;
+        UndirectedGraph undirectedGraph = new UndirectedGraph(4);
+        undirectedGraph.addEdge(0, 1, 10);
+        undirectedGraph.addEdge(0, 2, 6);
+        undirectedGraph.addEdge(0, 3, 5);
+        undirectedGraph.addEdge(1, 0, 10);
+        undirectedGraph.addEdge(1, 3, 15);
+        undirectedGraph.addEdge(2, 0, 6);
+        undirectedGraph.addEdge(2, 3, 4);
+        undirectedGraph.addEdge(3, 0, 5);
+        undirectedGraph.addEdge(3, 1, 15);
+        undirectedGraph.addEdge(3, 2, 4);
 
-        List<List<UndirectedEdge>> graph = new ArrayList<>(V);
-        for (int i = 0; i < V; i++) {
-            graph.add(new ArrayList<>());
-        }
-
-        // Add edges
-        graph.get(0).add(new UndirectedEdge(1, 10));
-        graph.get(0).add(new UndirectedEdge(2, 6));
-        graph.get(0).add(new UndirectedEdge(3, 5));
-        graph.get(1).add(new UndirectedEdge(0, 10));
-        graph.get(1).add(new UndirectedEdge(3, 15));
-        graph.get(2).add(new UndirectedEdge(0, 6));
-        graph.get(2).add(new UndirectedEdge(3, 4));
-        graph.get(3).add(new UndirectedEdge(0, 5));
-        graph.get(3).add(new UndirectedEdge(1, 15));
-        graph.get(3).add(new UndirectedEdge(2, 4));
-
-        List<UndirectedEdge> mst = primMST(graph);
+        List<UndirectedEdge> mst = primMST(undirectedGraph);
 
         System.out.println("Edges in the Minimum Spanning Tree:");
         for (UndirectedEdge edge : mst) {
