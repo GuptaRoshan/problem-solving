@@ -2186,18 +2186,105 @@ public static int[][] arrayToMatrix(int[] array, int n, int m) {
 
 gridNumber = `(row / 3) * 3 + (col / 3)`
 
-</br>
 
-# Permutations
+# Hashing Techniques
 
-`P(n, r) = (n−r)! / n!` where n is the total number of items and r is the number of items to choose from the total.
-Permutations of 2 letters from ABC : `P(3, 2) = (3−2)! / 3! = 3×2×1 = 6`
-The permutations are : `AB, BA, AC, CA, BC, CB`
+## Polynomial Rolling Hash
 
-</br>
+Polynomial Rolling Hash is a simple yet effective hashing technique, especially used in string hashing. The idea is to represent a string as a polynomial and then compute the hash value by evaluating this polynomial.
 
-# Combinations
+<h3>Formula</h3>
+<p>For a string <code>s</code> of length <code>n</code>, the hash value <code>H</code> is calculated as:</p>
+<p>
+  <code>
+    H(s) = (s<sub>0</sub> &times; p<sup>n-1</sup> + s<sub>1</sub> &times; p<sup>n-2</sup> + &hellip; + s<sub>n-1</sub> &times; p<sup>0</sup>) % m
+  </code>
+</p>
+<p>Where:</p>
+<ul>
+  <li><code>s<sub>i</sub></code> is the ith character of the string (converted to an integer, often using ASCII values).</li>
+  <li><code>p</code> is a prime number (typically a small prime, e.g., 31).</li>
+  <li><code>m</code> is a large prime number used to reduce hash collisions.</li>
+</ul>
 
-`C(n, r) = n! / (r! × (n−r)!)`
-Combinations of 2 letters from ABC : `C(3, 2) = 3! / ( 2! × (3−2)! ) = 3×2×1 / (2×1×1) = 3`
-The combinations are : `AB, AC, BC`
+### Example
+
+<p>For the string <code>"abc"</code> with <code>p = 31</code> and <code>m = 101</code>:</p>
+
+- Convert characters: 'a' = 1, 'b' = 2, 'c' = 3
+- Compute hash:
+  <br>
+  <code>
+  H("abc") = (1 &times; 31<sup>2</sup> + 2 &times; 31<sup>1</sup> + 3 &times; 31<sup>0</sup>) mod 101
+  <br>
+  = (961 + 62 + 3) mod 101
+  <br>
+  = 1026 mod 101
+  <br>
+  = 17
+  </code>
+
+## Division Method
+
+The Division Method is one of the simplest hashing techniques where the hash value is computed by taking the modulus of the key with a prime number.
+
+
+<h3>Formula</h3>
+<p>For a key <code>k</code> and a hash table size <code>m</code>, the hash value <code>H</code> is calculated as:</p>
+<p>
+  <code>
+    H(k) = k % m
+  </code>
+</p>
+<p>Where:</p>
+<ul>
+  <li><code>k</code> is the key (or integer value).</li>
+  <li><code>m</code> is the size of the hash table (preferably a prime number to reduce collisions).</li>
+</ul>
+
+
+### Example
+
+<p>For a key <code>k = 1234</code> and a hash table size <code>m = 1009</code> (a prime number):</p>
+
+- Compute hash:
+  <br>
+  <code>
+  H(1234) = 1234 mod 1009
+  <br>
+  = 225
+  </code>
+
+## Multiplicative Hashing
+
+Multiplicative Hashing uses a multiplicative factor to compute the hash value. It is based on multiplying the key by a constant and then taking the modulus of the result.
+
+<h3>Formula</h3>
+<p>For a key <code>k</code> and a hash table size <code>m</code>, the hash value <code>H</code> is calculated as:</p>
+<p>
+  <code>
+    H(k) = &lfloor; m &times; (k &times; A % 1) &rfloor;
+  </code>
+</p>
+<p>Where:</p>
+<ul>
+  <li><code>A</code> is a constant factor (0 &lt; A &lt; 1). A common choice is <code>(√5 - 1) / 2 ≈ 0.6180339887</code>.</li>
+  <li><code>&lfloor; x &rfloor;</code> denotes the floor function (rounding down to the nearest integer).</li>
+</ul>
+
+### Example
+
+<p>For a key <code>k = 1234</code>, hash table size <code>m = 1009</code>, and <code>A = 0.6180339887</code>:</p>
+
+- Compute hash:
+  <br>
+  <code>
+  H(1234) = &lfloor; 1009 &times; (1234 &times; 0.6180339887 mod 1) &rfloor;
+  <br>
+  = &lfloor; 1009 &times; 0.780300596 &rfloor;
+  <br>
+  = &lfloor; 787.8 &rfloor;
+  <br>
+  = 787
+  </code>
+
