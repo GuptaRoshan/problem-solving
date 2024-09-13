@@ -16,6 +16,7 @@
 - [Tree Techniques](#tree-techniques)
 - [Backtracking Techniques](#backtracking-techniques)
 - [Graph Techniques](#graph-techniques)
+- [Dynamic Programming](#dynamic-programming)
 - [Bit Manipulation](#bit-manipulation)
 - [Matrix](#matrix)
 - [Permutations](#permutations)
@@ -1860,6 +1861,255 @@ b) **Network Routing**
 10. **Practice and learn patterns:**
     - Many graph problems share similar structures
     - Recognizing these patterns can speed up problem-solving
+
+
+# Dynamic Programming
+
+### 1. **0/1 Knapsack**
+- **Scenario**: Imagine you are a backpacker going on a hiking trip. You have a backpack with a weight limit of **10 kg**. You also have several items to choose from:
+     - **Item A**: Weight = 4 kg, Value = $40
+     - **Item B**: Weight = 5 kg, Value = $50
+     - **Item C**: Weight = 6 kg, Value = $60
+
+  The **0/1 Knapsack** problem asks: which items should you pack to maximize the total value without exceeding the weight limit of 10 kg?
+
+- **Key Decision**: For each item, you must make a binary decision: either take it or leave it. You can't take half of an item or multiple units of the same item. For example, you can either take **Item A** (which weighs 4 kg and is worth $40) or leave it behind — there's no in-between.
+
+- **Outcome**: After evaluating all the options (Item A, B, and C), you would find the combination that gives the maximum value without exceeding the 10 kg limit. You might take Item B (5 kg, $50) and Item A (4 kg, $40) because their combined weight is 9 kg (within the limit) and their total value is $90, which is optimal.
+
+### 2. **Fractional Knapsack (Greedy Approach)**
+- **Scenario**: You're again packing for a trip, but this time, you can **take fractions of the items**. Let’s say your weight limit is **15 kg**:
+     - **Item A**: Weight = 10 kg, Value = $100
+     - **Item B**: Weight = 5 kg, Value = $60
+     - **Item C**: Weight = 8 kg, Value = $80
+
+  The **Fractional Knapsack** problem asks: how much of each item should you take to maximize value?
+
+- **Key Feature**: You can take fractions of items. For example, you can take **half of Item A** (5 kg of a 10 kg item) and get **$50** worth of value from it, instead of having to take the whole item.
+
+- **Greedy Approach**: To maximize value, you calculate the **value-to-weight ratio** for each item:
+     - **Item A**: $100 / 10 kg = $10 per kg
+     - **Item B**: $60 / 5 kg = $12 per kg
+     - **Item C**: $80 / 8 kg = $10 per kg
+
+  You start by taking all of **Item B** (5 kg, $60, best value per kg), then take **Item C** (8 kg, $80), and if there's still room, take a **fraction of Item A** until the weight limit is reached.
+
+- **Outcome**: With this approach, you maximize the value by prioritizing items with the highest value-to-weight ratio first. This problem is solved using a greedy algorithm.
+
+### 3. **Bounded Knapsack**
+- **Scenario**: Let’s say you're running a **store** and want to maximize the value of the items you display in a limited space. However, this time, you have a **fixed quantity** of each item available:
+     - **Item A**: Weight = 2 kg, Value = $30, Quantity available = 2
+     - **Item B**: Weight = 3 kg, Value = $50, Quantity available = 3
+     - **Item C**: Weight = 5 kg, Value = $70, Quantity available = 1
+
+  The **Bounded Knapsack** problem asks: given these limited quantities, how can you maximize the value while staying within the weight limit?
+
+- **Key Feature**: You can take **multiple units** of an item, but only up to the given limit. For example, if you want to take **Item A**, you can take **1 or 2** units, but not 3, because only 2 are available.
+
+- **Outcome**: You would consider all the items and their quantities to find the best combination that maximizes value. For instance, you might take 2 units of **Item A** (4 kg, $60) and 1 unit of **Item C** (5 kg, $70) to maximize value while staying under a weight limit of 9 kg.
+
+### 4. **Unbounded Knapsack (Infinite Knapsack)**
+- **Scenario**: You are a **merchant** with an unlimited supply of items to sell, but you have a limited display space in your shop (say, 20 kg capacity). You can display any number of these items:
+     - **Item A**: Weight = 3 kg, Value = $20
+     - **Item B**: Weight = 4 kg, Value = $30
+     - **Item C**: Weight = 5 kg, Value = $50
+
+  The **Unbounded Knapsack** problem asks: how many units of each item should you take to maximize the total value within the weight limit?
+
+- **Key Feature**: You can take **unlimited quantities** of each item. For instance, if **Item A** (3 kg, $20) seems valuable to you, you can take as many of them as your weight limit allows.
+
+- **Outcome**: In this case, you'd consider how many times you can take each item to maximize value while staying within the weight limit. For example, you might realize that taking **4 units of Item B** (16 kg, $120) gives you more value than taking **6 units of Item A** (18 kg, $120), and you'd have room for **1 unit of Item C** (5 kg, $50) to further maximize the value.
+
+
+### Summary of Key Differences:
+1. **0/1 Knapsack**: You must decide for each item whether to take it or not; you can't take fractions or multiple units.
+2. **Fractional Knapsack**: You can take fractions of items to maximize the total value, solved using a greedy approach.
+3. **Bounded Knapsack**: You can take multiple units of each item, but each has a limit on how many you can take.
+4. **Unbounded Knapsack**: You can take an unlimited number of units of any item, constrained only by the weight limit.
+
+
+## 5. **Longest Common Subsequence (LCS)**
+
+- **Scenario**: Suppose you have two sequences of characters:
+  - **Sequence 1**: `ABCBDAB`
+  - **Sequence 2**: `BDCAB`
+
+  The **Longest Common Subsequence (LCS)** problem is to find the longest subsequence that is common to both sequences.
+
+- **Key Concept**: A subsequence is a sequence that can be derived from another sequence by deleting some or none of the elements without changing the order of the remaining elements.
+
+- **Example**: For the sequences above, the LCS is `BCAB` (length 4). The subsequences `BCAB`, `BDAB`, and `BCAB` are all common, but `BCAB` is the longest.
+
+- **Approach**: Use dynamic programming to build a table where each cell `dp[i][j]` represents the length of the LCS of the first `i` characters of Sequence 1 and the first `j` characters of Sequence 2.
+
+- **Outcome**: The table is filled based on comparing characters from both sequences and using previously computed solutions to build up the length of the LCS.
+
+
+## 6. **Longest Increasing Subsequence (LIS)**
+
+- **Scenario**: Given an array of integers:
+  - **Array**: `[10, 22, 9, 33, 21, 50, 41, 60, 80]`
+
+  The **Longest Increasing Subsequence (LIS)** problem is to find the length of the longest subsequence where the elements are in increasing order.
+
+- **Key Concept**: Unlike the LCS, the subsequence does not need to be contiguous but must be in increasing order.
+
+- **Example**: For the array above, the LIS could be `10, 22, 33, 50, 60, 80` (length 6).
+
+- **Approach**: Use dynamic programming where `dp[i]` represents the length of the longest increasing subsequence ending at index `i`. Update `dp[i]` by checking all previous elements and extending the increasing subsequences.
+
+- **Outcome**: By examining all potential subsequences and updating the lengths dynamically, you find the length of the LIS for the array.
+
+
+## 7. **Dynamic Programming on Grid**
+
+- **Scenario**: Consider a grid where each cell contains a number, and you want to find the maximum path sum from the top-left to the bottom-right corner. You can only move right or down.
+
+  **Grid Example**:
+  ```
+  2  3  1
+  1  5  2
+  4  3  6
+  ```
+
+- **Key Concept**: The **Dynamic Programming on Grid** problem involves filling a table based on previous computations to find an optimal path or value.
+
+- **Approach**: Use a 2D DP table where each cell `dp[i][j]` represents the maximum sum path to reach cell `(i, j)`. Update each cell based on values from the top and left cells:  `dp[i][j] = grid[i][j] + max(dp[i-1][j], dp[i][j-1])`
+
+- **Outcome**: By processing each cell in the grid and combining the results from neighboring cells, you determine the maximum value that can be achieved for the given path constraints.
+
+
+## 8. **Dynamic Programming on Trees**
+
+- **Scenario**: Suppose you have a tree structure and want to find the maximum sum of values from the root to any leaf node, with constraints on what paths are allowed.
+
+- **Key Concept**: **Dynamic Programming on Trees** involves recursively solving problems by processing nodes and their subtrees to gather information and compute optimal solutions.
+
+- **Approach**:
+  1. **Define State**: Use DP where `dp[node]` represents the optimal solution for the subtree rooted at `node`.
+  2. **Recurrence Relation**: Solve for each node by combining results from its children. For example, if you want the maximum sum path, you might use:
+  `dp[node] = node_value + max(dp[child1], dp[child2], ...) `
+
+  3. **Process Tree**: Traverse the tree (e.g., using DFS) to compute DP values for each node based on its children.
+
+- **Outcome**: By solving the DP problem at each node and using results from subtrees, you compute the optimal solution for the entire tree structure.
+
+
+## Recurrence Relations
+
+### 1. **Fibonacci Sequence**
+- **Problem**: Find the \( n \)-th Fibonacci number.
+- **Description**: Calculate Fibonacci numbers using previously computed values.
+- **Recurrence Relation**: 
+  ```html
+  F(n) = F(n-1) + F(n-2)
+  ```
+
+### 2. **0/1 Knapsack Problem**
+- **Problem**: Given a set of items with weight and value, maximize the value without exceeding a weight capacity.
+- **Description**: You can either take or leave each item.
+- **Recurrence Relation**:
+  ```html
+  dp[i][w] = max(dp[i-1][w], dp[i-1][w-w_i] + v_i)
+  ```
+  where `w_i` and `v_i` are the weight and value of the \( i \)-th item.
+
+### 3. **Fractional Knapsack Problem**
+- **Problem**: Maximize the value by taking fractions of items, given a weight limit.
+- **Description**: Use a greedy approach based on value-to-weight ratio.
+- **Approach**: Solve using a greedy algorithm by selecting items with the highest value-to-weight ratio first.
+
+### 4. **Longest Common Subsequence (LCS)**
+- **Problem**: Find the longest subsequence common to two sequences.
+- **Description**: Build a DP table to track the length of the common subsequence for all prefixes.
+- **Recurrence Relation**:
+  ```html
+  dp[i][j] = 
+  <span style="color:blue;">1 + dp[i-1][j-1],</span> if X[i] = Y[j]
+  <span style="color:red;">max(dp[i-1][j], dp[i][j-1]),</span> otherwise
+  ```
+
+### 5. **Longest Increasing Subsequence (LIS)**
+- **Problem**: Find the longest increasing subsequence in an array.
+- **Description**: Track the length of the longest increasing subsequence up to each element.
+- **Recurrence Relation**:
+  ```html
+  dp[i] = max(dp[j] + 1) for j < i and arr[j] < arr[i]
+  ```
+
+### 6. **Edit Distance (Levenshtein Distance)**
+- **Problem**: Find the minimum number of operations (insertions, deletions, substitutions) required to convert one string into another.
+- **Description**: Use DP to compute the cost of transforming prefixes of the two strings.
+- **Recurrence Relation**:
+  ```html
+  dp[i][j] = 
+  <span style="color:blue;">dp[i-1][j-1],</span> if X[i] = Y[j]
+  <span style="color:red;">1 + min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1]),</span> otherwise
+  ```
+
+### 7. **Coin Change Problem**
+- **Problem**: Find the minimum number of coins needed to make a given amount.
+- **Description**: Use DP to track the minimum coins required for each amount.
+- **Recurrence Relation**:
+  ```html
+  dp[amount] = min(dp[amount - coin] + 1)
+  ```
+
+### 8. **Matrix Chain Multiplication**
+- **Problem**: Determine the most efficient way to multiply a sequence of matrices.
+- **Description**: Compute the minimum number of scalar multiplications needed.
+- **Recurrence Relation**:
+  ```html
+  dp[i][j] = min(dp[i][k] + dp[k+1][j] + p[i-1] * p[k] * p[j])
+  ```
+
+### 9. **0/1 Knapsack with Bounded Items**
+- **Problem**: Each item has a limited quantity available.
+- **Description**: Modify the 0/1 Knapsack approach to account for item limits.
+
+### 10. **Unbounded Knapsack Problem**
+- **Problem**: Each item can be selected an unlimited number of times.
+- **Description**: Use DP to find the maximum value with unlimited items.
+- **Recurrence Relation**:
+  ```html
+  dp[i] = max(dp[i], dp[i - weight_j] + value_j)
+  ```
+
+### 11. **Subset Sum Problem**
+- **Problem**: Determine if there is a subset of numbers that sums up to a given value.
+- **Description**: Use DP to check possible sums that can be formed.
+- **Recurrence Relation**:
+  ```html
+  dp[i][j] = dp[i-1][j] or dp[i-1][j - nums[i]]
+  ```
+
+### 12. **Longest Palindromic Subsequence**
+- **Problem**: Find the longest subsequence in a string that is a palindrome.
+- **Description**: Build a DP table to track the longest palindromic subsequence.
+- **Recurrence Relation**:
+  ```html
+  dp[i][j] = 
+  <span style="color:blue;">2 + dp[i+1][j-1],</span> if X[i] = X[j]
+  <span style="color:red;">max(dp[i+1][j], dp[i][j-1]),</span> otherwise
+  ```
+
+### 13. **Partition Problem**
+- **Problem**: Determine if a given set can be partitioned into two subsets with equal sum.
+- **Description**: Use DP to check if the sum can be split into two equal subsets.
+
+### 14. **Rod Cutting Problem**
+- **Problem**: Given a rod of length \( n \) and a price table, find the maximum revenue obtainable by cutting up the rod and selling the pieces.
+- **Description**: Use DP to compute maximum revenue for different lengths of rod.
+- **Recurrence Relation**:
+  ```html
+  dp[i] = max(price[j] + dp[i - j - 1]) for j < i
+  ```
+
+---
+
+Let me know if you need any more information!
+
+
 
 </br>
 
