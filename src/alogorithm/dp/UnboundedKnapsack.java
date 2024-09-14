@@ -8,18 +8,23 @@ public class UnboundedKnapsack {
 
         for (int i = 0; i <= n; i++) {
 
-            for (int c = 0; c <= target; c++) {
+            for (int j = 0; j <= target; j++) {
 
-                if (i == 0 || c == 0) dp[i][c] = 0;
+                if (i == 0 || j == 0) dp[i][j] = 0;
 
-                else if (weights[i - 1] <= c) {
-                    // problems.dp[i][c - weights[i - 1]] + values[i - 1] means we are selecting the same item again
-                    dp[i][c] = Math.max(dp[i - 1][c], values[i - 1] + dp[i][c - weights[i - 1]]);
+                else if (weights[i - 1] <= j) {
+                    //  dp[i - 1][j]: This represents the maximum value that can be obtained without including item i
+                    //  values[i - 1]: Includes the current item
+                    //  dp[i][j - weights[i - 1]]: Find the cost of remaining capacity by considering the same items (i)
+
+                    dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - weights[i - 1]] + values[i - 1]);
+
                 } else {
-                    dp[i][c] = dp[i - 1][c];
+                    dp[i][j] = dp[i - 1][j];
                 }
             }
         }
+
         return dp[n][target];
     }
 
@@ -42,6 +47,7 @@ public class UnboundedKnapsack {
     public static int unboundedKnapsackOptimization(int[] values, int[] weights, int target) {
         int n = weights.length;
         int[] dp = new int[target + 1];
+
         for (int c = 0; c <= target; c++) {
             for (int i = 0; i < n; i++) {
                 if (weights[i] <= c) {

@@ -62,6 +62,7 @@ public class BoundedKnapsack {
         int[][] dp = new int[n + 1][capacity + 1];
         for (int i = 1; i <= n; i++) {
             for (int j = 0; j <= capacity; j++) {
+
                 // For each item, consider the possibility of taking 0 to 'count' copies
                 for (int k = 0; k <= counts[i - 1]; k++) {
                     if (k * weights[i - 1] <= j) {
@@ -69,6 +70,7 @@ public class BoundedKnapsack {
                         dp[i][j] = Math.max(dp[i][j], dp[i - 1][j - k * weights[i - 1]] + k * values[i - 1]);
                     }
                 }
+
             }
         }
         return dp[n][capacity];

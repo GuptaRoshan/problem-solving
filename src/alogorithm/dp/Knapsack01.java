@@ -29,7 +29,10 @@ public class Knapsack01 {
                 if (i == 0 || j == 0) dp[i][j] = 0;
 
                 else if (weights[i - 1] <= j) {
-                    // problems.dp[i - 1][j - weights[i - 1]] + values[i - 1] means we are selecting the one item only once
+                    //  dp[i - 1][j]: This represents the maximum value that can be obtained without including item i
+                    //  values[i - 1]: Includes the current item
+                    //  dp[i - 1][j - weights[i - 1]]: Find the cost of remaining capacity by considering the previous items (i - 1)
+
                     dp[i][j] = Math.max(dp[i - 1][j], dp[i - 1][j - weights[i - 1]] + values[i - 1]);
                 } else {
                     dp[i][j] = dp[i - 1][j];
@@ -41,11 +44,25 @@ public class Knapsack01 {
         return dp[n][capacity];
     }
 
+    public static int knapsack01Optimized(int[] values, int[] weights, int capacity) {
+        int n = values.length;
+        int[] dp = new int[capacity + 1];
+
+        for (int i = 0; i < n; i++) {
+            for (int w = capacity; w >= weights[i]; w--) {
+                dp[w] = Math.max(dp[w], values[i] + dp[w - weights[i]]);
+            }
+        }
+
+        return dp[capacity];
+    }
+
     public static void main(String[] args) {
         int[] values = {60, 100, 120};
         int[] weights = {10, 20, 30};
         int capacity = 50;
         // 100 + 120 Select 20 and 30 only once which amounts to 50 and get maximum value 220
+        System.out.println("Maximum value that can be obtained: " + knapsack01Optimized(values, weights, capacity));
         System.out.println("Maximum value that can be obtained: " + knapsack01(values, weights, capacity));
     }
 

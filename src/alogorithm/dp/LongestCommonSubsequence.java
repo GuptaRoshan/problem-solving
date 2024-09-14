@@ -7,7 +7,7 @@ public class LongestCommonSubsequence {
      *
      * @param str1 problems.string 1
      * @param str2 String 2
-     * @return longest common subsequence length in str1 and str2
+     * @return the longest common subsequence length in str1 and str2
      */
     public static int findLCSLength(String str1, String str2) {
         int m = str1.length();

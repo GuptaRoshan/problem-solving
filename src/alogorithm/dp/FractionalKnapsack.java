@@ -18,6 +18,7 @@ public class FractionalKnapsack {
      * @return maximum value that can be obtained
      */
     public static double fractionalKnapsack(int[] values, int[] weights, int capacity) {
+
         record Item(int value, int weight, double ratio) {
         }
 

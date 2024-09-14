@@ -11,12 +11,15 @@ public class UniquePaths {
         for (int j = 0; j < n; j++) {
             dp[0][j] = 1;
         }
+
+
         // Build the DP table by summing the paths from the cell above and the cell to the left
         for (int i = 1; i < m; i++) {
             for (int j = 1; j < n; j++) {
                 dp[i][j] = dp[i - 1][j] + dp[i][j - 1];
             }
         }
+
         // The bottom-right cell contains the final result
         return dp[m - 1][n - 1];
     }
