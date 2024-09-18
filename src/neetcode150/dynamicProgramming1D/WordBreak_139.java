@@ -32,7 +32,7 @@ public class WordBreak_139 {
     }
 
     public static void main(String[] args) {
-        String s = "leetcode";
+        String s = "practice";
         List<String> wordDict = List.of("leet", "code");
         System.out.println(wordBreak(s, wordDict));
     }

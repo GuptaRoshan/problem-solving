@@ -8,11 +8,11 @@ public class PartitionEqualSubsetSum_416 {
 
     static Boolean[][] memo;
 
-    // Approach 1: Done using subset sum problem
+    // Approach 1: Done using a subset sum problem
     private static boolean subsetSum(int[] nums) {
         int sum = Arrays.stream(nums).sum();
 
-        // If sum is odd, then we can't divide the array into two equal halves
+        // If a sum is odd, then we can't divide the array into two equal halves
         if (sum % 2 != 0) return false;
         int target = sum / 2;
 
@@ -33,7 +33,7 @@ public class PartitionEqualSubsetSum_416 {
     // Approach 2: Done using 0/1 knapsack
     private static boolean knapsack01(int[] nums) {
         int sum = Arrays.stream(nums).sum();
-        // If sum is odd, then we can't divide the array into two equal halves
+        // If a sum is odd, then we can't divide the array into two equal halves
         if (sum % 2 != 0) return false;
         int target = sum / 2;
 
@@ -56,7 +56,7 @@ public class PartitionEqualSubsetSum_416 {
     }
 
 
-    // Approach 3: DP  using memoization
+    // Approach 3: DP using memoization
     private static boolean memoization(int[] nums) {
         int sum = 0;
         int n = nums.length;
@@ -77,7 +77,7 @@ public class PartitionEqualSubsetSum_416 {
         // Base case if sum is 0, then we have found the subset
         if (sum == 0) return true;
 
-            // Base case if we have reached the end of the array or sum is less than 0
+        // The Base case if we have reached the end of the array or sum is less than 0
         else if (pos >= nums.length || sum < 0) return false;
 
         // If the value is already calculated, then return the value
