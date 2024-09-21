@@ -39,13 +39,16 @@ public class HouseRobber2_213 {
             return nums[0];
         }
 
-        int val0 = nums[0];
+        int val0 = nums[0]; // skips the first house
         nums[0] = 0;
-        int max1 = helper(nums);
-        nums[0] = val0;
-        nums[nums.length - 1] = 0;
-        int max2 = helper(nums);
-        return Math.max(max1, max2);
+
+        int max1 = helper(nums); // find the max loot of without the first house
+        nums[0] = val0; // reset the value of the first house
+
+        nums[nums.length - 1] = 0; // skips the last house
+        int max2 = helper(nums); // find the max loot of without the last house
+
+        return Math.max(max1, max2); // calculate the maximum
     }
 
     public static void main(String[] args) {

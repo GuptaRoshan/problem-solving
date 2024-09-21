@@ -7,7 +7,7 @@ public class UniquePaths_62 {
      *
      * @param m number of rows
      * @param n number of columns
-     * @return number of unique paths from top left to bottom right
+     * @return number of unique paths from a top left to bottom right
      */
     public int BottomUp(int m, int n) {
         int[][] dp = new int[m][n];

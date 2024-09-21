@@ -49,8 +49,12 @@ public class Knapsack01 {
         int[] dp = new int[capacity + 1];
 
         for (int i = 0; i < n; i++) {
-            for (int w = capacity; w >= weights[i]; w--) {
-                dp[w] = Math.max(dp[w], values[i] + dp[w - weights[i]]);
+            for (int c = capacity; c > 0; c--) {
+
+                if(weights[i] <= c){
+                    dp[c] = Math.max(dp[c], values[i] + dp[c - weights[i]]);
+                }
+
             }
         }
 

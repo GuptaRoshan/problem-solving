@@ -5,6 +5,8 @@ import java.util.Map;
 
 public class LongestSubarrayKFrequency {
 
+    // https://leetcode.com/problems/length-of-longest-subarray-with-at-most-k-frequency/description/
+
     public static int maxSubarrayLength(int[] nums, int k) {
         Map<Integer, Integer> count = new HashMap<>();
 

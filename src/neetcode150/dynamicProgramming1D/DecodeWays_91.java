@@ -38,7 +38,7 @@ public class DecodeWays_91 {
     }
 
     public static void main(String[] args) {
-        String s = "226";
+        String s = "06";
         System.out.println(numDecodings(s));
     }
 

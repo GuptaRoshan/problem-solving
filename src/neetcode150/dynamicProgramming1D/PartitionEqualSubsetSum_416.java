@@ -20,11 +20,13 @@ public class PartitionEqualSubsetSum_416 {
         originalSet.add(0);
 
         for (int num : nums) {
+
             Set<Integer> newSet = new HashSet<>();
             for (int value : originalSet) {
                 newSet.add(value + num);
             }
             originalSet.addAll(newSet);
+
         }
         return originalSet.contains(target);
     }
@@ -91,7 +93,7 @@ public class PartitionEqualSubsetSum_416 {
 
 
     public static void main(String[] args) {
-        int[] nums = {1, 2, 5};
+        int[] nums = {1,5,11,5};
         System.out.println(subsetSum(nums));
         System.out.println(knapsack01(nums));
         System.out.println(memoization(nums));
