@@ -60,6 +60,7 @@ public class BoundedKnapsack {
     public static int knapsack(int[] values, int[] weights, int[] counts, int capacity) {
         int n = values.length;
         int[][] dp = new int[n + 1][capacity + 1];
+
         for (int i = 1; i <= n; i++) {
             for (int j = 0; j <= capacity; j++) {
 
