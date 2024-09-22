@@ -17,7 +17,7 @@ public class PermutationInString_567 {
             int k = s2.charAt(j) - 'a';
             frequency[k]++;
 
-            // Adjust the window if the current character frequency is more than zero
+            // Adjust the window if the current character frequency is higher than zero
             while (frequency[k] > 0) {
                 frequency[s2.charAt(i) - 'a']--;
                 i++;
