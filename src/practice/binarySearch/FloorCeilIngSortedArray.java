@@ -1,10 +1,10 @@
 package practice.binarySearch;
 
-public class FloorCeilInSortedArray {
+public class FloorCeilIngSortedArray {
 
 
     // https://www.geeksforgeeks.org/problems/floor-in-a-sorted-array-1587115620/1
-    public static int findFloor(long[] arr, int n, long x) {
+    public static int findFloor(long[] arr, long x) {
 
         int low = 0;
         int high = arr.length - 1;
@@ -25,7 +25,7 @@ public class FloorCeilInSortedArray {
         return floorIndex;
     }
 
-    public static int findCeil(long[] arr, int n, long x) {
+    public static int findCeil(long[] arr, long x) {
 
         int low = 0;
         int high = arr.length - 1;
@@ -49,10 +49,9 @@ public class FloorCeilInSortedArray {
 
     public static void main(String[] args) {
         long[] nums = {1, 2, 8, 10, 11, 12, 19};
-        int x = 5;
-        int n = 7;
-        System.out.println(findFloor(nums, n, x));
-        System.out.println(findCeil(nums, n, x));
+        int x = 8;
+        System.out.println(findFloor(nums, x));
+        System.out.println(findCeil(nums, x));
     }
 
 }

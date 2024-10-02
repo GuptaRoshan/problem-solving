@@ -42,20 +42,15 @@ class BST {
     //----------------------- Deletion --------------------------//
     private TreeNode deleteHelper(TreeNode root, int key) {
         // Base Case: If the tree is empty
-        if (root == null)
-            return null;
+        if (root == null) return null;
 
         // Otherwise, recur down the tree
-        if (key < root.val)
-            root.left = deleteHelper(root.left, key);
-        else if (key > root.val)
-            root.right = deleteHelper(root.right, key);
+        if (key < root.val) root.left = deleteHelper(root.left, key);
+        else if (key > root.val) root.right = deleteHelper(root.right, key);
         else {
             // node with only one child or no child
-            if (root.left == null)
-                return root.right;
-            else if (root.right == null)
-                return root.left;
+            if (root.left == null) return root.right;
+            else if (root.right == null) return root.left;
 
             // node with two children: get the inorder successor (smallest in the right subtree)
             root.val = minValue(root.right);
@@ -65,7 +60,6 @@ class BST {
 
         return root;
     }
-
 
     private int minValue(TreeNode root) {
         int min = root.val;
@@ -81,10 +75,9 @@ class BST {
         root = deleteHelper(root, key);
     }
 
-
     public static void main(String[] args) {
         BST bst = new BST();
-        int[] values = {8, 3, 10, 1, 6, 14, 4, 7};
+        int[] values = {-10, -3, 0, 5, 9};
         for (int value : values) {
             bst.insert(value);
         }

@@ -3,6 +3,7 @@ package practice.design;
 import java.util.LinkedList;
 import java.util.Queue;
 
+@SuppressWarnings("all")
 public class StackUsingQueues {
 
     private final Queue<Integer> queue;
@@ -13,7 +14,7 @@ public class StackUsingQueues {
 
     public void push(int x) {
         queue.add(x);
-        for (int i = 1; i < queue.size(); i++)
+        for (int i = 0; i < queue.size() - 1; i++)
             queue.add(queue.poll());
     }
 
@@ -28,6 +29,7 @@ public class StackUsingQueues {
     public boolean empty() {
         return queue.isEmpty();
     }
+
 
     public static void main(String[] args) {
         StackUsingQueues stack = new StackUsingQueues();
