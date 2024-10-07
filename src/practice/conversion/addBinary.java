@@ -1,4 +1,4 @@
-package practice.array;
+package practice.conversion;
 
 public class addBinary {
 

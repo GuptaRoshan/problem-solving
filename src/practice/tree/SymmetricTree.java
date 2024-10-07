@@ -5,6 +5,8 @@ import java.util.Queue;
 
 public class SymmetricTree {
 
+
+
     public static boolean isSymmetric(TreeNode root) {
         if (root == null) return true;
         Queue<TreeNode> q = new LinkedList<>();

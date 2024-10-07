@@ -45,12 +45,16 @@ class BST {
         if (root == null) return null;
 
         // Otherwise, recur down the tree
-        if (key < root.val) root.left = deleteHelper(root.left, key);
-        else if (key > root.val) root.right = deleteHelper(root.right, key);
+        if (key < root.val)
+            root.left = deleteHelper(root.left, key);
+        else if (key > root.val)
+            root.right = deleteHelper(root.right, key);
         else {
             // node with only one child or no child
-            if (root.left == null) return root.right;
-            else if (root.right == null) return root.left;
+            if (root.left == null)
+                return root.right;
+            else if (root.right == null)
+                return root.left;
 
             // node with two children: get the inorder successor (smallest in the right subtree)
             root.val = minValue(root.right);
