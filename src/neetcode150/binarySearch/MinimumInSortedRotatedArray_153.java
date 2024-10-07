@@ -8,6 +8,7 @@ public class MinimumInSortedRotatedArray_153 {
 
         while (low < high) {
             int mid = low + (high - low) / 2;
+
             if (nums[mid] <= nums[high]) {
                 high = mid;
             } else {
@@ -15,7 +16,7 @@ public class MinimumInSortedRotatedArray_153 {
             }
         }
 
-        return low;
+        return nums[low];
     }
 
     public static void main(String[] args) {

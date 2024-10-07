@@ -2,23 +2,21 @@ package practice.binarySearch;
 
 public class SearchInsertPosition {
 
-    // Round Down no comparison
-    // https://leetcode.com/problems/search-insert-position/description/
     public static int searchInsert(int[] nums, int target) {
 
         int low = 0;
-        int high = nums.length; // the only difference is we consider full list size here
+        int high = nums.length - 1;
 
-        while (low < high) {
+        while (low <= high) {
             int mid = low + (high - low) / 2;
-            if (target <= nums[mid]) {
-                high = mid;
-            } else {
+            if (nums[mid] <= target) {
                 low = mid + 1;
+            } else {
+                high = mid - 1;
             }
         }
-        return low;
 
+        return low;
     }
 
     public static void main(String[] args){

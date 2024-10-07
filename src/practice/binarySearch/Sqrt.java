@@ -10,10 +10,9 @@ public class Sqrt {
         int result = 0;
 
         while (low <= high) {
-
             int mid = low + (high - low) / 2;
-            // mid * mid <= x
-            if (mid <= x / mid) {
+            // Optimization : mid <= x / mid
+            if (mid * mid <= x) {
                 result = mid;
                 low = mid + 1;
             } else {

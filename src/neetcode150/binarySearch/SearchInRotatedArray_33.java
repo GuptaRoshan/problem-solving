@@ -32,7 +32,9 @@ public class SearchInRotatedArray_33 {
 
         while (low <= high) {
             int mid = low + (high - low) / 2;
-            if (nums[mid] == target) return mid;
+            if (nums[mid] == target) {
+                return mid;
+            }
             if (target < nums[mid]) {
                 high = mid - 1;
             } else {
