@@ -1,4 +1,4 @@
-package practice.matrix;
+package practice.backtracking;
 
 public class IslandPerimeter {
 

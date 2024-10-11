@@ -23,17 +23,31 @@ public class ValidateBST_98 {
         return inorder(root.right);
     }
 
+
+
+    private static boolean preorder(TreeNode node, long min, long max) {
+        if (node == null) {
+            return true;
+        }
+        if (node.val <= min || node.val >= max) {
+            return false;
+        }
+        // Check left subtree with updated max and right subtree with updated min
+        return preorder(node.left, min, node.val) && preorder(node.right, node.val, max);
+    }
+
     public boolean isValidBST(TreeNode root) {
-        return inorder(root);
+        //return inorder(root);
+        return preorder(root, Long.MIN_VALUE, Long.MAX_VALUE);
     }
 
     public static void main(String[] args) {
         ValidateBST_98 validateBST98 = new ValidateBST_98();
 
-        TreeNode node10 = new TreeNode(10);
-        TreeNode node20 = new TreeNode(20);
-        TreeNode root1 = new TreeNode(15, node10, node20);
-        System.out.println(validateBST98.isValidBST(root1));
+//        TreeNode node10 = new TreeNode(10);
+//        TreeNode node20 = new TreeNode(20);
+//        TreeNode root1 = new TreeNode(15, node10, node20);
+//        System.out.println(validateBST98.isValidBST(root1));
 
         System.out.println("====================================");
 
