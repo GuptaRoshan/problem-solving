@@ -1,6 +1,6 @@
-package practice.conversion;
+package practice.bitManipulation;
 
-public class addBinary {
+public class AddBinary {
 
     public static String addBinary(String a, String b) {
         StringBuilder sb = new StringBuilder();

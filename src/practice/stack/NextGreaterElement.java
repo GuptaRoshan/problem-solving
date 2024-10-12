@@ -1,5 +1,6 @@
 package practice.stack;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
@@ -41,6 +42,6 @@ public class NextGreaterElement {
     public static void main(String[] args) {
         int[] nums1 = {4, 1, 2};
         int[] nums2 = {1, 3, 4, 2};
-        System.out.println(nextGreaterElement(nums1, nums2));
+        System.out.println(Arrays.toString(nextGreaterElement(nums1, nums2)));
     }
 }

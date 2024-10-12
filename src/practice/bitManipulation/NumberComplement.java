@@ -1,4 +1,4 @@
-package practice.conversion;
+package practice.bitManipulation;
 
 public class NumberComplement {
 
