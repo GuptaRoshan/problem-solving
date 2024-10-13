@@ -11,7 +11,6 @@ public class DecimalToHex {
         while (num != 0) {
             int rem = num % 16;
             hex.insert(0, hexChars[rem]);
-
             num = num / 16;
         }
 
