@@ -154,12 +154,12 @@ public class TreeTraversal {
         root.right.right = new TreeNode(8);
 
         System.out.print("Preorder: ");
-        preorderRecursion(root);
+        preorderIterative(root);
         System.out.print("\n");
         System.out.print("Inorder: ");
-        inorderRecursion(root);
+        inorderIterative(root);
         System.out.print("\n");
         System.out.print("Postorder: ");
-        postorderRecursion(root);
+        postorderIterative(root);
     }
 }

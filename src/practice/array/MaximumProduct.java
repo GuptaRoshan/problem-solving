@@ -1,7 +1,5 @@
 package practice.array;
 
-import practice.Test;
-
 public class MaximumProduct {
 
     public int maximumProduct(int[] nums) {
