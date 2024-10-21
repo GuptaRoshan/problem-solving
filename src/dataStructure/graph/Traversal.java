@@ -10,7 +10,7 @@ public class Traversal {
         this.graph = graph;
     }
 
-    // DFS traversal using stack
+    /*-------------------------- DFS traversal using stack-------------------------- */
     public List<Integer> DFSUsingStack(int start) {
         boolean[] visited = new boolean[graph.vertices];
         List<Integer> result = new ArrayList<>();
@@ -33,7 +33,7 @@ public class Traversal {
         return result;
     }
 
-    // Recursive DFS traversal
+    /*-------------------------- Recursive DFS traversal -------------------------- */
     public List<Integer> DFSUsingRecursion(int start) {
         boolean[] visited = new boolean[graph.vertices];
         List<Integer> result = new ArrayList<>();
@@ -54,7 +54,7 @@ public class Traversal {
     }
 
 
-    // BFS traversal
+    /*-------------------------- BFS traversal -------------------------- */
     public List<Integer> BFS(int start) {
         boolean[] visited = new boolean[graph.vertices];
         List<Integer> result = new ArrayList<>();

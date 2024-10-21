@@ -6,7 +6,7 @@ public class DecimalToHex {
         if (num == 0) return "0";
 
         StringBuilder hex = new StringBuilder();
-        char[] hexChars = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
+        char[] hexChars = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
 
         while (num != 0) {
             int rem = num % 16;
